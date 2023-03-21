@@ -1,0 +1,25 @@
+package bit.basic.variable;
+
+import java.util.Calendar;
+
+public class ControlEx1 {
+
+	public int getAge(int year) {
+		return (Calendar.getInstance().get(Calendar.YEAR)-year)+1;
+	}
+	public void inputValue(int year, int month, int day) {
+		int age= getAge(year);
+		String ddi="";
+		String week="";
+		outputValue(age, ddi, week);
+	}
+	public void outputValue(int age, String ddi, String week) {
+		System.out.println("Age="+age+" Ddi="+ddi+" Week="+week);
+	}
+	public static void main(String[] args) {
+
+		ControlEx1 c = new ControlEx1();
+		c.inputValue(1994, 2, 7);
+	}
+
+}

@@ -1,0 +1,14 @@
+package www.naver.com;
+
+public class ActionJava {
+	
+	public static void main(String[] args) {
+		System.out.println("Hello JAVA2222222222");
+		System.out.println("ActionJava��������");
+		System.out.println("ActionJava깨진다?");
+		// 반복문 for 
+		for (int i = 0; i < args.length; i++) {
+			
+		}
+	}
+}

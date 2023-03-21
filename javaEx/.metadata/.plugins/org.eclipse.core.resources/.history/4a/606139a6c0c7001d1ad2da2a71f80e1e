@@ -1,0 +1,20 @@
+package bit.basic.variable;
+
+public class ControlEx1 {
+
+	public void inputValue(int year, int month, int day) {
+		int age=0;
+		String ddi="";
+		String week="";
+		outputValue(age, ddi, week);
+	}
+	public void outputValue(int age, String ddi, String week) {
+		System.out.println("Age="+age+" Ddi="+ddi+" Week="+week);
+	}
+	public static void main(String[] args) {
+
+		ControlEx1 c = new ControlEx1();
+		c.inputValue(2023, 3, 21);
+	}
+
+}

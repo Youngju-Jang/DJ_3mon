@@ -1,0 +1,21 @@
+package bit.basic.variable;
+
+import java.util.Scanner;
+
+// byte short int long / 
+public class Calendar {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String input = sc.nextLine();
+		String[] inArr = input.split(" ");
+		int year = Integer.parseInt(inArr[0].substring(0, 4));
+		int month = Integer.parseInt(inArr[1].substring(0, 1));
+		int day = Integer.parseInt(inArr[2].substring(0, 2));
+		
+		
+		System.out.println(year);
+		System.out.println(month);
+		System.out.println(day);
+		
+	}
+}
