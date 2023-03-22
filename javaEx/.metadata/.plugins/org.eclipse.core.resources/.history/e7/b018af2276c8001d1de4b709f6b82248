@@ -1,0 +1,84 @@
+package bit.basic.array;
+
+import java.util.Arrays;
+
+public class ArrayEx2 {
+	// 배열이 꽉찼을 경우 increment하기
+	// 10 -> 20 -> 30 순으로 배열늘리기
+	int[] m = new int[10]; // [10] [20]
+	int cnt = 0;
+	public boolean isFull() {		
+		// full -> increment		
+		return cnt == m.length;
+	}
+	public boolean isEmpty() {
+		return cnt == 0;
+	}
+	public void increment() {
+		int[] temp = m;
+		m = new int[m.length+10];
+		for(int i=0; i<temp.length; i++) {
+			m[i] = temp[i];
+		}
+	}
+	public int search(int num) {
+		//순환탐색
+		// 비었는가
+		if(isEmpty()) return -1;		
+		// 못찾으면 -1
+		for(int i=0; i<m.length; i++) {
+			if(num == m[i]) return i;
+		}
+		return -1;
+	}
+	public void modify(int oldNum, int newNum) {
+		// 있는지먼저 확인
+		int index = search(oldNum);
+		if(index != -1) {
+			m[index] = newNum;
+		}
+	}
+	public void delete(int num) {
+		// 10 20 30 40 50  >>> 30 삭제시
+		// 10 20 40 50 0
+		// 숫자존재유무 검색
+		int index = search(num);
+		// 없으면 끝
+		if(index==-1) return ;
+		// 해당숫자 뒤에수들 땡기기
+		for(int i=index; i<m.length; i++) {
+			// 둘다 0이면 패스
+//			if(m[i]==0 && m[i+1]==0) continue;			
+			m[i] = m[i+1];
+		}
+		//마지막꺼 영넣기
+		m[m.length-1] = 0;	
+		cnt--;
+	}
+	public void add(int data) {
+		
+		// 꽉찼는가 > 찼으면 늘리기
+		if(isFull()) {
+			increment();
+		}
+		m[cnt] = data;
+		cnt++;
+	}
+	public void add(int fdata, int sdata) {
+		add(fdata);
+		add(sdata);
+	}
+
+	public static void main(String[] args) {
+		ArrayEx2 a = new ArrayEx2();
+		a.add(10);
+		a.add(20);
+		a.add(20);
+		a.add(30);
+		System.out.println(Arrays.toString(a.m));
+		a.delete(20);
+		System.out.println(Arrays.toString(a.m));
+		a.modify(30, 40);
+		System.out.println(Arrays.toString(a.m));
+	}
+}
