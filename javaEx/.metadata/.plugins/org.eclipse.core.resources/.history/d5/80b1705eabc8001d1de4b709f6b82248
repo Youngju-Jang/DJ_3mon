@@ -1,0 +1,144 @@
+package bit.basic.array;]
+
+import java.util.Arrays;
+
+public class ArrayEx6 {
+	// 배열이 꽉찼을 경우 increment하기
+	// 10 -> 20 -> 30 순으로 배열늘리기
+	int[][] m = new int[5][10];
+	int cnt[] = new int[5];
+	
+	public boolean isFull(int row) {		
+		// full -> increment		
+		return cnt[row] == m[row].length;
+	}
+	public boolean isEmpty(int row) {
+		return cnt[row] == 0;
+	}
+	public void increment(int row) {
+		int[] temp = m[row];
+		m[row] = new int[m[row].length+10];
+		for(int i=0; i<temp.length; i++) {
+			m[row][i] = temp[i];
+		}
+	}
+	public int search(int row, int num, int fromIndex) {
+		// fromIndex 넣을수있음
+		//순환탐색
+		// 비었는가
+		if(isEmpty(row)) return -1;		
+		// 못찾으면 -1
+		for(int i=0; i<m[row].length; i++) {
+			if(num == m[row][i]) return i;
+		}
+		return -1;
+	}
+	public void modify(int row, int oldNum, int newNum) {
+		// 있는지먼저 확인
+		int index = search(row, oldNum, 0);
+		if(index != -1) {
+			m[row][index] = newNum;
+		}
+	}
+	public void delete(int row, int num) {
+		// char 추가로 받아서 allDelete도 되도록 수정가능
+		// 숫자존재유무 검색
+		int index = search(row, num, 0);
+		// 없으면 끝
+		if(index==-1) return ;
+		// 해당숫자 뒤에수들 땡기기
+		for(int i=index; i<m[row].length-1; i++) {
+			// 둘다 0이면 패스
+			if(m[row][i]==0 && m[row][i+1]==0) continue;	
+			m[row][i] = m[row][i+1];
+		}
+		m[row][m[row].length-1] = 0;
+		cnt[row]--;
+	}
+	public void add(int row, int data) {		
+		// 꽉찼는가 > 찼으면 늘리기
+		if(isFull(row)) {
+			increment(row);
+		}
+		m[row][cnt[row]] = data;
+		cnt[row]++;
+	}
+	public void add(int row, int fdata, int sdata) {
+		add(row, fdata);
+		add(row, sdata);
+	}
+
+	public static void main(String[] args) {
+		ArrayEx6 a = new ArrayEx6();
+		a.add(0, 10);
+		a.add(0, 20);
+		a.add(0, 20);
+		a.add(0, 30);
+		a.add(2, 10);
+		a.add(2, 20);
+		a.add(2, 30);
+		a.add(4, 20);
+		a.add(4, 30);
+		System.out.println(Arrays.toString(a.m[0]));
+		System.out.println(Arrays.toString(a.m[1]));
+		System.out.println(Arrays.toString(a.m[2]));
+		System.out.println(Arrays.toString(a.m[3]));
+		System.out.println(Arrays.toString(a.m[4]));
+		a.delete(0, 20);
+		a.delete(2, 20);
+		a.delete(2, 30);
+		a.delete(4, 30);
+		System.out.println(Arrays.toString(a.m[0]));
+		System.out.println(Arrays.toString(a.m[1]));
+		System.out.println(Arrays.toString(a.m[2]));
+		System.out.println(Arrays.toString(a.m[3]));
+		System.out.println(Arrays.toString(a.m[4]));
+		a.modify(0, 30, 40);
+		a.modify(2, 10, 40);
+		System.out.println(Arrays.toString(a.m[0]));
+		System.out.println(Arrays.toString(a.m[1]));
+		System.out.println(Arrays.toString(a.m[2]));
+		System.out.println(Arrays.toString(a.m[3]));
+		System.out.println(Arrays.toString(a.m[4]));
+		a.add(0, 30);
+		a.add(0, 30);
+		a.add(0, 30);
+		a.add(0, 30);
+		a.add(0, 30);
+		a.add(0, 30);
+		a.add(0, 30);
+		a.add(0, 30);
+		System.out.println(Arrays.toString(a.m[0]));
+		System.out.println(Arrays.toString(a.m[1]));
+		System.out.println(Arrays.toString(a.m[2]));
+		System.out.println(Arrays.toString(a.m[3]));
+		System.out.println(Arrays.toString(a.m[4]));
+		a.add(0,50);
+		a.delete(0,50);
+		a.delete(0,30);
+		System.out.println(Arrays.toString(a.m[0]));
+		System.out.println(Arrays.toString(a.m[1]));
+		System.out.println(Arrays.toString(a.m[2]));
+		System.out.println(Arrays.toString(a.m[3]));
+		System.out.println(Arrays.toString(a.m[4]));
+		a.add(0,0);
+		a.add(0,10);
+		System.out.println(Arrays.toString(a.m[0]));
+		System.out.println(Arrays.toString(a.m[1]));
+		System.out.println(Arrays.toString(a.m[2]));
+		System.out.println(Arrays.toString(a.m[3]));
+		System.out.println(Arrays.toString(a.m[4]));
+		a.modify(0,0, 40);
+		System.out.println(Arrays.toString(a.m[0]));
+		System.out.println(Arrays.toString(a.m[1]));
+		System.out.println(Arrays.toString(a.m[2]));
+		System.out.println(Arrays.toString(a.m[3]));
+		System.out.println(Arrays.toString(a.m[4]));
+		a.modify(0,0, 40);
+		System.out.println(Arrays.toString(a.m[0]));
+		System.out.println(Arrays.toString(a.m[1]));
+		System.out.println(Arrays.toString(a.m[2]));
+		System.out.println(Arrays.toString(a.m[3]));
+		System.out.println(Arrays.toString(a.m[4]));
+	}
+}

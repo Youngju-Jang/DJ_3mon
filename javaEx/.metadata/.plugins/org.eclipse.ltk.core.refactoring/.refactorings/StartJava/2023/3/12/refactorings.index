@@ -11,3 +11,5 @@
 1679458260955	Copy compilation unit
 1679466057637	Rename type 'ArrayEx2'
 1679473911851	Rename method 'gsa'
+1679485804211	Copy compilation unit
+1679487485898	Extract method 'printAll'
