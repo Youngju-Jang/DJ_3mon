@@ -1,0 +1,16 @@
+package bit.basic.array;
+
+import java.util.Arrays;
+
+public class ArrayEx4 {
+	
+	public double[] getValue(int ...x) {
+		return new double[] {Math.sqrt(x[0]), Math.sqrt(x[1]), Math.sqrt(x[0])};
+	}
+	
+	public static void main(String[] args) {
+		ArrayEx4 a = new ArrayEx4();
+		System.out.println(Arrays.toString(a.getValue(10,20,30)));
+	}
+
+}

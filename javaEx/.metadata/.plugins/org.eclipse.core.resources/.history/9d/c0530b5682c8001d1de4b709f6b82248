@@ -1,0 +1,19 @@
+package bit.basic.array;
+
+import java.util.Arrays;
+
+public class ArrayEx4 {
+	
+	public double[] getValue(int ...x) {
+		return new double[] {Math.sqrt(x[0]), Math.sqrt(x[1]), Math.sqrt(x[0])};
+	}
+	
+	public static void main(String[] args) {
+		ArrayEx4 a = new ArrayEx4();
+		for(double i : a.getValue(25, 36, 49)) {
+			System.out.printf("%.2f",i);
+		}
+		System.out.println(Arrays.toString(a.getValue(10,20,30)));
+	}
+
+}

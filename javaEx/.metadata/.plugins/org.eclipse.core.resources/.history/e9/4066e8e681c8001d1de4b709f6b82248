@@ -1,0 +1,13 @@
+package bit.basic.array;
+
+public class ArrayEx4 {
+	
+	public double getValue(int x) {
+		return Math.sqrt(x);
+	}
+	public static void main(String[] args) {
+		ArrayEx4 a = new ArrayEx4();
+		System.out.println(a.getValue(10));
+	}
+
+}
