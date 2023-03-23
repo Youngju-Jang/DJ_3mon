@@ -77,26 +77,20 @@ public class ArrayEx6 {
 		a.add(0, 10, 20, 30, 20, 40, 20, 20, 20);
 		a.add(2, 10, 20, 30, 20, 20);
 		a.add(4, 20, 30, 5, 39);
+		System.out.println("0,2,4행에 add 함");
 		printAll(a);
 		a.delete(0, 20, "all");
 		a.delete(2, 20);
 		a.delete(2, 30);
 		a.delete(4, 30);
+		System.out.println("delete 함");
 		printAll(a);
 		a.modify(0, 30, 40);
 		a.modify(2, 10, 40);
+		System.out.println("0행 30>40, 2행 10>40");
 		printAll(a);
-		a.add(0, 30, 20, 30, 20, 20, 20 );
-		printAll(a);
-		a.add(0,50);
-		a.delete(0,50);
-		a.delete(0,30);
-		printAll(a);
-		a.add(0,0, 10);
-		printAll(a);
-		a.modify(0,0, 40);
-		printAll(a);
-		a.modify(0,0, 40);
+		a.add(0, 30, 20, 30, 20, 20, 20, 20, 20, 20,20 );
+		System.out.println("0행에 많이 추가함 > ");
 		printAll(a);
 	}
 	private static void printAll(ArrayEx6 a) {

@@ -1,0 +1,10 @@
+package bit.basic.obj1;
+
+public class Parent {
+	String val;
+	
+	public Parent() {
+		this.val = "parent";
+	}
+
+}

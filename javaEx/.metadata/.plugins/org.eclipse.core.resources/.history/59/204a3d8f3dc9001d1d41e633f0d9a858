@@ -1,0 +1,11 @@
+package bit.basic.obj1;
+
+public class child extends parent{
+	
+	public child() {
+		super();
+		this.val = "child"; 
+			
+	}
+
+}

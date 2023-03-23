@@ -1,0 +1,16 @@
+package bit.basic.obj1;
+
+public class Child extends Parent{
+	
+	public Child() {
+		super();
+		this.val = "child";
+			
+	}
+	
+	public static void main(String[] args) {
+		Parent p = new Child();
+		System.out.println(p.val);
+	}
+
+}

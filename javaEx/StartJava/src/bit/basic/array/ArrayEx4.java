@@ -1,7 +1,6 @@
 package bit.basic.array;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class ArrayEx4 {
 	

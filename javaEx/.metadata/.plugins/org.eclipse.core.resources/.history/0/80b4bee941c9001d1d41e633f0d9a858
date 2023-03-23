@@ -1,0 +1,13 @@
+package bit.basic.obj1;
+
+public class ObjectEx2 {
+
+	public void add(int x) {
+	}
+	public void add(int x) {
+	}
+	public static void main(String[] args) {
+		ObjectEx2 o = new ObjectEx2();
+	}
+
+}
