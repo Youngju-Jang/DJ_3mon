@@ -1,0 +1,13 @@
+package bit.basic.obj1;
+
+public class SuperClass {
+	private int superClassValue;
+	
+	public void actionProcess() {
+		System.out.println("actionProcess");
+	}
+	
+	public void sub3Action() {
+		System.out.println("super, sub method");
+	}
+}

@@ -1,0 +1,9 @@
+package bit.basic.obj2;
+
+public class ListAction extends Action{
+
+	@Override
+	public ActionForward execute() {
+		return new ActionForward();
+	}
+}

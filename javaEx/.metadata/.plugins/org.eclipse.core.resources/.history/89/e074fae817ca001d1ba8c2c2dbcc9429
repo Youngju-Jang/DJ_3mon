@@ -1,0 +1,8 @@
+package bit.basic.obj2;
+
+public class Action {
+	public ActionForward execute() {
+		System.out.println("");
+		return null;
+	}
+}

@@ -1,0 +1,14 @@
+package bit.basic.obj1;
+
+public class SubClass1 extends SuperClass{
+	
+	
+	public void actionProcess() {
+		System.out.println("actionProcess");
+	}
+	
+	public void printSubClass1(int a) {
+		System.out.println("sub print");
+	}
+	
+}

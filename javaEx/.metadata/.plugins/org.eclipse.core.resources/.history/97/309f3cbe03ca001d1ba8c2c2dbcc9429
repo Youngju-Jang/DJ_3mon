@@ -1,0 +1,7 @@
+package bit.basic.obj1;
+
+public class SuperClass {
+	public void actionProcess() {
+		System.out.println("actionProcess");
+	}
+}

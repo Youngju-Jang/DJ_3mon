@@ -1,0 +1,16 @@
+package bit.basic.obj2;
+
+import java.util.Scanner;
+
+// 여기가 메인
+public class ActionProcess {
+	private Scanner scanner = new Scanner(System.in);
+	
+	public void menu() {
+		
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+}

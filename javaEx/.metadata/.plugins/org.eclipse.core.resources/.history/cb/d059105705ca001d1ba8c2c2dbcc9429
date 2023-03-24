@@ -1,0 +1,11 @@
+package bit.basic.obj1;
+
+public class SuperClass {
+	public void actionProcess() {
+		System.out.println("actionProcess");
+	}
+	
+	public void printSubClass1(long a) {
+		System.out.println("super print");
+	}
+}

@@ -1,0 +1,6 @@
+package bit.basic.obj2;
+
+// 커맨드요청에따라 액션을 생성, 요청없으면 가비지콜렉션 ㄱㄱ하는 역할
+public class ActionFactory {
+	
+}

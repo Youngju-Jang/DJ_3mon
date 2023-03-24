@@ -1,0 +1,17 @@
+package bit.basic.obj2;
+
+public class ObjectEx2 {
+	private String message;
+	
+	public ObjectEx2() {
+		message="hi";
+	}
+	
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	
+	public String getMessage() {
+		return this.message;
+	}
+}
