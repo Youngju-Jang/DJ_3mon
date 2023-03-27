@@ -1,0 +1,6 @@
+package bit.basic.obj3;
+
+public interface InterfaceEx2 {
+	public abstract void interfaceEx2Method();
+	public default void showDefaultMethod() {}
+}

@@ -1,0 +1,18 @@
+package bit.basic.obj4;
+
+public class StaticEx1 {
+	public void show() {
+		System.out.println("run show()");
+	}
+	
+	public static void staticShow() {
+		System.out.println("run staticShow()");
+	}
+	
+	public static void main(String[] args) {
+		StaticEx1 e = new StaticEx1();
+		e.show();
+		
+		staticShow();
+	}
+}

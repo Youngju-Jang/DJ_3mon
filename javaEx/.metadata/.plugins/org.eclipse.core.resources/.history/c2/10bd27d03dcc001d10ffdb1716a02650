@@ -1,0 +1,5 @@
+package bit.basic.obj3;
+
+public interface InterfaceEx1 {
+
+}

@@ -64,7 +64,7 @@ public class ArrayEx5 {
 	}
 	// 최빈값(최다빈도수)
 	public String getMost() {
-		int[] cnt = new int[99];
+		int[] cnt = new int[100];
 		int maxCnt = 0;
 		String ans = "";
 		// 카운트용

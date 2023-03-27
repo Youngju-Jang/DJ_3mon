@@ -1,0 +1,12 @@
+package bit.basic.obj3;
+
+public abstract class AbstractSuperClass {
+	public static int terst;
+
+	public void abstractSuperMethod() {
+		System.out.println("abstractSuperMethod");
+	}
+	
+	public abstract void abstractMethodSP();
+	
+}
