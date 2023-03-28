@@ -1,0 +1,15 @@
+package bit.basic.obj5;
+
+import java.util.ArrayList;
+
+public class WindowEx3 extends ArrayList<String>{
+
+	public void actionString() {
+		System.out.println(this.toString());
+	}
+	public static void main(String[] args) {
+		WindowEx3 w = new WindowEx3();
+		w.actionString();
+				
+	}
+}

@@ -26,7 +26,6 @@ public class AnonyMousEx {
 	};// inner
 	
 	public void anonymousMethod1() {
-		i.fileCheck();
 		
 	}// outer
 	
