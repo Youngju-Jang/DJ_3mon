@@ -1,0 +1,68 @@
+package bit.basic.obj4;
+
+public class Parent {
+	
+	public Parent() {
+		System.out.println("parent 생성자");
+	}
+	
+	public Parent(int num) {
+		System.out.println("parent 1 para 생성자");
+	}
+	
+	public Parent(int num1, int num2) {
+		System.out.println("parent 2 para 생성자");
+	}
+	
+	public void sayHi() {
+		System.out.println("parent sayHi");
+	}
+
+	public static void main(String[] args) {
+		// 자식클래스 생성자호출시 부모클래스 생성자 호출(super() 생략) 후 호출 
+		Child ch = new Child(); // parent 생성자   child 생성자
+		// 부모메소드아닌 오버라이딩된 자식메소드 호출
+		ch.sayHi(); // child sayHi
+		
+		System.out.println(); 
+		// 부모변수에 담더라도 마찬가지
+		Parent pach = new Child(); // parent 생성자   child 생성자
+		// 부모변수에 자식인스턴스가 있기때문에 자식에서 오버라이딩된 메소드 호출
+		pach.sayHi(); // child sayHi
+		
+		System.out.println();
+		Parent pa = new Parent();  // parent 생성자
+		pa.sayHi(); // parent sayHi
+		
+		System.out.println();
+		// 파라미터있는 자식생성자 호출시에도 명시하지않으면 super()먼저 호출 후 진행
+		Child para1 = new Child(1); // parent 생성자 	child 1 para 생성자
+		
+		// super(2,3) 파라미터있는 super()생성자 호출시 파라미터없는 super() 호출x
+		System.out.println();
+		Child para2 = new Child(2,3); // parent 2 para 생성자   child 2 para 생성자
+	}
+}
+
+class Child extends Parent{
+	
+	public Child() {
+		System.out.println("child 생성자");
+	}
+	
+	public Child(int num) {
+		System.out.println("child 1 para 생성자");
+	}
+	
+	public Child(int num1, int num2) {
+		super(num1, num2);
+		System.out.println("child 2 para 생성자");
+	}
+	
+	@Override
+	public void sayHi() {
+		System.out.println("child sayHi");
+	}
+}
+
+

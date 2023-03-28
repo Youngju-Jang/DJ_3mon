@@ -1,0 +1,38 @@
+package bit.basic.obj5;
+//InnerClass : Member Inner, Static Inner, Local Inner, AnonyMous
+public class OuterClass {
+
+	//// member 영역 ////
+	private int outerValue; // member 변수 = 인스턴스 변수
+	private int x;
+	public OuterClass() {
+		System.out.println("OuterClass()");
+		System.out.println("x = " + x);
+		System.out.println("outerValue = " + outerValue);
+	}
+	private void outerMethod() {
+		System.out.println("outerMethod");
+		System.out.println("x = " + x);
+		System.out.println("outerValue = " + outerValue);
+	}
+	
+	// InnerClass
+	public class Inner{ // Member Inner
+		private int innerValue;
+		private int x;
+		public Inner() {
+			System.out.println("Inner()");
+		}
+		public void innerMethod() {
+			outerValue = 100; // outerValue
+			x = 100; // innerValue
+			outerMethod();
+		}
+	}
+	public static void main(String[] args) {
+		OuterClass.Inner inner = new OuterClass().new Inner();
+		inner.innerMethod();
+		
+	}
+	
+}

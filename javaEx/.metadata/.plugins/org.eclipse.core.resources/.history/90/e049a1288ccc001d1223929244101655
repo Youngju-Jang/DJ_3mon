@@ -1,0 +1,38 @@
+package bit.basic.obj4;
+
+public class Parent {
+	
+	public Parent() {
+		System.out.println("parent 생성자");
+	}
+	
+	public void sayHi() {
+		System.out.println("parent sayHi");
+	}
+
+	public static void main(String[] args) {
+		Child ch = new Child();
+		ch.sayHi();			
+		
+		System.out.println();
+		Parent pach = new Child();
+		pach.sayHi();
+		
+		Parent pa = new Parent();
+		pa.sayHi();
+	}
+}
+
+class Child extends Parent{
+	
+	public Child() {
+		System.out.println("child 생성자");
+	}
+	
+	@Override
+	public void sayHi() {
+		System.out.println("child sayHi");
+	}
+}
+
+

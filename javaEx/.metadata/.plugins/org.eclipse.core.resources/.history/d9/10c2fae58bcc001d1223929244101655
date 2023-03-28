@@ -1,0 +1,17 @@
+package bit.basic.obj4;
+
+public class Parent {
+	
+	public Parent() {
+		System.out.println("parent 생성자");
+	}
+	
+	public void sayHi() {
+		System.out.println("parent sayHi");
+	}
+
+}
+
+class child{
+	
+}

@@ -1,0 +1,62 @@
+package bit.basic.obj4;
+
+public class Parent {
+	
+	public Parent() {
+		System.out.println("parent 생성자");
+	}
+	
+	public Parent(int num) {
+		System.out.println("parent 1 para 생성자");
+	}
+	
+	public Parent(int num1, int num2) {
+		System.out.println("parent 2 para 생성자");
+	}
+	
+	public void sayHi() {
+		System.out.println("parent sayHi");
+	}
+
+	public static void main(String[] args) {
+		Child ch = new Child(); // parent 생성자 /child 생성자
+		ch.sayHi(); // child sayHi
+		
+		System.out.println(); 
+		Parent pach = new Child(); // parent 생성자 /child 생성자
+		pach.sayHi(); // child sayHi
+		
+		System.out.println();
+		Parent pa = new Parent();  // parent 생성자
+		pa.sayHi(); // parent sayHi
+		
+		System.out.println();
+		Child para1 = new Child(1); // parent 생성자 /child 1 para 생성자
+		
+		System.out.println();
+		Child para2 = new Child(2,3); // parent 2 para 생성자 /child 2 para 생성자
+	}
+}
+
+class Child extends Parent{
+	
+	public Child() {
+		System.out.println("child 생성자");
+	}
+	
+	public Child(int num) {
+		System.out.println("child 1 para 생성자");
+	}
+	
+	public Child(int num1, int num2) {
+		super(num1, num2);
+		System.out.println("child 2 para 생성자");
+	}
+	
+	@Override
+	public void sayHi() {
+		System.out.println("child sayHi");
+	}
+}
+
+
