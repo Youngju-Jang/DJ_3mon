@@ -1,0 +1,25 @@
+package bit.basic.obj5;
+
+public class InstanceMember extends SuperInstanceMember{
+	
+	private int x;
+	
+	public InstanceMember() {
+//		this.superValidate();
+//		superValue=100;
+	}
+	public void outerMemberMethod() {
+		System.out.println("x = " + x);
+	}
+	
+	public class Inner{ // object
+		public Inner() {
+			InstanceMember.this.x = 100; // 외부 x 접근
+			outerMemberMethod();
+		}
+	}// inner
+	
+	public static void main(String[] args) {
+		InstanceMember.Inner inner = new InstanceMember().new Inner();
+	}
+}// outer
