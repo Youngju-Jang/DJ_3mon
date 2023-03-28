@@ -38,6 +38,6 @@ public class LocalOuter extends JPanel{
 
 	public static void main(String[] args) {
 		LocalOuter local = new LocalOuter(); 
-		local.method1(10);
+		local.method1();
 	}
 }
