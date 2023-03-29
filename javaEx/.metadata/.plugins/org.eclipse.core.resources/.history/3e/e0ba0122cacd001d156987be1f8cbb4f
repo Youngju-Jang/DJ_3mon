@@ -1,0 +1,12 @@
+package bit.pk.app2;
+
+public class Super {
+	// 다른패키지. 후손x
+	public Super() { // 후손생성자
+		InstanceClass su = new InstanceClass();
+		su.publicData = 10;
+//		su.protectedData = 10;
+//		su.defaultData = 10;
+//		su.privateDate = 10;
+	}
+}
