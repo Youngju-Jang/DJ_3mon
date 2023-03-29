@@ -11,7 +11,6 @@ import java.awt.event.WindowEvent;
 
 public class WindowFrame2 extends Frame{
 	Dimension d = Toolkit.getDefaultToolkit().getDefaultToolkit().getScreenSize();
-	static final int SQUAREWIDTH = 60;
 	private Pan pan = new Pan(); // component
 	public WindowFrame2() {
 		this.add(pan);
@@ -34,12 +33,10 @@ public class WindowFrame2 extends Frame{
 
 		@Override
 		public void paint(Graphics g) {
-			// 바둑판그리기
-			int startI = (d.width%SQUAREWIDTH ==0)? SQUAREWIDTH/2 : (d.width%SQUAREWIDTH)/2;
-			int startJ = (d.height%SQUAREWIDTH ==0)? SQUAREWIDTH/2 : (d.height%SQUAREWIDTH)/2;
-			for(int i=startI; i<= d.width-startI-SQUAREWIDTH; i+=SQUAREWIDTH) {
-				for(int j=startJ; j<=d.height-startJ-SQUAREWIDTH; j+=SQUAREWIDTH) {
-					g.drawRect(i, j, SQUAREWIDTH, SQUAREWIDTH);
+			System.out.println(d.width%60);
+			for(int i=(d.width%60)/2; i<= d.width-70; i+=60) {
+				for(int j=(d.height%60)/2; j<=d.height-70; j+=60) {
+					g.drawRect(i, j, 60, 60);
 				}
 			}
 		}

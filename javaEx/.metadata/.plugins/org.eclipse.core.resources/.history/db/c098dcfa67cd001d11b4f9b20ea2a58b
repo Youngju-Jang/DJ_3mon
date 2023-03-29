@@ -34,7 +34,6 @@ public class WindowFrame2 extends Frame{
 
 		@Override
 		public void paint(Graphics g) {
-			// 바둑판그리기
 			int startI = (d.width%SQUAREWIDTH ==0)? SQUAREWIDTH/2 : (d.width%SQUAREWIDTH)/2;
 			int startJ = (d.height%SQUAREWIDTH ==0)? SQUAREWIDTH/2 : (d.height%SQUAREWIDTH)/2;
 			for(int i=startI; i<= d.width-startI-SQUAREWIDTH; i+=SQUAREWIDTH) {
