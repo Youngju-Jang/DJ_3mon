@@ -1,0 +1,15 @@
+package bit.app.exception;
+
+public class ProcessClient {
+
+	Process p;
+	public void action() {
+		p.fileCheck();
+		System.out.println("action");
+	}
+	
+	public static void main(String[] args) {
+		ProcessClient p = new ProcessClient();
+		p.action();
+	}
+}

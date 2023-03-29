@@ -1,0 +1,5 @@
+package bit.app.exception;
+
+public class ExceptionEx2 {
+
+}

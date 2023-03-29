@@ -1,0 +1,39 @@
+package bit.app.exception;
+
+public class ExceptionEx1 {
+	
+	public void arithmeticException() {
+		System.out.println((int)(Math.random()*100%50));
+	}
+	
+	public void numberFormatException() {
+		
+	}
+	
+	public void nullPointerException() {
+		
+	}
+
+	public void arrayIndexOutOfBoundsException() {
+		int[] m = new int[5];
+		for(int i=0; i<= m.length; i++) {
+			try {
+				m[i] = 100;
+				System.out.println("i : "+i +", Data="+m[i]);
+			} catch (ArrayIndexOutOfBoundsException e) {
+				System.out.println(e.getMessage());
+			} catch(NullPointerException e) {
+				
+			}
+			finally {
+				System.out.println("finally");
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		ExceptionEx1 e = new ExceptionEx1();
+		e.arrayIndexOutOfBoundsException();
+		e.arithmeticException();
+	}
+}
