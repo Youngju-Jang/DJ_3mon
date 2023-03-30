@@ -1,0 +1,10 @@
+package bit.basic.collection;
+
+public class BoardBean {
+	private int no;
+	private String title;
+	private String writer;
+	private String contents;
+	private String password;
+	private String regdate;
+}

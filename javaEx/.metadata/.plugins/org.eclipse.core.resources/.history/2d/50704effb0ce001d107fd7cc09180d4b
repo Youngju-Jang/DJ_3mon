@@ -1,0 +1,19 @@
+package www.naver.com;
+
+public class test {
+	static int answer = 0;
+	public static int solution(String s) {
+        int[] alArr = new int[26];
+        for(int i=0; i<s.length(); i++) {
+//        	alArr[(s.substring(i,i+1))-65]++;
+        	System.out.println(s.substring(i,i+1));
+        }
+        
+        return answer;
+    }
+	
+	public static void main(String[] args) {
+		System.out.println(solution("banana"));
+		System.out.println(Integer.parseInt("A")-65);
+	}
+}

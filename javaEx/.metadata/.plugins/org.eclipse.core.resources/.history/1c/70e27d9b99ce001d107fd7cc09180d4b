@@ -1,0 +1,14 @@
+package bit.basic.collection;
+
+import java.util.HashSet;
+
+public class SetEx1 {
+	public void setProcess1() {
+		String[] lesson = {"JAVA", "DATABASE", "SERVLET"};
+		HashSet<String> set1 = new HashSet<String>();
+		
+	}
+	public static void main(String[] args) {
+		SetEx1 e = new SetEx1();
+	}
+}

@@ -1,0 +1,9 @@
+package bit.basic.collection;
+
+import java.util.ArrayList;
+
+public class ListDao {
+	private static ArrayList<BoardBean> list = new ArrayList<BoardBean>(); 
+	
+	
+}

@@ -1,0 +1,21 @@
+package bit.basic.collection;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class ListEx2 {
+
+	public void listProcess1() {
+		ArrayList<String> list1 = new ArrayList<String>();
+		list1.add("hippo");
+		Iterator<String> i = list1.iterator();
+		list1.add("add");
+		i.next();
+		
+		
+	}
+	public static void main(String[] args) {
+		ListEx2 list = new ListEx2();
+		list.listProcess1();
+	}
+}

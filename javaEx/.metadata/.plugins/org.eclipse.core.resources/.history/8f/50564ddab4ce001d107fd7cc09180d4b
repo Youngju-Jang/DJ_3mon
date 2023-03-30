@@ -1,0 +1,34 @@
+package bit.basic.collection;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class ListDao {
+	private static ArrayList<BoardBean> list = new ArrayList<BoardBean>(); 
+	private static ListDao dao;
+	public static ListDao getDao() {
+		if(dao==null) {
+			dao = new ListDao();
+		}
+		return dao;
+	}
+	public void listInsert(BoardBean bean) {
+		list.add(bean);
+		System.out.println("Insert Success");
+	}
+	// list return
+	public List<BoardBean> getList(){
+		return list;
+	}
+	// 중복체크 있으면 true
+	public boolean noCheck(int num) {
+		if(list.isEmpty()) return false;
+		for(BoardBean bean : list) {
+			if(bean.getNo() == num) {
+				return true;
+			}
+		}
+		return false;
+	}
+}

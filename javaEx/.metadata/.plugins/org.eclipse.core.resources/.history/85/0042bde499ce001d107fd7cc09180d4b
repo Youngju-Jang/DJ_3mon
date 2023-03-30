@@ -1,0 +1,25 @@
+package bit.basic.collection;
+
+import java.util.HashSet;
+
+public class SetEx1 {
+	public void setProcess1() {
+		String[] lesson = {"JAVA", "DATABASE", "SERVLET"};
+		HashSet<String> set1 = new HashSet<String>();
+		HashSet<String> set2 = new HashSet<String>();
+		
+		for(int i=0; i<lesson.length; i++) {
+			if(!set1.add(lesson[i])) {
+				set2.add(lesson[i]);
+			}
+		}
+		for(String item : set1) {
+			System.out.println(item);
+		}
+		
+	}
+	public static void main(String[] args) {
+		SetEx1 e = new SetEx1();
+		e.setProcess1();
+	}
+}

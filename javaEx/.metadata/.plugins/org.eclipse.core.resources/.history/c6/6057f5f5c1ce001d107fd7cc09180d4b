@@ -1,0 +1,15 @@
+package bit.basic.collection;
+
+import java.util.ArrayList;
+
+public class ListEx2 {
+
+	public void listProcess1() {
+		ArrayList<String> list1 = new ArrayList<String>();
+		list1.add("");
+	}
+	public static void main(String[] args) {
+		ListEx2 list = new ListEx2();
+		list.listProcess1();
+	}
+}

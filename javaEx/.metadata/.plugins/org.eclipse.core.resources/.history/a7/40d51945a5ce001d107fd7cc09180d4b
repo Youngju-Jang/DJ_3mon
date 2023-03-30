@@ -1,0 +1,28 @@
+package bit.basic.collection;
+
+import java.util.ArrayList;
+
+public class ListDao {
+	private static ArrayList<BoardBean> list = new ArrayList<BoardBean>(); 
+	private static ListDao dao;
+	private ListDao() {}
+	public static ListDao getDao() {
+		if(dao==null) {
+			dao = new ListDao();
+		}
+		return dao;
+	}
+	public void listInsert() {
+		
+	}
+	
+	public boolean noCheck(int  num) {
+		if(list.isEmpty()) return true;
+		for(BoardBean bean : list) {
+			if(bean.getNo() == num) {
+				return true;
+			}
+		}
+		return false;
+	}
+}

@@ -1,0 +1,93 @@
+package bit.basic.collection;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
+
+public class ListEx1 {
+	
+	private static ListDao dao = ListDao.getDao();
+	private static List<BoardBean> list = dao.getList();
+	private Scanner scanner = new Scanner(System.in);
+	
+	// 3. Info 
+	public void info() {
+		// 텅비었을경우
+		if(list.size()==0) {
+			System.out.println("텅 비었습니다.");
+			return;
+		}
+		// info 원하는 빈 넘버 get
+		System.out.println("no");
+		int no = scanner.nextInt();
+		// 존재하는 번호인가
+		if(dao.noCheck(no)) {
+			for(BoardBean bean : list){
+				if(bean.getNo()==no) {
+					System.out.println(bean.toString());
+				}
+			}
+		}else { 
+			System.out.println("존재하지 않는 책입니다.");
+		}
+	}
+	
+	
+	// 1. Add
+	public void add() {
+		BoardBean bean = new BoardBean();
+		
+		System.out.println("no");
+		int no = scanner.nextInt();	
+		while(dao.noCheck(no)) { // 중복된 숫자일경우 true
+			System.out.println("이미 존재하는 숫자입니다. 새로운 번호를 입력하십시오.");
+			no = scanner.nextInt();
+		}
+		bean.setNo(no); 		
+		System.out.println("title");
+		bean.setTitle(scanner.next());
+		System.out.println("writer");
+		bean.setWriter(scanner.next());
+		System.out.println("contents");
+		bean.setContents(scanner.next());
+		System.out.println("password");
+		bean.setPassword(scanner.next());
+		Calendar c = Calendar.getInstance();
+		String regdate = String.valueOf(c.get(Calendar.YEAR))
+				.concat(String.valueOf(c.get(Calendar.MONTH)+1))
+				.concat(String.valueOf(c.get(Calendar.DATE)));
+		bean.setRegdate(regdate);
+		System.out.println(bean);
+		dao.listInsert(bean);
+	}
+	
+	// 2. List
+	public void list() {
+		Iterator<BoardBean> iter = list.iterator();
+		while(iter.hasNext()) {
+			System.out.println(iter.next());
+		}
+	}
+
+	public void menu() {
+		while(true) {
+			System.out.println("1. Add 2.List 3.Info 4.Modify 5.Delete");
+			
+			switch(scanner.nextInt()) {
+			case 1:
+				add(); break;
+			case 2:
+				list(); break;
+			case 3: 
+				info(); break;
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		ListEx1 ex = new ListEx1();
+		ex.menu();
+	}
+}

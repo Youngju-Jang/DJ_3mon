@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="m[0]"/>
+		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="hasNext"/>
+			<item value="hasnext"/>
 			<item value="m[0]"/>
 			<item value="search"/>
 			<item value="strDDi"/>
