@@ -1,0 +1,14 @@
+package bit.basic.collection;
+
+import java.util.HashMap;
+
+public class MapEx1 {
+
+	public void mapProcess() {
+		HashMap<Integer, String> map1 = new HashMap<Integer, String>();
+	}
+	public static void main(String[] args) {
+		MapEx1 e = new MapEx1();
+		e.mapProcess();
+	}
+}

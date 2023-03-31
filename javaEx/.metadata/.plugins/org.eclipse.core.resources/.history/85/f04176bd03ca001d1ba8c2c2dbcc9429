@@ -1,8 +1,0 @@
-package bit.basic.obj1;
-
-public class SubClass1 extends SuperClass{
-	public void printSubClass1() {
-		System.out.println("print subClass1");
-	}
-	
-}

@@ -6,8 +6,11 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value=""/>
+		<item key="selection" value="MAX_VALUE"/>
 		<list key="findhistory">
+			<item value="MAX_VALUE"/>
+			<item value="checkEmpty"/>
+			<item value="empty"/>
 			<item value="hasNext"/>
 			<item value="hasnext"/>
 			<item value="m[0]"/>

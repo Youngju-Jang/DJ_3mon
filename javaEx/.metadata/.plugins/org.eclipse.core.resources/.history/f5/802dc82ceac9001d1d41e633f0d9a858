@@ -1,8 +1,0 @@
-package bit.basic.obj1;
-
-public class SuperMain {
-
-	public static void main(String[] args) {
-		
-	}
-}

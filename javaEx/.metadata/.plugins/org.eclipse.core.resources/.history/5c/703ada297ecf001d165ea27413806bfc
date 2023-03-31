@@ -1,0 +1,38 @@
+package bit.basic.collection;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map.Entry;
+
+public class MapEx1 {
+
+	public void mapProcess() {
+		HashMap<Integer, String> map1 = new HashMap<Integer, String>();
+		map1.put(1, "딸기");
+		map1.put(2, "바나나");
+		map1.put(3, "수박");
+		map1.put(3, "딸기");
+		map1.put(4, "레몬");
+		Iterator<Integer> it = map1.keySet().iterator();
+		
+//		while(it.hasNext()) {
+//			System.out.println(map1.get(it.next()));
+//		}
+//		System.out.println(map1);
+		
+		for(Entry<Integer, String> en : map1.entrySet()) {
+			System.out.println(en.getValue());
+		}
+		Iterator<Entry<Integer, String>> it2 = map1.entrySet().iterator();
+		while(it2.hasNext()) {
+			Entry<Integer, String> i = it2.next();
+			System.out.print(i.getValue());
+			System.out.println(i.getKey());
+		}
+		
+	}
+	public static void main(String[] args) {
+		MapEx1 e = new MapEx1();
+		e.mapProcess();
+	}
+}
