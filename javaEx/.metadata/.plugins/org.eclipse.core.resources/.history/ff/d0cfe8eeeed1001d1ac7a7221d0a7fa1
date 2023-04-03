@@ -1,0 +1,26 @@
+package bit.app.io;
+
+public class Member {
+	private String id;
+	private String name;
+	private double height;
+	public Member() {
+		super();
+	}
+	public Member(String id, String name, double height) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.height = height;
+	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		
+		return super.toString();
+	}
+	
+	public static void main(String[] args) {
+		Member m = new Member("123", "dndn", 124);
+	}
+}

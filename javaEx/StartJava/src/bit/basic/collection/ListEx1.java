@@ -1,13 +1,21 @@
 package bit.basic.collection;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
+import bit.app.io.Member;
+
 public class ListEx1 {
-	
+	private final String PATH="c:\\test\\";
 	private static ListDao dao = ListDao.getDao();
 	private Scanner scanner = new Scanner(System.in);	
 	
@@ -26,7 +34,7 @@ public class ListEx1 {
 		
 		System.out.println("no");
 		int no = scanner.nextInt();	
-		while(dao.getList().size()!=0 && dao.getIdNumIndex(no)==-1) { // 중복된 숫자일경우 true
+		while(dao.getList().size()!=0 && dao.getIdNumIndex(no)!=(-1)) { // 중복된 숫자일경우 true
 			System.out.println("이미 존재하는 숫자입니다. 새로운 번호를 입력하십시오.");
 			no = scanner.nextInt();
 		}
@@ -125,7 +133,29 @@ public class ListEx1 {
 		}
 		System.out.println(dao.deleteBeanIndex(index));
 	}
+	// 6. Save
+	public void save() {
+		System.out.println("저장할 파일이름 : ");
+		String fileName= scanner.next();
+		try(ObjectOutputStream oos = new ObjectOutputStream(new PrintStream(new File(PATH+fileName+".txt")))){
+				oos.writeObject(dao.getList());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	
+	// 7. Open 
+	public void open() {
+		System.out.println("불러올 파일이름 : ");
+		String fileName= scanner.next();
+		try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File(PATH+fileName+".txt")))) {
+			ArrayList<BoardBean> fileBean = (ArrayList<BoardBean>) ois.readObject();
+			dao.setList(fileBean);
+			System.out.println("DB Insert 완료");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	// 책 번호로 책 인덱스 get
 	public int search() {
 		System.out.println("IdNumber");
@@ -141,7 +171,6 @@ public class ListEx1 {
 		}
 		return false;
 	}
-	
 	public void menu() {
 		while(true) {
 			System.out.println("1. Add 2.List 3.Info 4.Modify 5.Delete 6.Save 7.Open");
@@ -157,6 +186,10 @@ public class ListEx1 {
 				modify(); break;
 			case 5:
 				delete(); break;
+			case 6:
+				save(); break;
+			case 7: 
+				open(); break;
 			}
 		}
 	}

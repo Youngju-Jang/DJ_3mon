@@ -1,0 +1,12 @@
+package bit.app.io;
+
+public class ByteStreamEx {
+
+	public void streamEx1() {
+		System.out.println("Data: ");
+	}
+	public static void main(String[] args) {
+		ByteStreamEx b = new ByteStreamEx();
+		b.streamEx1();
+	}
+}

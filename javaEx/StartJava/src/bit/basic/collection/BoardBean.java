@@ -1,6 +1,8 @@
 package bit.basic.collection;
 
-public class BoardBean {
+import java.io.Serializable;
+
+public class BoardBean implements Serializable{
 	private int no;
 	private String title;
 	private String writer;

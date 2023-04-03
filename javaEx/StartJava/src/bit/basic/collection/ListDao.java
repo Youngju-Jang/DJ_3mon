@@ -28,8 +28,14 @@ public class ListDao {
 		list.add(bean);
 		System.out.println("Insert Success");
 	}
+	public void setList(ArrayList<BoardBean> beanList) {
+		this.list = beanList;
+	}
 	public String deleteBeanIndex(int index) {
 		return list.remove(index).getWriter().concat("님 삭제");
+	}
+	public void deleteAll() {
+		list.clear();
 	}
 	// list return
 	public List<BoardBean> getList(){

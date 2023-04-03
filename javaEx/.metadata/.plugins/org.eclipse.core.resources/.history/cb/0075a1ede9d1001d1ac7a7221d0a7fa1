@@ -1,0 +1,21 @@
+package bit.app.io;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class CharacterStreamEx {
+
+	public void fileCopy() throws FileNotFoundException, InterruptedException {
+		Scanner scanner = new Scanner(new File("c:\\test\\test.txt"));
+		while(scanner.hasNext()) {
+			Thread.sleep(100);
+//			System.out.println(scanner.nextLine());
+			System.out.println(scanner.next());
+		}
+	}
+	public static void main(String[] args) throws FileNotFoundException, InterruptedException {
+		CharacterStreamEx c = new CharacterStreamEx();
+		c.fileCopy();
+	}
+}

@@ -1,0 +1,48 @@
+package bit.app.io;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.PrintStream;
+import java.util.HashMap;
+import java.util.Map;
+
+public class ObjectStreamEx {
+
+	private final String PATH="c:\\test\\obj.dat";
+	public void writeMember() { 
+		HashMap<String, Member> map = new HashMap();
+		// hashMap : serialize 되어있음 
+		try(ObjectOutputStream oos = new ObjectOutputStream(new PrintStream(new File(PATH)));
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File(PATH)))
+			){			
+			map.put("BLUE", new Member("BLUE", "red", 189.9));
+			map.put("BLUE1", new Member("BLUE1", "yello", 19.9));
+			map.put("BLUE2", new Member("BLUE2", "black", 389.9));
+			map.put("BLUE3", new Member("BLUE3", "white", 289.9));
+			map.put("BLUE4", new Member("BLUE3", "green", 89.9));
+			oos.writeObject(map);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void readMember() {
+		try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File(PATH)))) {
+//			System.out.println(ois.readObject());
+			if(ois.readObject() instanceof HashMap) {
+				HashMap<String, Member> map = (HashMap<String, Member>) ois.readObject();
+				for( Map.Entry<String, Member> elem:map.entrySet()) {
+					System.out.println(elem.getKey() + " : " + elem.getValue());
+				}
+			}
+		} catch (Exception e) {
+			
+		}
+	}
+	public static void main(String[] args) {
+		ObjectStreamEx o = new ObjectStreamEx();
+//		o.writeMember();
+		o.readMember();
+	}
+}

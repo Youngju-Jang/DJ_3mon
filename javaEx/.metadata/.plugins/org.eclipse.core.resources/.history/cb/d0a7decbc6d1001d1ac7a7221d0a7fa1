@@ -1,0 +1,18 @@
+package bit.app.io;
+
+import java.io.IOException;
+
+public class ByteStreamEx {
+
+	public void streamEx1() throws IOException {
+		System.out.println("Data: ");
+		byte[] contents = new byte[100];
+//		System.in.read(contents);
+		int rc = System.in.read(contents);
+		System.out.println("rc =" + rc);
+	}
+	public static void main(String[] args) throws Exception{
+		ByteStreamEx b = new ByteStreamEx();
+		b.streamEx1();
+	}
+}

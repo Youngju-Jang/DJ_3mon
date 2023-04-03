@@ -1,0 +1,92 @@
+package bit.basic.collection;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map.Entry;
+import java.util.Vector;
+
+public class MapEx1 {
+
+	public void mapProcess1() {
+		HashMap<Integer, String> map1 = new HashMap<Integer, String>();
+		map1.put(1, "딸기");
+		map1.put(2, "바나나");
+		map1.put(3, "수박");
+		map1.put(3, "딸기");
+		map1.put(4, "레몬");
+		Iterator<Integer> it = map1.keySet().iterator();
+		
+//		while(it.hasNext()) {
+//			System.out.println(map1.get(it.next()));
+//		}
+//		System.out.println(map1);
+		
+		for(Entry<Integer, String> en : map1.entrySet()) {
+			System.out.println(en.getValue());
+		}
+		Iterator<Entry<Integer, String>> it2 = map1.entrySet().iterator();
+		while(it2.hasNext()) {
+			Entry<Integer, String> i = it2.next();
+			System.out.println(i.getKey() + " : " + i.getValue());
+		}
+		
+	}
+	public void mapProcess2() {
+		HashMap<String, Object> m1 = new HashMap<String, Object>();
+		m1.put("empno", "7612");
+		m1.put("name", "장영주");
+		m1.put("sal", "7000");
+		
+		HashMap<String, Object> m2 = new HashMap<String, Object>();
+		m2.put("empno", "7613");
+		m2.put("name", "박혜주");
+		m2.put("sal", "7000");
+		
+		Vector<HashMap<String, Object>> vector = new Vector<HashMap<String,Object>>();
+		vector.add(m1);
+		vector.add(m2);	
+		
+		Iterator<HashMap<String, Object>> vi = vector.iterator();
+		while(vi.hasNext()) {
+			HashMap<String, Object> node = vi.next();
+			Iterator<Entry<String, Object>> ie = node.entrySet().iterator();
+			while(ie.hasNext()) {
+				Entry<String, Object> eo = ie.next();
+				System.out.println(eo.getKey() + " : " + eo.getValue());
+			}
+		}
+		float f = 3;
+		System.out.println(f);
+//		float f1 = 10.0; 
+//		float f2 = f1 + 20.0;
+		
+		int[] scores = {90, 80, 100};
+		// #1
+//		scores[3] = 95;
+		// #3
+//		scores = {90, 80, 100, 95};
+		// #2
+		scores = new int[] {90, 80, 100, 95};
+		// #4
+		int[] scores2 = new int[4];
+		System.arraycopy(scores, 0, scores2, 0, scores.length);
+		scores2[3] = 95;
+		// #5
+		scores = Arrays.copyOf(scores, 5);
+		
+		int intArray[][] = new int [4][3]; 
+		int [] intArray2[] = new int [4][3];
+		int [][] intArray3 = new int [4][3];
+//		int [][] intArray4 = new int [4]{1,2,3};
+		int [][] intArray5 = new int[][] {{1,2,3},{1,2,3},{1,2,3},{1,2,3}};
+		int [][] intArray6 = {{1,2,3},{1,2,3},{1,2,3},{1,2,3}};
+
+		System.out.printf("%3d", 5);
+
+	}
+	public static void main(String[] args) {
+		MapEx1 e = new MapEx1();
+		e.mapProcess2();
+	}
+}

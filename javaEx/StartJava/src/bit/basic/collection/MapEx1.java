@@ -74,7 +74,15 @@ public class MapEx1 {
 		scores2[3] = 95;
 		// #5
 		scores = Arrays.copyOf(scores, 5);
+		
+		int intArray[][] = new int [4][3]; 
+		int [] intArray2[] = new int [4][3];
+		int [][] intArray3 = new int [4][3];
+//		int [][] intArray4 = new int [4]{1,2,3};
+		int [][] intArray5 = new int[][] {{1,2,3},{1,2,3},{1,2,3},{1,2,3}};
+		int [][] intArray6 = {{1,2,3},{1,2,3},{1,2,3},{1,2,3}};
 
+		System.out.printf("%.3f", 5.0);
 
 	}
 	public static void main(String[] args) {
