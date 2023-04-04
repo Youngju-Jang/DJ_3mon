@@ -150,7 +150,7 @@ public class ListEx1 {
 		String fileName= scanner.next();
 		try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File(PATH+fileName+".txt")))) {
 			ArrayList<BoardBean> fileBean = (ArrayList<BoardBean>) ois.readObject();
-			dao.setList(fileBean); // 전체 db변경함
+			dao.setList(fileBean);
 			System.out.println("DB Insert 완료");
 		} catch (Exception e) {
 			e.printStackTrace();

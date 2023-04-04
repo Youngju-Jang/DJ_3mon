@@ -1,7 +1,0 @@
-package bit.basic.obj3;
-
-public interface InterfaceEx1 {
-
-	static final int DATA = 10;
-	public static void showInterEx1() {};
-}
