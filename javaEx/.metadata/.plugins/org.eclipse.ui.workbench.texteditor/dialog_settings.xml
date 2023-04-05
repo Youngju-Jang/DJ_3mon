@@ -6,8 +6,9 @@
 		<item key="wholeword" value="true"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="native"/>
+		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="age"/>
 			<item value="native"/>
 			<item value="out"/>
 			<item value="MAX_VALUE"/>
