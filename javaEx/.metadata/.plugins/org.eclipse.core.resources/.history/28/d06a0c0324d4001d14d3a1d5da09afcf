@@ -44,7 +44,7 @@ public class ListEx1 {
 		System.out.println("writer");
 		bean.setWriter(scanner.next());
 		System.out.println("contents");
-		bean.setContents(scanner.next());  
+		bean.setContents(scanner.next());
 		System.out.println("password");
 		bean.setPassword(scanner.next());
 		Calendar c = Calendar.getInstance();
