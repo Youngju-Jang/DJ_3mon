@@ -35,8 +35,8 @@ from employees
 group by job_id;
 
 -- ex4) 부서별 급여평균을 구해서 사원명,부서별 급여평균을 출력하시오 (X)
-
-
+select first_name, avg(salary) over (partition by department_id)
+from employees;
 
 -- ex5) group by / having절
 -- 부서별 급여평균을 구해서 평균급여가  6000이상인 부서만 출력  (8건)
@@ -45,7 +45,10 @@ group by job_id;
 --     -----------------------
 --        NULL    7000
 --        20      9500
-
+select department_id '부서ID', truncate(avg(salary), 0) '평균급여'
+from employees
+group by department_id
+having avg(salary) >= 6000;
 
 
 -- ex6)부서별 급여평균을 구하시오 (9건)
@@ -57,7 +60,11 @@ group by job_id;
 --            20      ￦9,500
 --    조건4) 부서별로 오름차순정렬하시오 
 --    조건5) 평균급여가 5000이상인 부서만 표시하시오
-
+select department_id '부서코드', concat('￦',FORMAT(round(avg(salary)),0)) '평균급여'
+from employees
+group by department_id
+having avg(salary) >= 5000
+order by department_id asc;
  
 
 -- ex7) 비효율적인 having절
@@ -66,6 +73,12 @@ group by job_id;
 -- ---------------------------
 -- 10                    4400
 -- 20                    13000 
+select department_id, truncate(max(salary),0) 'max_salary'
+from employees
+where department_id is not null
+group by department_id
+order by department_id asc;
+
 
 -- ex8) having절 (where + group by + having)
 -- 10과 20 부서에서 최대급여를 받는사람의 급여를 구하시오.  --1건
@@ -74,14 +87,19 @@ group by job_id;
 --         department_id     max_salary
 --         -----------------------------------
 --           20                    13000 
-
+select department_id, truncate(max(salary),0) 'max_salary'
+from employees
+where department_id is not null and department_id in (10, 20)
+group by department_id
+having max(salary) >= 5000
+order by department_id asc;
 
 -- ==========================================================================
 -- [조인(join)]
 
 -- (employees)     (departments)     (join)
 --   사       부                 부        부                   사     부    부
---   원       서       +    서        서     =      원     서    서
+--   원       서       +         서        서     =             원     서    서
 --   이       번                 번        이                   이     번    이
 --   름       호                 호        름                   름     호    름
 
@@ -131,27 +149,34 @@ select * from departments;
 select * from locations;
 
 -- 방법1(MySQL구문)
-
+select department_id, city
+from departments d, locations l
+where d.location_id = l.location_id;
 
 
 -- 방법2(Ansi표준구문)
-
-
+select department_id, city
+from departments
+inner join locations using(location_id);
 
 -- ex3) outer join(left) : 왼쪽 테이블은 모두포함하여 조인
 -- 사원테이블과 부서테이블에서 부서번호가 같은 사원을 조인하시오 ==> 107건
 -- 조건 1) 사원이름, 부서ID, 부서이름을 출력하시오
 -- 조건 2) 사원테이블의 모든 사원을 포함하시오
-
-
-
+select first_name, e.department_id, department_name
+from employees e
+    left outer join departments d
+    on e.department_id = d.department_id;
 
 -- ex4) outer join(right) : 오른쪽 테이블은 모두 포함 하여 조인
 -- 사원테이블과 부서테이블에서 부서번호가 같은 사원을 조인하시오 ===> 122건
 -- 조건 1) 사원이름, 부서ID, 부서이름을 출력하시오
 -- 조건 2) 부서테이블의 모든 부서를 포함하시오
 
-
+select first_name, e.department_id, department_name
+from employees e
+    right outer join departments d
+    on e.department_id = d.department_id;
 
 
 select * from departments;
@@ -159,11 +184,15 @@ select * from locations;
 -- ex5) departments 와  locations 자연조인의 비교(같은컬럼 : location_id)  ==> 27건
 --        두개의 테이블을 연결해서 부서위치(location_id), 도시(city), 부서이름(department_name)을 출력하시오
 -- 방법1(natural  join)
-
+select d.location_id, l.city, d.department_name
+from departments d
+    natural join locations l;
 
 
 -- 방법2(inner join)
-
+select d.location_id, l.city, d.department_name
+from departments d inner join locations l
+on d.location_id = l.location_id;
 
 
 -- ex6) inner join,  natural join : 두개의 컬럼이 일치하는경우
@@ -173,16 +202,20 @@ select * from locations;
 --        last_name     department_id   manager_id
 --        ------------------------------------------
 -- 방법1(MySQL구문)
-
-
- 
+select last_name, d.department_id, d.manager_id
+from employees e, departments d
+where e.department_id = d.department_id
+and e.manager_id = d.manager_id;
 
 -- 방법2(Ansi표준)
-
-
+select last_name, d.department_id, d.manager_id
+from employees e inner join departments d
+on e.department_id = d.department_id
+and e.manager_id = d.manager_id;
 
 -- 방법3(natural 조인이용)
-
+select last_name, d.department_id, d.manager_id
+from employees e natural join departments d;
 
 
 -- ex7) 내용은 같은데 컬럼명이 다른경우에 조인으로 연결하기
@@ -194,32 +227,35 @@ select * from locations;
 --      50	     Shipping	      South San Francisco
 --      10	     Administration	  Seattle 
 
+
 drop table locations2;          -- 테이블 삭제
 
 create table locations2 
 as select * from locations;     -- 테이블복사
 
 show tables;                    -- 테이블 목록확인
-select * from locations2;       -- locations2 내용확인
+select * from locations2;
+-- locations2 내용확인
 
 alter table locations2 rename column location_id to loc_id;   
 -- location_id를 loc_id로 변경
 
 -- 방법1(MySQL구문)
-
+select d.department_id, d.department_name, l.city
+from departments d , locations2 l
+where d.location_id = l.loc_id;
 
 -- 방법2(Ansi표준)
-
-
+select d.department_id, d.department_name, l.city
+from departments d join locations2 l
+on d.location_id = l.loc_id;
 
 -- ex8) self 조인 : 자기자신의 테이블과 조인하는경우
 --        사원과 관리자를 연결하시오, 모든 사원을 표시하시오  --107건
 
 --        사원번호   사원이름      관리자
 --        ----------------------------------
---        101      Kochhar      King   
-
-
+--        101      Kochhar      King
 
 -- ex9) cross join: 모든행에 대해 가능한 모든조합을 생성하는 조인
 select count(*) from countries;     -- 25
@@ -256,7 +292,17 @@ select * from salgrades;
 --           ------------------------------------
 --            King	       24000	       A
 --            De Haan      17000	       B
-
+use scott;
+select ENAME '사원이름', SAL '급여',
+       case
+           when s.GRADE = 1 then 'A'
+           when s.GRADE = 2 then 'B'
+           when s.GRADE = 3 then 'C'
+           when s.GRADE = 4 then 'D'
+           when s.GRADE = 5 then 'E'
+       end '급여등급'
+from emp, salgrade s
+where emp.SAL between s.LOSAL and s.HISAL ;
 
 
 -- ex12) n(여러)개의 테이블은 조인
@@ -269,6 +315,7 @@ select * from salgrades;
 -- department_id      job_id          department_id
 -- job_id
 
+
 -- [조건]
 -- 1. 부서이름 정렬후 같은 부서이름인 경우 업무명으로 오름차순 정렬하시오
 -- 2. 사원이름, 부서이름, 업무명의 이름으로 출력하시오
@@ -278,8 +325,11 @@ select * from salgrades;
 -- --------------------------------------------------
 -- Higgins	Accounting Manager	 Accounting
 -- Gietz		Public Accountant	 Accounting
-
-
+use bitdb;
+select e.first_name '사원이름', d.department_name '부서이름', e.job_id '업무명'
+from employees e join jobs j on e.job_id = j.job_id
+    join departments d on e.department_id = d.department_id
+order by d.department_name, e.job_id asc;
 
 -- ----------------------------------------------------------------------------------
 -- [문제1] manager_id가 같은 사원을 조인하여 
@@ -297,7 +347,11 @@ select * from salgrades;
 --  Lorentz	   IT	  103
 --  Pataballa  IT	  103
 
-
+select last_name, d.department_name, d.manager_id
+from employees e join departments d
+    on e.department_id = d.department_id
+where d.department_name = 'IT'
+order by last_name asc;
 
 -- ----------------------------------------------------------------------------------
 -- [문제2] 부서테이블과 위치테이블을 조인하여 도시를 알아내시오   --21건
@@ -313,6 +367,11 @@ select * from salgrades;
 select * from locations;
 select * from departments;
 
+select department_id, city
+from departments d join locations l
+    on d.location_id = l.location_id
+where city = 'Seattle'
+order by department_id desc;
 
 
 -- ----------------------------------------------------------------------------------
@@ -321,8 +380,10 @@ select * from departments;
 --  조건1) 타이틀은  사원이름(last_name), 부서ID, 부서이름으로 출력하시오
 --  조건2) 부서번호가 30번 또는 90번인 사원들만 출력하시오
 --  조건3) 사원이름별 오름차순 정렬하시오
-
-
+select last_name, d.department_id, department_name
+from departments d join employees e on d.department_id = e.department_id
+where d.department_id in (30, 90)
+order by last_name asc;
 
 -- department_id=30 or department_id=90 또는 department_id in(30,90)
 -- ----------------------------------------------------------------------------------
