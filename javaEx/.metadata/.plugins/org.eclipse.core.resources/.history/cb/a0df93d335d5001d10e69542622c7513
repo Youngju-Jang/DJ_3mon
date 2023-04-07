@@ -153,7 +153,7 @@ public class ListEx1 {
 		if(file.length() ==0) {
 			return;
 		}
-		try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
+		try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File(PATH)))) {
 			Object obj = ois.readObject();
 			ArrayList<BoardBean> fileBean = (ArrayList<BoardBean>) obj;
 			dao.setList(fileBean); // 전체 db변경함

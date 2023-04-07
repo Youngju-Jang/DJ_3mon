@@ -15,10 +15,9 @@ import java.util.Scanner;
 import bit.app.io.Member;
 
 public class ListEx1 {
-	private final String PATH="c:\\test\\obj.txt";
+	private final String PATH="c:\\test\\";
 	private static ListDao dao = ListDao.getDao();
 	private Scanner scanner = new Scanner(System.in);	
-	
 	
 	// 0. 비었는가
 	public boolean checkEmpty() {
@@ -136,9 +135,9 @@ public class ListEx1 {
 	}
 	// 6. Save
 	public void save() {
-//		System.out.println("저장할 파일이름 : ");
-//		String fileName= scanner.next();
-		try(ObjectOutputStream oos = new ObjectOutputStream(new PrintStream(new File(PATH)))){
+		System.out.println("저장할 파일이름 : ");
+		String fileName= scanner.next();
+		try(ObjectOutputStream oos = new ObjectOutputStream(new PrintStream(new File(PATH+fileName+".txt")))){
 				oos.writeObject(dao.getList());
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -147,17 +146,12 @@ public class ListEx1 {
 	
 	// 7. Open 
 	public void open() {
-//		System.out.println("불러올 파일이름 : ");
-//		String fileName= scanner.next();
-		File file = new File(PATH);
-		if(file.length() ==0) {
-			return;
-		}
-		try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
-			Object obj = ois.readObject();
-			ArrayList<BoardBean> fileBean = (ArrayList<BoardBean>) obj;
+		System.out.println("불러올 파일이름 : ");
+		String fileName= scanner.next();
+		try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File(PATH+fileName+".txt")))) {
+			ArrayList<BoardBean> fileBean = (ArrayList<BoardBean>) ois.readObject();
 			dao.setList(fileBean); // 전체 db변경함
-			System.out.println("DB insert 완료");
+			System.out.println("DB Insert 완료");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -176,10 +170,6 @@ public class ListEx1 {
 			return true;
 		}
 		return false;
-	}
-	
-	public ListEx1() {
-		open();
 	}
 	public void menu() {
 		while(true) {
@@ -207,5 +197,5 @@ public class ListEx1 {
 	public static void main(String[] args) {
 		ListEx1 ex = new ListEx1();
 		ex.menu();
-	}	
+	}
 }

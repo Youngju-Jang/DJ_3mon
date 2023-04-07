@@ -1,0 +1,16 @@
+package com.bit.board;
+
+import com.bit.util.DBUtil;
+
+public class BoardMain {
+
+	public static void main(String[] args) {
+		try {
+			System.out.println(DBUtil.getInstance().getConnection());
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+	}
+}

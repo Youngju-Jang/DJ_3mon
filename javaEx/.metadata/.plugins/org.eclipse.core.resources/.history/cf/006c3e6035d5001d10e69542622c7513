@@ -149,12 +149,11 @@ public class ListEx1 {
 	public void open() {
 //		System.out.println("불러올 파일이름 : ");
 //		String fileName= scanner.next();
-		File file = new File(PATH);
-		if(file.length() ==0) {
-			return;
-		}
-		try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
+		try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File(PATH)))) {
 			Object obj = ois.readObject();
+			if(obj == null) {
+				return;
+			}
 			ArrayList<BoardBean> fileBean = (ArrayList<BoardBean>) obj;
 			dao.setList(fileBean); // 전체 db변경함
 			System.out.println("DB insert 완료");
