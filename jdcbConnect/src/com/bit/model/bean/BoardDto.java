@@ -46,4 +46,15 @@ public class BoardDto {
      public void setRegisterTime(String registerTime) {
           this.registerTime = registerTime;
      }
+     
+     @Override
+     public String toString() {
+          return "BoardDto{" +
+               "articleNo=" + articleNo +
+               ", subject='" + subject + '\'' +
+               ", content='" + content + '\'' +
+               ", userId='" + userId + '\'' +
+               ", registerTime='" + registerTime + '\'' +
+               '}';
+     }
 }

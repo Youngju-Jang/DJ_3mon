@@ -6,13 +6,14 @@ import com.bit.model.bean.BoardDto;
 
 import java.util.List;
 
-public class BoardServiceImpl implements BoardService{
+public class BoardServiceImpl implements BoardService {
      
      private static BoardService boardService = new BoardServiceImpl();
      
-     public static BoardService getBoardService(){
+     public static BoardService getBoardService() {
           return boardService;
      }
+     
      @Override
      public void registerArticle(BoardDto boardDto) {
           BoardDaoImpl.getBoardDao().registerArticle(boardDto);
@@ -20,26 +21,26 @@ public class BoardServiceImpl implements BoardService{
      
      @Override
      public List<BoardDto> searchListAll() {
-          return null;
+          return BoardDaoImpl.getBoardDao().searchListAll();
      }
      
      @Override
      public List<BoardDto> searchListBySubject(String subject) {
-          return null;
+          return BoardDaoImpl.getBoardDao().seearchListBySubject(subject);
      }
      
      @Override
      public BoardDto viewArticle(int no) {
-          return null;
+          return BoardDaoImpl.getBoardDao().viewArticle(no);
      }
      
      @Override
      public void modifyArticle(BoardDto boardDto) {
-     
+          BoardDaoImpl.getBoardDao().modifyArticle(boardDto);
      }
      
      @Override
      public void deleteArticle(int no) {
-     
+          BoardDaoImpl.getBoardDao().deleteArticle(no);
      }
 }
