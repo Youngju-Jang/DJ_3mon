@@ -1,5 +1,7 @@
 package com.bit.board;
 
+import com.bit.board.model.service.BoardServiceImpl;
+import com.bit.model.bean.BoardDto;
 import com.bit.util.DBUtil;
 
 import java.io.BufferedReader;
@@ -7,10 +9,26 @@ import java.io.InputStreamReader;
 
 public class BoardMain {
 	BufferedReader in;
+	
 	public BoardMain() {
 		in = new BufferedReader(new InputStreamReader(System.in));
 		menu();
 	}
+	
+	private void searchListBySubject() throws Exception{
+	
+	}
+	
+	private void viewArticle() throws Exception{
+	
+	}
+	
+	private void modifyArticle() throws Exception{
+	
+	}
+	
+	private void deleteArticle() throws Exception{}
+	
 	private void menu() {
 		while (true) {
 			System.out.println("---------- 게시판 메뉴 ----------");
@@ -27,24 +45,42 @@ public class BoardMain {
 			try {
 				int num = Integer.parseInt(in.readLine());
 				switch (num) {
-				case 1:
-					registerArticle();
-					break;
-				case 2:
-					searchListAll();
-					break;	
-				default:
-					System.exit(0);
+					case 1:
+						registerArticle();
+						break;
+					case 2:
+						searchListAll();
+						break;
+                    case 3:
+                         searchListBySubject();
+                         break;
+                    case 4:
+                         viewArticle();
+                         break;
+					default:
+						System.exit(0);
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 	}
+	
 	private void registerArticle() throws Exception {
-		//BoardDto boardDto = new BoardDto();
-		System.out.println("registerArticle");
+		BoardDto boardDto = new BoardDto();
+		System.out.println("=======글목록======");
+		System.out.println("제목");
+		boardDto.setSubject(in.readLine());
+		
+		System.out.println("내용");
+		boardDto.setContent(in.readLine());
+		
+		System.out.println("아이디");
+		boardDto.setUserId(in.readLine());
+		
+		BoardServiceImpl.getBoardService().registerArticle(boardDto);
 	}
+	
 	private void searchListAll() {
 		System.out.println("searchListAll");
 	}
