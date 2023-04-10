@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd9d4f6b-b7df-4d8c-b67f-54a064fd55ed" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/test1.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test2.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test3.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test4.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test5.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test6.sql" beforeDir="false" />
-    </list>
+    <list default="true" id="dd9d4f6b-b7df-4d8c-b67f-54a064fd55ed" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,17 +21,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/joj1043/Documents/bit/DJ_3mon/mysqlWork/문제"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/joj1043/Documents/bit/DJ_3mon/mysqlWork/문제&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/문제" />
