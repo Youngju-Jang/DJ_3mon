@@ -11,15 +11,13 @@ CREATE TABLE member_profile(
 
 CREATE TABLE rest_review(
    review_id      INT AUTO_INCREMENT PRIMARY KEY,
-   rest_id       varchar(10),
+   rest_id       int,
    member_id      int,
    review_score   int,
    review_text      varchar(1000),
    review_date      date
 );
 
-ALTER TABLE rest_review
-ADD FOREIGN KEY (member_id) REFERENCES member_profile(member_id);
 
 CREATE TABLE rest_list(
    rest_id int AUTO_INCREMENT PRIMARY KEY,
@@ -27,6 +25,10 @@ CREATE TABLE rest_list(
    rest_category varchar(50),
    address varchar(100)
 );
+
+ALTER TABLE rest_review
+ADD FOREIGN KEY (member_id) REFERENCES member_profile(member_id),
+ADD FOREIGN KEY (rest_id) REFERENCES rest_list (rest_id);
 
 INSERT INTO rest_list (rest_name, rest_category, address) VALUES
 ('영동식당', '한식', '전북 익산시 중앙로5길 1-5'),
@@ -90,7 +92,7 @@ insert into member_profile (member_name, tlno, gender, date_of_birth) values
 ('이철수', '01012345678', 'M', '1992-03-29'),
 ('이지호','01076432111','W','1992-02-12'),
 ('김지윤','01032324117','W','1992-02-22'),
-('김지훈','01023258688','M','1993-02-23'),
+('김지훈','01023258688','M','1993-03-14'),
 ('박서연','01076482209','W','1993-03-16'),
 ('조예린','01012345678','W','1990-11-30'),
 ('정은성','01022349753','M','1992-02-20'),
@@ -110,7 +112,7 @@ insert into member_profile (member_name, tlno, gender, date_of_birth) values
 ('이유빈','01093854756','W','2002-05-10');
 
 insert into rest_review (rest_id, member_id, review_score, review_text, review_date) values
-(3, 23, 8, '이번에 친구들과 같이 방문했는데, 맛있고 분위기도 좋았어요. 특히 새우튀김과 생맥주가 인상적이었습니다. 다음에 또 가고 싶은 식당 중 하나입니다.', '2021-01-01'),
+(3, 23, 8, '이번에 친구들과 같이 방문했는데, 맛있고 분위기도 좋았어요. 특히 새우튀김과 생맥주가 인상적이었습니다. 다음에 또 가고 싶은 식당 중 하나입니다.', '2021-08-29'),
 (8, 25, 9, '가격 대비 퀄리티가 좋은 곳이에요. 직접 만든 김치와 반찬들이 맛있었고, 메인 요리인 소고기 스테이크도 부드럽고 맛있었습니다.', '2021-02-14'),
 (14, 21, 7, '평일 점심에 가보았는데, 가성비가 굉장히 좋았습니다. 직접 빚은 떡국과 김치찌개가 정말 맛있었어요. 서비스도 친절하고 좋았습니다.', '2021-03-07'),
 (22, 30, 5, '맛있는 음식을 먹고 싶어서 방문했는데, 좀 실망스러웠습니다. 요리의 맛이 그리 좋지는 않았고, 가격도 비싸다는 느낌이 강했습니다. 분위기나 서비스도 그다지 좋지 않았습니다.', '2021-04-22'),
@@ -210,3 +212,7 @@ insert into rest_review (rest_id, member_id, review_score, review_text, review_d
 select * from rest_list;
 select * from member_profile;
 select * from rest_review;
+
+insert into rest_review (rest_id, member_id, review_score, review_text, review_date) values
+(3, 18, 9, '이번에 친구들과 같이 방문했는데, 맛있고 분위기도 좋았어요. 특히 새우튀김과 생맥주가 인상적이었습니다. 다음에 또 가고 싶은 식당 중 하나입니다.', '2021-02-23');
+
