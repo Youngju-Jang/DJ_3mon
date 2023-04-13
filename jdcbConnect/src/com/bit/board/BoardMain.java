@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.bit.board.model.dao.BoardDaoImpl.getBoardDao;
 import static com.bit.board.model.service.BoardServiceImpl.getBoardService;
 
 public class BoardMain {
