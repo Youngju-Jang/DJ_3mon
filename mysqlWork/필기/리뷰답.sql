@@ -34,16 +34,18 @@ where mp.member_id=3;
 select * from rest_review where review_id=78;
 select *
 from member_profile
-wh
+
 -- 5. REST_LIST에서 주소가 부산인 식당의 수를 구하시오.
 select count(*) '부산 식당수'
 from rest_list
 where address like '부산%';
 
--- 6. REST_REVIEW에서 ??? 음식점의 평점의 평균을 구하시오.
+-- 6. REST_REVIEW에서 한식 음식점의 평점의 평균을 구하시오.
 -- 평균은 소숫점 2자리에서 반올림하시오.
-select rl.rest_id, round(avg(review_score), 2)
+use restReview;
+select round(avg(review_score), 2)
 from rest_review rr join rest_list rl on rr.rest_id = rl.rest_id
+where rl.rest_category = '한식'
 group by rl.rest_id;
 
 -- 7.REST_LIST에서 음식점 종류가 한식이면 ‘국내’, 음식점 종류가 중식이거나 일식 또는 양식이면 ‘해외’라고 출력하시오.
@@ -69,7 +71,24 @@ group by rl.rest_id;
 
 
 -- 14.MEMBER_PROFILE, REST_REVIEW 테이블에서 10대, 20대, 30대 별로 가장 많은 리뷰를 남긴 음식점의 종류와 리뷰의 개수를 출력하시오.
-
+use restReview;
+(SELECT '20대', rl.rest_category 종류, count(*) 개수
+FROM member_profile m
+         JOIN rest_review rr ON m.member_id = rr.member_id
+         JOIN rest_list rl ON rr.rest_id = rl.rest_id
+WHERE year(now()) - year(date_of_birth) + 1 BETWEEN 20 AND 29
+GROUP BY rl.rest_category
+ORDER BY count(*) DESC
+LIMIT 1)
+UNION
+(SELECT '30대', rl.rest_category 종류, count(*) 개수
+FROM member_profile m
+         JOIN rest_review rr ON m.member_id = rr.member_id
+         JOIN rest_list rl ON rr.rest_id = rl.rest_id
+WHERE year(now()) - year(date_of_birth) + 1 BETWEEN 30 AND 39
+GROUP BY rl.rest_category
+ORDER BY count(*) DESC
+LIMIT 1);
 
 -- 15. 성별이 남자인 회원이 부산시에 속해있는 식당에 가서 쓴 리뷰 중 평점이 5점 이상인 리뷰의 갯수를 구하세요.
 
