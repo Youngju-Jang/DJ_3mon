@@ -41,7 +41,7 @@ public class UserServiceImpl implements UserService{
      
      @Override
      public UserDto getUserByUserIdAndPassword(int userId, String password) {
-          return getUserDao().login(userId, password);
+          return getUserDao().getUserByUserIdAndPassword(userId, password);
      }
      
      @Override

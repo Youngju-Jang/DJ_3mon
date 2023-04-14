@@ -11,7 +11,6 @@ import java.util.List;
 
 public class UserDaoImpl implements UserDao{
      private static UserDao userDao = new UserDaoImpl();
-     public static UserDao getUserDao(){return userDao;}
      
      @Override
      public boolean registerUser(String username, String password) {
@@ -94,6 +93,8 @@ public class UserDaoImpl implements UserDao{
           return user;
      }
      
+     public static UserDao getUserDao(){return userDao;}
+     
      @Override
      public List<UserDto> searchAllUser() {
           return null;
@@ -105,7 +106,7 @@ public class UserDaoImpl implements UserDao{
      }
      
      @Override
-     public UserDto login(int userId, String password) {
+     public UserDto getUserByUserIdAndPassword(int userId, String password) {
           
           return null;
      }
@@ -116,13 +117,31 @@ public class UserDaoImpl implements UserDao{
      }
      
      @Override
-     public int addMoney(int no, int money) {
-          return 0;
-     }
-     
-     @Override
-     public int minusMoney(int no, int money) {
-          return 0;
+     public void modifyMoney(int no, int money) {
+          Connection con = null;
+          PreparedStatement pstmt = null;
+          int totalMoney = 0;
+          try {
+               con = DBUtil.getInstance().getConnection();
+               con.setAutoCommit(false);
+               StringBuilder sql = new StringBuilder("update user \n");
+               sql.append("set allowance = allowance + ? \n");
+               sql.append("where user_id = ?");
+               pstmt = con.prepareStatement(sql.toString());
+               pstmt.setInt(1, money);
+               pstmt.setInt(2, no);
+               pstmt.executeUpdate();
+               con.commit();
+          }catch(SQLException e){
+               e.printStackTrace();
+               try {
+                    con.rollback();
+               } catch (SQLException e1) {
+                    e1.printStackTrace();
+               }
+          } finally {
+               DBUtil.getInstance().close(pstmt, con);
+          }
      }
      
      @Override

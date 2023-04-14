@@ -1,11 +1,14 @@
 package com.bit.board;
 
+import com.bit.model.bean.DiaryDto;
 import com.bit.model.bean.UserDto;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import static com.bit.board.model.service.BoardServiceImpl.getBoardService;
+import static com.bit.board.model.service.DiaryServiceImpl.getDiaryService;
 import static com.bit.board.model.service.UserServiceImpl.getUserService;
 
 public class DiaryMain {
@@ -64,12 +67,73 @@ public class DiaryMain {
      // 메인 용돈기입장
      private void menu(){
           while(true){
-               
+               System.out.println("용돈기입장 메뉴");
+               System.out.println("1. 수입 입력");
+               System.out.println("2. 지출 입력");
+               System.out.println("3. 월별 내역보기");
+               System.out.println("4. 현재 잔액 확인");
+               System.out.println("0. 프로그램 종료");
+               try{
+                    int num = Integer.parseInt(in.readLine());
+                    switch(num){
+                         case 1:
+                              increase();
+                              break;
+                         case 2:
+                              decrease();
+                              break;
+                         case 3:
+                              break;
+                         case 4:
+                              break;
+                         default:
+                              System.exit(0);
+                    }
+               } catch (IOException e) {
+                    e.printStackTrace();
+               }
           }
      }
-     private UserDto login(int userId, String password){
-          return getUserService().getUserByUserIdAndPassword(userId, password);
+     
+     private void decrease() throws IOException{
+          DiaryDto diaryDto = new DiaryDto();
+          System.out.println("======지출한 용돈 정보======");
+          System.out.println("날짜 (ex.2000-01-01) : ");
+          diaryDto.setDate(in.readLine());
+          
+          System.out.println("사용한 용돈 금액 : ");
+          diaryDto.setExpense(-Integer.parseInt(in.readLine()));
+          
+          System.out.println("지출 카테고리 : ");
+          diaryDto.setCategory(in.readLine());
+          
+          System.out.println("기록사항 : ");
+          diaryDto.setNote(in.readLine());
+          
+          diaryDto.setUserId(user.getUserId());
+          
+          getDiaryService().writeDiary(diaryDto);
      }
+     private void increase() throws IOException {
+          DiaryDto diaryDto = new DiaryDto();
+          System.out.println("======받은 용돈 정보======");
+          System.out.println("날짜 (ex.2000-01-01) : ");
+          diaryDto.setDate(in.readLine());
+          
+          System.out.println("받은 용돈 금액 : ");
+          diaryDto.setExpense(Integer.parseInt(in.readLine()));
+          
+          System.out.println("용돈 카테고리 : ");
+          diaryDto.setCategory(in.readLine());
+          
+          System.out.println("기록사항 : ");
+          diaryDto.setNote(in.readLine());
+          
+          diaryDto.setUserId(user.getUserId());
+          
+          getDiaryService().writeDiary(diaryDto);
+     }
+     
      // 회원가입
      private boolean register(String username, String password){
           return getUserService().registerUser(username, password);

@@ -31,3 +31,9 @@ select * from user
 where user_id = 1 and password = 'abc';
 
 desc user;
+select * from user;
+select * from diary;
+update user set allowance = allowance+ -1000 where user_id = 1;
+
+
+
