@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>CSS Selector : Pseudo Selector(가상선택자)</title>
+    <style>
+        div {
+            font-weight: bold;
+        }
+
+        div, div p {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        div p {
+            border: 1px solid black;
+        }
+
+        div p:first-child {
+            background: #0076ff;
+            color: #ffb100;
+        }
+
+        div#content {
+            background: #ffb100;
+            color: #0076ff;
+        }
+
+        div#content::before {
+            content: "blue";
+            color: black;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        div#content::after{
+            color: red;
+            content: "after1";
+        }
+    </style>
+</head>z
+<body>
+    <div>
+        <p>111</p>
+        <p>222</p>
+    </div>
+    <div id="content">ㅋㅋㅋ</div>
+</body>
+</html>

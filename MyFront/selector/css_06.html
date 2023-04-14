@@ -1,0 +1,36 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>CSS Selector : Descendant Selector(자손선택자)</title>
+    <style>
+        div, p {
+            padding: 10px;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        div {
+            background: #051c36de;
+        }
+
+        div div {
+            background: #fc6aad;
+            color: #0076ff;
+        }
+
+        div>p {
+            background: #ffb100;
+            color: #00ff15;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Descendant Selector(자손선택자)</p>
+        <div>
+            <p>Descendant Selector(자손선택자)</p>
+        </div>
+    </div>
+</body>
+</html>

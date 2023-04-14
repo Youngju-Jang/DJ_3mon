@@ -1,0 +1,50 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>CSS Selector : Pseudo-classes Selector(가상클래스선택자)</title>
+    <style type="text/css">
+        /*
+         * Pseudo-classes Selector(가상클래스선택자)
+         * User Agent가 제공하는 보이지 않는 가상의 클래스를 지정함.
+         * :first-child :(CSS1) 지정된 요소의 첫번재 자식요소를 선택함.
+         *    - sample : div:first-child {color: white; background-color: red; }
+         * :link : (CSS1) 지정된 요소의 링크를 선택함.
+         *    - sample : a:link {text-decoration: none; }
+         * :visited : (CSS1) 지정된 요소의 방문한 링크를 선택함.
+         *    - sample : a:visited {font-weight: normal; }
+         */
+         /*  :hover : (CSS1) 지정된 요소에 마우스가 올라간 경우 선택함. */
+         p:nth-of-type(odd) { background-color: orange; }
+         /* :active : (CSS1) 지정된 요소가 활성화된 경우 선택함.
+         *    - sample : a:active { color: green; }
+         * :focus : (CSS2) 지정된 요소가 포커스를 가질 경우 선택함.
+         *    - sample : input:focus { backgroundcolor: #F7F7D5;}
+         * :lang(langulage) : (CSS2) 지정된 요소의 lang 속성의 값이 같은 경우 선택함.
+         *    - sample : p:lang(en) {font-weight: bold;}
+         * :last-child :(CSS3) 지정된 요소의 마지막 자식요소를 선택함.
+         *    - sample : div p:last-child {color: white; background-color: black;}
+         * :enabled :(CSS3) 지정된 요소가 enabled인 경우 선택함.
+         *    - sample : input[type="text"]:enabled {background-color: green;}
+         * :disabled :(CSS3) 지정된 요소가 diabled인 경우 선택함.
+         *    - sample : input[type="password"]:disabled {background-color: #999;}
+         * :nth-child(n) :(CSS3) 부모요소의 n번째에 해당하는 지정된 모든 자식요소를 선택함.
+         *    - sample : tr:nth-child(2n) {background-color: #99ff99;}
+         */
+
+        /* :first-child */
+        /*p:first-child {color: white; background-color: red; }*/
+
+    </style>
+</head>
+<body>
+    <p>teo1</p>
+    <p>teo2</p>
+    <p>teo3</p>
+    <p>teo4</p>
+    <p>teo5</p>
+    <p>teo6</p>
+    <p>teo7</p>
+    <p>teo8</p>
+</body>
+</html>

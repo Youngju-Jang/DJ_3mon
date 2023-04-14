@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>CSS Selector : Attribute Selector(속성선택자)</title>
+    <style>
+        div, p {
+            padding: 10px;
+            margin: 10px;
+        }
+        [title] {
+            background: #ffb100;
+            color: #0076ff;
+            font-weight: bold;
+        }
+        [title="two"] {
+            border: 2px solid black;
+        }
+        p[title="two"] {
+            background: #0076ff;
+            color: #ffb100;
+        }
+        /* 속성값과 어떤 요소의 띄어쓰기로 구분된 속성값의 일치여부 */
+        p[title~="second"] {
+            background: #25097c;
+        }
+        p[class^="second"] {
+            background: #25d32c;
+        }
+        p[class$="wrap"] {
+            color: red;
+            font-weight: bold;
+        }
+        }
+        [class*="et"] {
+            background: rgb(102, 133, 117);
+        }
+    </style>
+</head>
+<body>
+    <div title="one">selector[attribute name]</div>
+    <div title="two">selector[attribute name=value]</div>
+    <p title="two">selector[attribute name=value]</p>
+    <p title="first second third">selector[attribute name~=value]</p>
+    <p class="second-container">selector[attribute name^=value]</p>
+    <p class="second-wrap">selector[attribute name$=value]</p>
+    <div class="onetwothree">dfdf</div>
+</body>
+</html>

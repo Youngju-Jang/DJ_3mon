@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>CSS3 : transform</title>
+    <style type="text/css">
+        div {
+            width: 200px;
+            height: 100px;
+            background: #ffb100;
+            margin: 100px;
+        }
+
+        div {
+            /*
+             * rotate(angle)
+             * 엘리먼트를 지정된 각도로 회전함.
+             */
+            /*-webkit-transform: rotate(-30deg);*/
+            /*-ms-transform: rotate(-30deg);*/
+            /*transform: rotate(-30deg);*/
+
+            /*
+             * translate(x, y), translateX(n), translateY(n)
+             * 엘리먼트를 x, y축으로 이동함.
+             */
+            /*-ms-transform: translate(50px, 100px);*/
+            /*-webkit-transform: translate(50px, 100px);*/
+            /*transform: translate(50px, 100px);*/
+
+            /*
+             * scale(x, y), scaleX(n), scaleY(n)
+             * 엘리먼트의 너비와 폭을 변경함.
+             */
+            /*-ms-transform: scale(2, 3);*/
+            /*-webkit-transform: scale(2, 3);*/
+            /*transform: scale(2, 3) ;*/
+
+            /*
+             * skew(x-angle, y-angle), skewX(angle), skewY(angle)
+             * 엘리먼트를 지정된 각도만큼 외곡함.
+             */
+            -ms-transform: skew(30deg, 20deg);
+            -webkit-transform: skew(30deg, 20deg);
+            transform: skew(30deg, 20deg);
+        }
+    </style>
+</head>
+<body>
+<div>Contents</div>
+</body>
+</html>
