@@ -15,7 +15,8 @@
          *    - sample : a:visited {font-weight: normal; }
          */
          /*  :hover : (CSS1) 지정된 요소에 마우스가 올라간 경우 선택함. */
-         p:nth-of-type(odd) { background-color: orange; }
+         input:enabled { background-color: orange; }
+         p:nth-child(3) {background-color: aqua;}
          /* :active : (CSS1) 지정된 요소가 활성화된 경우 선택함.
          *    - sample : a:active { color: green; }
          * :focus : (CSS2) 지정된 요소가 포커스를 가질 경우 선택함.
@@ -38,13 +39,17 @@
     </style>
 </head>
 <body>
-    <p>teo1</p>
-    <p>teo2</p>
-    <p>teo3</p>
-    <p>teo4</p>
-    <p>teo5</p>
-    <p>teo6</p>
-    <p>teo7</p>
-    <p>teo8</p>
+    <label for="in">input : </label><input type="text" name="in">
+    <label for="in">input : </label><input type="text" name="in" disabled>
+    <div>
+        <p>teo1</p>
+        <p>teo2</p>
+        <p>teo3</p>
+        <p>teo4</p>
+        <p>teo5</p>
+        <p>teo6</p>
+        <p>teo7</p>
+        <p>teo8</p>
+    </div>
 </body>
 </html>
