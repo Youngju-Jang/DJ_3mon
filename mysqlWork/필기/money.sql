@@ -18,3 +18,16 @@ CREATE TABLE diary (
     note TEXT,
     FOREIGN KEY (user_id) REFERENCES user(user_id)
 );
+
+select user_id
+from user
+where username = "absc";
+
+insert into user (username, password)
+values ('abc','abc');
+
+select * from user;
+select * from user
+where user_id = 1 and password = 'abc';
+
+desc user;

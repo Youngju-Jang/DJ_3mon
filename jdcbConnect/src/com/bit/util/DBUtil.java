@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DBUtil {
 	private final String driverName = "com.mysql.cj.jdbc.Driver";
-	private final String url = "jdbc:mysql://localhost:3306/bitdb?serverTimezone=UTC";
+	private final String url = "jdbc:mysql://localhost:3306/pocketMoney?serverTimezone=UTC";
 	private final String user = "bit";
 	private final String pass = "bit";
 	

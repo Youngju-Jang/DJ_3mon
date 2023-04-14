@@ -13,16 +13,20 @@ public class UserServiceImpl implements UserService{
      }
      @Override
      public boolean registerUser(String username, String password) {
-          // 유저명 중복확인
-          if(existsUser(username)) return false;
+          // 유저명 중복시 불가
+          if(getUserId(username)!=0) return false;
           // 회원가입
-          getUserDao().registerUser(username, password);
-          return true;
+          return getUserDao().registerUser(username, password);
      }
      
      @Override
-     public boolean existsUser(String username) {
-          return false;
+     public UserDto getUserByUsername(String username) {
+          return getUserDao().getUserByUsername(username);
+     }
+     
+     @Override // 유저명 중복확인
+     public int getUserId(String username) {
+          return getUserDao().getUserId(username);
      }
      
      @Override
@@ -36,8 +40,8 @@ public class UserServiceImpl implements UserService{
      }
      
      @Override
-     public UserDto searchUserByNameAndPassword(String name, String password) {
-          return null;
+     public UserDto getUserByUserIdAndPassword(int userId, String password) {
+          return getUserDao().login(userId, password);
      }
      
      @Override
