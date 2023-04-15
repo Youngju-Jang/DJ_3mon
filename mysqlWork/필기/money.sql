@@ -35,5 +35,11 @@ select * from user;
 select * from diary;
 update user set allowance = allowance+ -1000 where user_id = 1;
 
+select *
+from diary
+where user_id = 1 and year(date) = 2023 and month(date) = 4
+order by date asc;
+
+select * from diary;
 
 

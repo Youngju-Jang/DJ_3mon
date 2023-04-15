@@ -1,11 +1,14 @@
 package com.bit.board.model.dao;
 
+import com.bit.model.bean.BoardDto;
 import com.bit.model.bean.DiaryDto;
 import com.bit.util.DBUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DiaryDaoImpl implements DiaryDao{
@@ -56,5 +59,39 @@ public class DiaryDaoImpl implements DiaryDao{
      @Override
      public List<DiaryDto> getTotalRecord(int userId) {
           return null;
+     }
+     
+     @Override // 유저의 년, 월 기록리스트
+     public List<DiaryDto> getRecordByMonthAndYear(int userId, int year, int month) {
+          List<DiaryDto> list = new ArrayList<DiaryDto>();
+          Connection con = null;
+          PreparedStatement pstmt = null;
+          ResultSet rs = null;
+          try {
+               con = DBUtil.getInstance().getConnection();
+               StringBuilder sql = new StringBuilder("Select * From diary \n");
+               sql.append("where user_id = ? and year(date) = ? and month(date) = ? \n")
+                    .append("order by date asc");
+               pstmt = con.prepareStatement(sql.toString());
+               pstmt.setInt(1, userId);
+               pstmt.setInt(2, year);
+               pstmt.setInt(3, month);
+               rs = pstmt.executeQuery();
+               while (rs.next()) {
+                    DiaryDto dto = new DiaryDto();
+                    dto.setDiaryId(rs.getInt("diary_id"));
+                    dto.setUserId(rs.getInt("user_id"));
+                    dto.setDate(rs.getString("date"));
+                    dto.setExpense(rs.getInt("expense"));
+                    dto.setCategory(rs.getString("category"));
+                    dto.setNote(rs.getString("note"));
+                    list.add(dto);
+               }
+          } catch (SQLException e) {
+               e.printStackTrace();
+          } finally {
+               DBUtil.getInstance().close(rs, pstmt, con);
+          }
+          return list;
      }
 }

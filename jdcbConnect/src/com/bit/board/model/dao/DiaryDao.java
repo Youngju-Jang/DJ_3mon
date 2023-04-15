@@ -9,4 +9,5 @@ public interface DiaryDao {
      void modifyDiary(DiaryDto diaryDto); // 수정
      void deleteDiary(int diaryId); // 삭제
      List<DiaryDto> getTotalRecord(int userId); // 기록 불러오기
+     List<DiaryDto> getRecordByMonthAndYear(int userId, int year, int month); //월별 목록 불러오기
 }

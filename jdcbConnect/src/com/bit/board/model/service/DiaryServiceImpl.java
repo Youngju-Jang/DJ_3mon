@@ -30,7 +30,7 @@ public class DiaryServiceImpl implements  DiaryService{
      }
      
      @Override
-     public List<DiaryDto> getTotalRecord(int userId) {
-          return null;
+     public List<DiaryDto> getRecordByMonthAndYear(int userId, int year, int month) {
+          return getDiaryDao().getRecordByMonthAndYear(userId, year, month);
      }
 }

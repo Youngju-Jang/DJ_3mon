@@ -11,6 +11,7 @@ import java.util.List;
 
 public class UserDaoImpl implements UserDao{
      private static UserDao userDao = new UserDaoImpl();
+     public static UserDao getUserDao(){return userDao;}
      
      @Override
      public boolean registerUser(String username, String password) {
@@ -93,8 +94,6 @@ public class UserDaoImpl implements UserDao{
           return user;
      }
      
-     public static UserDao getUserDao(){return userDao;}
-     
      @Override
      public List<UserDto> searchAllUser() {
           return null;
@@ -102,6 +101,24 @@ public class UserDaoImpl implements UserDao{
      
      @Override
      public int showAllowance(int no) {
+          Connection con = null;
+          PreparedStatement pstmt = null;
+          ResultSet rs = null;
+          try {
+               con = DBUtil.getInstance().getConnection();
+               StringBuilder sql = new StringBuilder("Select allowance \n");
+               sql.append("From user \n")
+                    .append("where user_id = ? ");
+               pstmt = con.prepareStatement(sql.toString());
+               pstmt.setInt(1, no);
+               rs = pstmt.executeQuery();
+               rs.next();
+               return rs.getInt("allowance");
+          } catch (SQLException e) {
+               e.printStackTrace();
+          } finally {
+               DBUtil.getInstance().close(rs, pstmt, con);
+          }
           return 0;
      }
      

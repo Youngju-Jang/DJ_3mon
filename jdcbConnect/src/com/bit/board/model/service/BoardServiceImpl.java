@@ -1,6 +1,5 @@
 package com.bit.board.model.service;
 
-import com.bit.board.model.dao.BoardDao;
 import com.bit.board.model.dao.BoardDaoImpl;
 import com.bit.model.bean.BoardDto;
 

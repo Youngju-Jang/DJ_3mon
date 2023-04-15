@@ -6,6 +6,7 @@ import com.bit.model.bean.UserDto;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
 
 import static com.bit.board.model.service.DiaryServiceImpl.getDiaryService;
 import static com.bit.board.model.service.UserServiceImpl.getUserService;
@@ -82,8 +83,10 @@ public class DiaryMain {
                               decrease();
                               break;
                          case 3:
+                              showMonthList();
                               break;
                          case 4:
+                              showAllowance();
                               break;
                          default:
                               System.exit(0);
@@ -91,6 +94,24 @@ public class DiaryMain {
                } catch (IOException e) {
                     e.printStackTrace();
                }
+          }
+     }
+     
+     private void showAllowance() throws IOException{
+          int allowance = getUserService().showAllowance(user.getUserId());
+          System.out.println(user.getUsername() + "님의 현재 잔액은 "+ allowance + "원 입니다.");
+     }
+     
+     private void showMonthList() throws IOException{
+          System.out.println("======원하는 년, 월의 용돈기입 리스트======");
+          System.out.println("원하는 년 (ex 2023년: 2023) : ");
+          int year = Integer.parseInt(in.readLine());
+          System.out.println("원하는 월 (ex 1월: 1) : ");
+          int month = Integer.parseInt(in.readLine());
+          List<DiaryDto> diaryDtoList = getDiaryService().getRecordByMonthAndYear(user.getUserId(), year, month);
+          System.out.println(user.getUsername()+"님의 " + year +"년 " + month + "월 용돈기입 목록 ");
+          for(DiaryDto diary : diaryDtoList){
+               System.out.println(diary);
           }
      }
      

@@ -36,7 +36,7 @@ public class UserServiceImpl implements UserService{
      
      @Override
      public int showAllowance(int no) {
-          return 0;
+          return getUserDao().showAllowance(no);
      }
      
      @Override
