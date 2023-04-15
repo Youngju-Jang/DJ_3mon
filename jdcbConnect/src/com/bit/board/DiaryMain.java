@@ -7,7 +7,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import static com.bit.board.model.service.BoardServiceImpl.getBoardService;
 import static com.bit.board.model.service.DiaryServiceImpl.getDiaryService;
 import static com.bit.board.model.service.UserServiceImpl.getUserService;
 

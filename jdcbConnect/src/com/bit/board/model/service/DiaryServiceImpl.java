@@ -3,7 +3,6 @@ package com.bit.board.model.service;
 import com.bit.model.bean.DiaryDto;
 import static com.bit.board.model.dao.DiaryDaoImpl.getDiaryDao;
 import static com.bit.board.model.dao.UserDaoImpl.getUserDao;
-
 import java.util.List;
 
 public class DiaryServiceImpl implements  DiaryService{
