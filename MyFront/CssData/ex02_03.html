@@ -4,11 +4,104 @@
 <meta charset="UTF-8">
 <title>ID선택자</title>
 <style>
+	* {
+		border : 1px solid;
+	}
+	ul{
+		list-style: none;
+	}
 	#t1{ font-family: 'Comic Sans MS'; color:purple; }
+	body{
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		height: 100%;
+	}
+	#mid{
+		width: 100%;
+		display: flex;
+		justify-content: flex-start;
+		flex-direction: row;
+		min-height: 500px;
+	}
+	#mid > nav {
+		width: 50px;
+		margin-right: 50px;
+		height: 100%;
+		width: 20%; 
+	}
+	#mid > nav > ul {
+		list-style: none;
+		padding-left: 0;
+	}
+	ul > li {
+		background-color: #80b74e;
+		line-height: 50px;
+		/* padding : 16px 0px; */
+		text-align: center;
+	}
+	nav > ul > li {
+	}
+	ul > li:hover{
+		background-color: #daf90bdf;
+		color:#511bb5;
+	}
+	#mid > main {
+		width: 80%;
+		padding:20px;
+	}
+	footer{
+		position: float;
+		bottom: 0px;
+	}
+	img{
+		float: right;
+	}
+	p{
+		clear : both;
+	}
+	a ~ ul{
+		padding-left: 0;
+		display:  none;
+	}
+	a ~ ul:hover{
+		display: block;
+	}
 </style>
 </head>
 <body>
-<h1 id="t1">Have a nice day</h1>
-<h1 id="t2">좋은 하루 되세요</h1>
-</body>
+	<header>
+		<h1 id="t1">Have a nice day</h1>
+	</header>
+	<div id="mid">
+		<nav>
+			<ul>
+				<li>
+					<a href="#">hi</a>
+					<ul>
+						<li><a href="#">a</a></li>
+						<li><a href="#">b</a></li>
+						<li><a href="#">c</a></li>
+						<li><a href="#">d</a></li>
+					</ul>
+				</li>
+				<li>hi</li>
+				<li>hi</li>
+				<li>hi</li>
+			</ul>
+		</nav>
+		<main>
+			dd
+			<p><p>
+			<img class="c1" src="image/house.jpg" alt="house" style="width:170px;height:170px;margin-right:15px;">
+				When Alice follows the White Rabbit down a rabbit hole, she finds herself in a land where she can change her size. She meets a Duchess with a pig for a baby, a Cook that throws spoons, a wise but mad Cheshire cat, the March Hare, Mad Hatter and a Dormouse. A Caterpillar shows her how to adjust her height by eating from the right and left sides of a mushroom. With that knowledge, Alice is able to enter a beautiful garden to play croquet with the Queen of Hearts. This game of croquet is played with flamingos (mallets), balls (curled-up hedgehogs) and an army of bent-over cards (arches). As the living croquet game continually changes, the Queen has most of her guests arrested, but introduces Alice to a Gryphon and Mock Turtle. 
+				By the end, almost everyone she meets ends up in a courtroom where the King of Hearts wants a verdict before the evidence, jurors pay attention to all the wrong information, witnesses are threatened with punishment and Alice grows tall enough not to be intimidated by a pack of cards, which is what the court and soldiers are. Suddenly Alice wakes up and realizes that her entire adventure was an amazing dream.</p>
+				
+		</main>
+	</div>
+	<footer>
+		<h1 id="t2">좋은 하루 되세요</h1>
+	</footer>
+</me>
 </html>
