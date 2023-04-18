@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>표준 이벤트 모델</title>
+<style>
+#box {
+    background-color: orange;
+    border: 1px solid;
+    padding: 5px;
+    color: white;
+    width: 300px;
+    height: 200px;
+}
+</style>
+</head>
+
+<body>
+<div id="box">
+  <button onclick="add()" id="startbtn">시작</button>
+  <button onclick="remove()" id="stopbtn">정지</button>
+</div>
+<p id="demo"></p>
+
+<script>
+function myFunction(){
+	document.getElementById("demo").innerHTML=" X좌표:" + event.x 
+	                            +"&nbsp;&nbsp;&nbsp;Y좌표:"+event.y;
+}
+function add(){
+	document.getElementById("box").addEventListener("mousemove", myFunction);
+}
+function remove(){
+	document.getElementById("box").removeEventListener("mousemove", myFunction);
+}
+</script>
+</body>
+</html>
+<!-- 
+addEventListener(eventName, handler, [useCapture])
+ :특정 이벤트를 등록하고 해당 함수를 실행한다
+
+removeEventHandler(eventName, handler)
+ :등록한 이벤트 리스너를 제거한다
+ -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

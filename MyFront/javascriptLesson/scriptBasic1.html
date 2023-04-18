@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log("Hello JavaScript!");
+      function functionAction1() {
+        console.log("functionAction1");
+      }
+      var baseFunction = function () {
+        console.log("baseFunction");
+      };
+      functionAction1();
+      baseFunction();
+
+    //   showScript();
+      //    function showScript(){
+      //     console.log("show Script");
+      //    }
+
+      var showScript = function () {
+        alert("showScript var");
+      };
+
+      var a = 10;
+      var a = 9;
+      console.log(a);
+
+      let b = 10;
+      //    let b = 20;
+      console.log("................");
+      var a = 1; // 전역 컨텍스트
+      function outer() {
+        // outer 컨텍스트
+        console.log(a);
+        // var a = 20;
+        function inner() {
+          // inner 컨텍스트
+          console.log(a);
+          var a = 3;
+          console.log(a);
+        }
+        inner(); // inner가 실행될 때 outer의 LexcicalEnvironemnt를 outerEnvironmentReference로 참조한다.
+        console.log(a);
+      }
+      outer(); // outer가 실행될 때 전역 컨텍스트의 LexcicalEnvironemnt를 outerEnvironmentReference로 참조한다.
+      console.log(a);
+console.log("................")
+      var v = 50;
+      function showOutter(){
+        console.log(v); // undefined
+        console.log(this.v); // 50
+        function showInner(){
+            console.log(v);//undefined
+            console.log(this.v); // 50
+            var v = 100;
+        }
+        showInner();
+        var v = 99;
+      }
+      showOutter();
+
+
+
+    </script>
+  </body>
+</html>

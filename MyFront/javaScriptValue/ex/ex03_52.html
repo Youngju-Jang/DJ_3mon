@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSON(stingify, parse)</title>
+<script>
+	user={name:"admin",
+		  email:"aa@bb.com",
+		  phone:"010-1111-1111"};
+	
+//	alert(user);
+
+	userStr=JSON.stringify(user);
+//	alert(userStr);  
+	
+	JSON.parse(userStr, function(key, value){
+		alert(key + "  " + value);	
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>
+<!-- 
+JSON 함수
+stringify(): JSON객체를 string으로 변환해 준다.
+parse(): string객체를 JSON객체로 변환해 준다. 
+ -->

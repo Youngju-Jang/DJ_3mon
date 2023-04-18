@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function ex1(){
+	alert(encodeURI("가나다")+"\n" +decodeURI("%EA%B0%80%EB%82%98%EB%8B%A4"));
+}
+function ex2(){
+	eval("var num=5+2");
+	ob=eval("({'a':1, 'b':2, 'c':3})");
+	alert(num + "\n" + ob.c);
+}
+function ex3(){
+	var x=10,y=15;
+	alert(String(x)+String(y));
+}
+</script>
+</head>
+<body>
+<form name="frm">
+	<input type="button" onclick="ex1()" value="연습1">&nbsp;&nbsp;
+	<input type="button" onclick="ex2()" value="연습2">&nbsp;&nbsp;
+	<input type="button" onclick="ex3()" value="연습3">&nbsp;&nbsp;
+</form>	
+</body>
+</html>
+<!-- 
+encodeURI(): 파라미터를 전달하는 URI전체를 인코딩 할때 특수문자(; : / = ? 등)
+                       을 제외한 문자만 인코딩 한다. 주로 인터넷 주소를 인코딩할때 사용한다.
+decodeURI(): encodeURI()로 인코딩된 데이터를 다시 되돌인다
+
+eval() :문자로된 수식을 javascript의 수식으로 인식하여 실행하고 결과를 반환한다
+
+String() : 숫자를 문자형으로 변환한다
+ -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>생성자 함수</title>
+<script>
+	function User(name,age){  // 생성자 함수
+		this.name=name;
+		this.age=age;
+		this.view=function(){
+			document.write("나의 이름은 " + this.name +"이고, 나이는 " + this.age +"세 입니다.<br>");
+		}
+	}
+	
+	var ob1=new User('kim',25);   // 인스턴스 생성
+	var ob2=new User('lee',20);
+	ob1.view();
+	ob2.view();
+////////////////////////////////
+	var a = 1;
+	function outer(){
+		console.log(a);
+		function inner(){
+			console.log(a);
+			var a = 3;
+		}
+		inner();
+		console.log(a);
+	}
+	outer();
+	console.log(a);
+</script>
+</head>
+<body>
+
+</body>
+</html>

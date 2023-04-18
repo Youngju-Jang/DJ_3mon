@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>근거리선택자</title>
+</head>
+
+<body>
+<strong>머리말</strong><p id="me"><span>가운데</span><a href="">링크</a><img src="../image/cat.png"/></p><button>꼬리말</button>
+<hr>
+<script>
+    var me = document.getElementById("me");
+    document.write("topNode : " + me.ownerDocument.nodeName + "<br>");
+    document.write("firstChild : " + me.firstChild.nodeName+ "<br>");
+   // document.write("firstChild : " + me.firstChild.firstChild.nodeValue+ "<br>");
+    document.write("lastChild : " + me.lastChild.nodeName + "<br>");
+    document.write("parentNode : " + me.parentNode.nodeName + "<br>");
+    document.write("previousSibling : " + me.previousSibling.nodeName + "<br>");
+    document.write("nextSibling : " + me.nextSibling.nodeName + "<br>");
+</script>
+</body>
+</html>
+<!-- 
+ownerDocument: 최상위노드
+firstChild: 첫번째 child노드
+lastChild: 마지막 child노드
+parentNode: 부모 노드
+previousSibling: 이전노드
+nextSibling: 다음노드
+ -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

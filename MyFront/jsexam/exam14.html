@@ -10,6 +10,7 @@
 function showMessage(value) {
 	if (arguments.length != showMessage.length)
 		throw new Error('인수의 수가 틀립니다. : ' + arguments.length);
+	console.log(showMessage.length);
 	document.writeln(value);	
 }
 

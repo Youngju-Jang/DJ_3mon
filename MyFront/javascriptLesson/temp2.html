@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      let a=10, b=20, c=30;
+      console.log("1:", String.raw`a+b+c=${a+b+c}`);
+      console.log("1:", String.raw`줄바꿈 \n ㅎㅎㅎ `);
+      console.log("1:", `줄바꿈 \n ㅎㅎㅎ `);
+      let one = 88;
+
+      var add = function(x,y){
+        return x+y;
+      }
+
+      var plus = add;
+
+      function showAdd(x,y){
+        return x+y;
+      }
+
+      showAdd.result = showAdd(3,8);
+      console.log(showAdd.result);
+      console.dir(showAdd);
+    </script>
+</body>
+</html>
