@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<pre>
+<script>
+function objectPrint(obj) {
+	for(var key in obj)
+		document.writeln(obj[key]);		
+}
+var student = {
+        이름: '홍길동',
+        국어: 92, 수학: 98,
+        영어: 96, 과학: 98
+};
+objectPrint(student);
+
+var person = { };        
+person.이름 = '홍길동';
+person.취미 = '악기';
+person.특기 = '프로그래밍';
+person.장래희망 = '생명공학자';
+objectPrint(person);
+
+</script>
+</pre>
+</body>
+</html>
