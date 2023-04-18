@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>표준 이벤트 모델</title>
+<script>
+function ex1(){
+	alert("1");
+}
+function ex2(){
+	alert("2");
+}
+function ex3(){
+	alert("3");
+}
+function addEvent(){
+	document.getElementById("startbtn").addEventListener("click", ex1());	
+	document.getElementById("startbtn").addEventListener("click", ex2());
+	document.getElementById("startbtn").addEventListener("click", ex3());
+}
+</script>
+</head>
+<body>
+	<button onclick="addEvent()" id="startbtn">시작</button>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

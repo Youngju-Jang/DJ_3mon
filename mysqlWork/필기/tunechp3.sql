@@ -8,11 +8,25 @@ select * from 사원
 where 사원번호 between 100001 and 200000;
 
 explain
-select 사원.사원번호, 사원.이름, 사원.성, 급여.연봉,
-    (select max(부서번호)
-     from 부서사원_매핑 as 매핑 where 매핑.사원번호 = 사원.사원번호) 카운트
-from 사원, 급여
-where 사원.사원번호 = 10001
-and 사원.사원번호 = 급여.사원번호;
+select 사원.사원번호, 급여.연봉
+from 사원,
+    (select 사원번호, max(연봉) as 연봉
+     from 급여
+     where 사원번호 between 10001 and 20000
+     group by 사원번호) as 급여
+where 사원.사원번호 = 급여.사원번호;
 
 select * from 사원;
+
+explain
+select *
+from 사원
+where 사원번호 between 10001 and 100000
+    and 입사일자 = '1985-11-21';
+
+explain
+select 사원번호, 시작일자
+from 직급
+where 직급명 = 'Manager';
+
+desc 직급;

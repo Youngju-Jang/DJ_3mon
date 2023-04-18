@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선언적 함수</title>
+<script>
+	function shape(){
+		document.write("** 도형의 넓이 **<br>");
+	}
+	function circleSize(r){
+		document.write("원의 넓이:" +(r*r*3.14)+"<br>");
+		return; //생략가능
+	}
+	function getSquareSize(width,height){
+		return width * height;
+	}
+	
+	shape();
+	circleSize(10);
+	document.write("사각형의넓이:" + getSquareSize(4,5));
+</script>
+</head>
+<body>
+
+</body>
+</html>

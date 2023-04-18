@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>근거리선택자</title>
+</head>
+<body>
+<ul id="tea">
+	<li>아메리카노</li>
+	<li>카페라테</li>
+	<li>콜드브르</li>
+</ul>
+<hr>
+<script>
+	var tea = document.getElementById("tea");
+	var childs = tea.childNodes;
+	alert(childs.length);
+	for (var i = 0; i < childs.length;i++) {
+		alert(childs[i].nodeName);
+	    if (childs[i].nodeName == "LI")
+	        document.write(i + "번째 데이터 = " + childs[i].firstChild.nodeValue + "<br>");
+	}
+</script> 
+</body>
+</html>
+
+<!-- ------------------------------------------------------------------------- -->
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>근거리선택자</title>
+<script>
+function exec(){
+	var tea = document.getElementById("tea");
+	var childs=tea.childNodes;
+	var str="";
+	for(var i=0; i<childs.length; i++){
+		alert(childs[i].nodeName);
+		if(childs[i].nodeName =="LI"){
+			//document.write(i+"번째 데이터=" + childs[i].firstChild.nodeValue +"<br>");
+			str +=(i+"번째 데이터=" + childs[i].firstChild.nodeValue +"<br>");
+		}
+	}
+	document.getElementById("demo").innerHTML=str;
+}
+</script>
+</head>
+<body onload="exec()">
+<ul id="tea" >
+    <li>아메리카노</li>
+    <li>카페라테</li>
+    <li>콜드브르</li>
+</ul>
+<hr>
+<div id="demo"></div>
+</body>
+</html>
+-->
+
+
+
+
+
+
+
+
+
+
+

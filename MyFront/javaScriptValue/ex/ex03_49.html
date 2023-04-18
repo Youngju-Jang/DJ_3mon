@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSON(객체)</title>
+<script>
+function init(){
+	var emp={"name":"홍길동", 
+			"age":25, 
+			"phone":"010-1111-111", 
+			"addr":"서울"};
+	//alert(emp['name']);   //or emp.name  
+	
+	var msg="";
+	msg +="이름:" + emp.name
+	    + "<br>나이:" +emp.age
+	    + "<br>연락처:" + emp['phone'] 
+        + "<br>주소:" + emp['addr']+"<br>";
+	
+	document.getElementById("result").innerHTML=msg;
+}
+</script>
+</head>
+<body onload="init()">
+<h2>JSON 표기법</h2>
+<div id="result"></div>
+</body>
+</html>
+
+
+

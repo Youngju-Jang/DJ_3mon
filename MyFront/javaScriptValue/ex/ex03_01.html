@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>산술연산자</title>
+    <script>
+      var a = 10,
+        b = 3,
+        sub,
+        mul,
+        divi;
+      sub = a - b;
+      mul = a * b;
+      divi = a / b;
+      document.write("두수의 합:" + (a + b) + "<br>");
+      document.write("두수의 차:" + sub + "<br>");
+      document.write("두수의 곱:" + mul + "<br>");
+      document.write("두수의 몫:" + divi + "<br>");
+
+      myName("철수"); // 첫 번째 myName 호출
+      myName(name); // 두 번째 myName 호출
+
+      function myName(name) {
+        console.log("제 이름은 " + name + "입니다");
+      }
+      var name = "영희";
+
+      const func = () => console.log(letVar);
+
+      let letVar = 3; //TDZ 끝
+      func(); // TDZ 밖에서 호출
+    </script>
+  </head>
+  <body></body>
+</html>

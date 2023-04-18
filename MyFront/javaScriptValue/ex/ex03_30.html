@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열 객체</title>
+<style>
+	div{
+		position:absolute;
+		top:100px;
+		left: 200px;
+		padding:10px;
+		background-color: yellow;
+		width: 210px;
+		border: 1px solid black; 
+	}
+</style>
+</head>
+<body>
+<div id="demo"></div>
+
+<script>
+	var fruits=new Array("banana","orange","apple","mango");
+	var text="";
+	
+	fruits.sort();
+	text += fruits+"<br>";
+			
+	fruits.reverse();
+	text += fruits;
+	document.getElementById("demo").innerHTML=text;
+
+/*	var fruits=new Array("banana","orange","apple","mango");
+	fruits.sort();
+	document.write(fruits);
+	document.write("<br>");
+			
+	fruits.reverse();
+	document.write(fruits);  */
+</script>
+</body>
+</html>
+
+
+
+
+

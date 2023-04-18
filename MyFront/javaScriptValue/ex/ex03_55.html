@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>수동 슬라이드(고전이벤트모델)</title>
+<style>
+img{
+	width: 500px;
+	height: 350px;
+}
+a.leftbtn{position: absolute; top:45%; left:0;}
+a.rightbtn{position:absolute; top:45%; right:0;}
+div.large{max-width: 100%; position: relative; 
+          /* border: 1px solid black; */}
+div.small{max-width: 500px; position: relative;
+          /* border: 1px solid red; */}
+</style>
+<script>
+window.onload=function(){
+	var slideIndex=1;
+	showDivs(1);
+	
+	lbtn.onclick=function(){
+		showDivs(slideIndex +=1);
+	}
+	rbtn.onclick=function(){
+		showDivs(slideIndex += -1);
+	}
+	function showDivs(n){
+		var i;
+		var x=document.getElementsByClassName("mySlides");
+		if(n > x.length) { slideIndex=1; }
+		if(n < 1 ) { slideIndex = x.length; }
+		for(i=0; i<x.length; i++){
+			x[i].style.display="none";  // 모든 슬라이드 hiddin
+		}
+		x[slideIndex-1].style.display="block";
+	}
+}
+</script>
+</head>
+<body>
+<div align="center" class="large">
+	<h2 align="center">수동 슬라이드</h2>
+	<div class="small">
+		<img class="mySlides" src="../image/01.jpg">
+		<img class="mySlides" src="../image/02.jpg">
+		<img class="mySlides" src="../image/03.jpg">
+		<img class="mySlides" src="../image/04.jpg">
+		
+		<a class="leftbtn" id="lbtn">◀</a>
+		<a class="rightbtn" id="rbtn">▶</a>
+	</div>
+</div>
+</body>
+</html>
+
+
+<!-- -------------------------------------------------- -->
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>수동 슬라이드(인라인이벤트 모델)</title>
+<style>
+img{
+	width: 500px;
+	height: 350px;
+}
+a.leftbtn{position: absolute; top:45%; left:0;}
+a.rightbtn{position:absolute; top:45%; right:0;}
+div.large{max-width: 100%; position: relative; 
+          /* border: 1px solid black; */}
+div.small{max-width: 500px; position: relative;
+          /* border: 1px solid red; */}
+</style>
+<script>
+var slideIndex=1;
+function plusDivs(n){
+	showDivs(slideIndex +=n);
+}
+function showDivs(n){
+	var i;
+	var x=document.getElementsByClassName("mySlides");
+	if(n > x.length) { slideIndex=1; }
+	if(n < 1 ) { slideIndex = x.length; }
+	for(i=0; i<x.length; i++){
+		x[i].style.display="none";  // 모든 슬라이드 hiddin
+	}
+	x[slideIndex-1].style.display="block";
+}
+</script>
+</head>
+<body onload="showDivs(1)">
+<div align="center" class="large">
+	<h2 align="center">수동 슬라이드</h2>
+	<div class="small">
+		<img class="mySlides" src="../image/01.jpg">
+		<img class="mySlides" src="../image/02.jpg">
+		<img class="mySlides" src="../image/03.jpg">
+		<img class="mySlides" src="../image/04.jpg">
+		
+		<a class="leftbtn" onclick="plusDivs(-1)">◀</a>
+		<a class="rightbtn" onclick="plusDivs(1)">▶</a>
+	</div>
+</div>
+</body>
+</html>
+
+ -->

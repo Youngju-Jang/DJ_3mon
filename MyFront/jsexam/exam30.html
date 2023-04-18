@@ -1,0 +1,28 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>정적 프로퍼티／정적 메소드</title>
+</head>
+<body>
+<pre>
+<script>
+var Area = function() {};
+
+Area.version = '1.0';
+
+Area.triangle = function(base, height) {
+  return base * height / 2;
+}
+Area.diamond = function(width, height) {
+  return width * height / 2
+}
+document.writeln('Area클래스의 버전：' + Area.version);
+document.writeln('삼각형의 면적：' + Area.triangle(5, 3));
+var a = new Area();//객체의이름에 담아서 사용할 수 없다
+//단 정적 메서드는 맴버 선언을 그때그때 할수 있어서 좋다.
+document.writeln('마름모의 면적：' + a.diamond(10, 2));
+
+</script>
+</pre>
+</body>
+</html>

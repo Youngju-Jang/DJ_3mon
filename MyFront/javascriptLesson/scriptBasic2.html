@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 변수 var let const  -->
+<script>
+    //   console.log(a);
+    //   var a=10;
+
+     //showScript(); 
+    //  function showScript(){
+    //     alert('showScript');
+    //  }
+    // var showScript=function(){
+    //     alert('showScript');
+    // }
+    //    let a=100;
+    //    let a=99;
+    //    console.log(a);
+          
+        //   const a=99;const a=99;
+
+    // var v=50;
+    // function showOutter(){
+    //     var v=99;
+    //     console.log(this.v);
+    //     function showInner(){
+    //         console.log(this.v);
+    //         // var v=100;
+    //     }
+    //     showInner();
+
+    // }
+    // showOutter();
+    // console.log("1:",`안녕하세요`);
+    // console.log("2:",`안녕하\n세요`);
+    // console.log("3:",`안녕하  
+    //                   jfkdajsflka
+    //                   fjhdasjfklsadjfklas
+    //                   fjdkslajfklasdjfas
+    //                   fjkldsajflkdsaj`);
+
+    let java=80,mysql=90,html=70;
+
+    // console.log("Score:",`${java} + ${mysql}+ ${html}= ${java+mysql+html}`);
+
+    // let a=10,b=20,c=30;
+    // console.log("1:",String.raw`a+b+c=${a+b+c}`);
+    // console.log("1:",String.raw`줄바꿈 \n ㅎㅎㅎㅎ`);
+    // console.log("1:",`줄바꿈 \n ㅎㅎㅎㅎ`);
+    // let one=88,two=77;
+    // let result=String.raw({raw:"JavaApplication"},one,two,66);
+    // console.log(result);
+
+    // var add=function(x,y){
+    //     return x+y;
+    // }
+    // var plus=add;
+    // console.log(add(10,88));
+    // console.log(plus(40,68));
+
+    // var v=function(x,y){
+    //     var j=function (){
+    //         return x*y;
+    //     }
+    //     return j;    
+    // }
+    // console.log(v(1,7)());
+
+
+    // var k=function(x,y){
+    //     return function(){
+    //         return x+y;
+    //     }
+    // }
+    // console.log(k(10,40)());
+
+    // var jdk=new Function('x','y','return x-y');
+    // console.log(jdk(6,8));
+
+    // function showAdd(x,y){
+    //     return x+y;
+    // }
+    // showAdd.result=showAdd(4,8);
+    // showAdd.st='good';
+    // console.log(showAdd.result);
+    // console.log(showAdd.st);
+
+    var person={
+        name: ['bob', 'smith'],
+        age: 32,
+        bio: function(){
+            console.log(this.name[0] + ' ' + this.name[1])
+        },
+        lesson: {kor:50, eng:90, math:100}
+    }
+    // console.log(person);
+    // console.log(person.bio());
+
+    for( var index in person.name){
+        // console.log(person.name[index]);
+    }
+
+    person.name.forEach(function(item, index, arr){
+        // console.log(item); // bob
+        // console.log(index); // index
+        // console.log(arr); // 객체
+    })
+
+    for(var key in person.lesson){
+        console.log(key, " : " , person.lesson[key]);
+    }
+
+
+
+
+
+
+
+
+
+
+</script>
+<body>
+    
+</body>
+</html>
