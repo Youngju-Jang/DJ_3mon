@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-<pre>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+  </head>
+  <body>
+    <pre>
 <script>
 function outerFunction() {
+    var i = 10;
     return function () {
-        document.write('<H1>Hello World .. !</h1>');
-    };
+        document.write('<H1>Hello World .. !</h1>' + ++i);
+        };
+    }
+    
+    function testFunc(){
+        var i = 10;
+        return document.write('<H1>Hello World .. !</h1>' + ++i);
+
 }
+
 outerFunction( )( );
 var result = outerFunction( );
 result( );
 result( );
-</script>
+
+document.write(`      <hr>           `);
+
+// testFunc( );
+// testFunc( );
+var result = testFunc( );
+// result();
+// result();
+// result;
+
+</script> 
 </pre>
-</body>
+  </body>
 </html>
-
-

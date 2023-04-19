@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-<pre>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+  </head>
+  <body>
+    <pre>
 <script>
 function objectPrint(obj) {
 	for(var key in obj)
@@ -14,18 +14,25 @@ function objectPrint(obj) {
 var student = {
         이름: '홍길동',
         국어: 92, 수학: 98,
-        영어: 96, 과학: 98
+        "영어": 96, 과학: 98,
+        "펑션" : function(){console.log("~"); return "yes";}
 };
-objectPrint(student);
+
+console.log(">>>>>>>."+ student.영어);
+console.log(">>>>>>>."+ student.펑션());
+console.log(">>>>>>>."+ student[`이름`]);
+// objectPrint(student);
+document.writeln(student.이름);
+document.writeln(student[`이름`]);
 
 var person = { };        
 person.이름 = '홍길동';
 person.취미 = '악기';
 person.특기 = '프로그래밍';
 person.장래희망 = '생명공학자';
-objectPrint(person);
+// objectPrint(person);
 
 </script>
 </pre>
-</body>
+  </body>
 </html>

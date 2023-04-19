@@ -8,8 +8,11 @@
 <pre>
 <script>
 var g_v = "전역변수";
+let l_v = "전역 Lv";
+
 function myFunc1() {
-	var l_v = "myFunc1()의 지역 변수";
+	// var l_v = "myFunc1()의 지역 변수";
+	let l_v = "myFunc1()의 지역 변수2";
 	document.writeln("myFunc1() 함수의 스코프 영역");
 	document.writeln("l_v : " + l_v);
 	document.writeln("g_v : " + g_v);
@@ -28,6 +31,20 @@ document.writeln();
 document.writeln("전역(글로벌) 스코프 영역");
 document.writeln("g_v : " + g_v);
 document.writeln("l_v : " + l_v);
+
+var a = 1; // 전역 컨텍스트
+function outer () { // outer 컨텍스트
+  function inner () { // inner 컨텍스트
+    console.log("inner a: " + a);
+    var a = 3;
+    console.log("inner a : " + a);
+  }
+  inner(); // inner가 실행될 때 outer의 LexcicalEnvironemnt를 outerEnvironmentReference로 참조한다.
+  console.log("outter a : " + a);
+//   var a = 4;
+}
+outer(); // outer가 실행될 때 전역 컨텍스트의 LexcicalEnvironemnt를 outerEnvironmentReference로 참조한다.
+console.log("global a : " + a);
 </script>
 </pre>
 </body>

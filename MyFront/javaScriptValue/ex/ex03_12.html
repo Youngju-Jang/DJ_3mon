@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title></title>
 <script>
-	var score=45;
+	var score=85;
 	var grade;                
 	
 	if(score>=90)		grade='A';
@@ -14,6 +14,20 @@
 	else				grade='F';
 	
 	document.write("나의 점수는 "+score+"점이고 학점은 " + grade +" 입니다"); 
+
+	var grades = ['A','B','C','D','E'];
+	var scores = [90,80,70,60];
+
+	grade = grades[4];
+
+	for(var i in scores){
+		if(score >= scores[i]){
+			grade = grades[i];
+			break;
+		}
+	}
+	console.log(grade);
+
 </script>
 </head>
 <body>
