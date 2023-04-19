@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    function showMethod1() {
+      console.log("showMethod1()");
+    }
+    // showMethod1(val=3);
+    function showMethod1() {
+      var sum = 0;
+      for (var i in arguments) {
+        if (typeof arguments[i] == "object") {
+          for (var j in arguments[i]) {
+            if (!isNaN(arguments[i][j])) {
+              sum += arguments[i][j];
+            }
+          }
+          continue;
+        }
+        if (!isNaN(arguments[i])) {
+          sum += arguments[i];
+        }
+      }
+      console.log(sum);
+    }
+
+    function showMethod2(...args) {
+      var sum = 0;
+      for (var i in args) {
+        if (typeof args[i] == "object") {
+          for (var j in args[i]) {
+            if (!isNaN(args[i][j])) {
+              sum += args[i][j];
+            }
+          }
+          continue;
+        }
+        if (!isNaN(args[i])) {
+          sum += args[i];
+        }
+      }
+      console.log(sum);
+    }
+
+    function showMethod3() {
+      var value = 0;
+      for (var i = 0; i < arguments.length; i++) {
+        if (typeof i === "number") {
+          value += arguments[i];
+        } else if (typeof arguments[i] != null && typeof arguments[i] === "object") {
+          for (var index in arguments[i]) {
+            console.log(arguments[i][index]);
+          }
+        }
+      }
+      return value;
+    }
+
+    var sum = 0;
+
+    function showMethod4() {
+      for (let value of arguments) {
+        if (typeof value === "number" && !isNaN(value)) {
+          sum += value;
+        } else if (Array.isArray(value)) {
+          showMethod4.apply(this, value);
+        } else if (typeof value === "object" && value !== null) {
+          showMethod4.apply(this, Object.values(value));
+        }
+      }
+      return sum;
+    }
+
+    console.log(showMethod4(1, 4, 5, 6, "rk", new Date(), null, [99, 33, 22], { a: 45, b: 78 }));
+  </script>
+  <body></body>
+</html>

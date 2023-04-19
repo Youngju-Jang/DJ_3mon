@@ -16,6 +16,23 @@
 	var ob2=new User('lee',20);
 	ob1.view();
 	ob2.view();
+
+	function Member(){
+		console.log('function Member()');
+	}
+
+	function Member(name, id, tel){
+		this.name = name;
+		this.id = id;
+		this.tel = tel;
+		console.log(name + " : " + id + " : " + tel);
+	}
+	var m = new Member('java', 'blue', '010-3823-5151');
+	var m2 = Member('java', 'blue', '010-3823-5151');
+	console.log("type: " + typeof(m)  + " : " + typeof(m2));
+	console.log(m.name);
+	// console.log(m2.name);
+
 ////////////////////////////////
 	var a = 1;
 	function outer(){
@@ -29,6 +46,7 @@
 	}
 	outer();
 	console.log(a);
+
 </script>
 </head>
 <body>
