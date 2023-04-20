@@ -1,4 +1,6 @@
 use tuning;
+show databases;
+
 
 show variables like 'profiling%';
 set profiling = 'ON';

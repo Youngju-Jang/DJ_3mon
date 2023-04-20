@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function helloToServer(){
+	var xhr=new XMLHttpRequest();
+	
+	xhr.onreadystatechange=function(){
+		// alert(xhr.readyState);
+		if(xhr.readyState==4 && xhr.status==200){
+			document.getElementById('display').innerHTML=xhr.responseText;
+		}
+	}
+	var param="irum="+document.f.irum.value;
+	xhr.open("GET","hello.jsp?" + encodeURI(param), true);
+	
+	// alert("open");
+	xhr.send(null);
+	// alert("send");
+	
+} 
+</script>
+</head>
+<body>
+<form name="f">
+	이름: <input type="text" name="irum">
+	<input type="button" value="입력" onclick="helloToServer()">
+</form>
+<div id="display"></div>
+</body>
+</html>
+
+
+
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+var httpRequest=null;
+
+function getXMLHttpRequest()
+{
+	if(window.ActiveXObject){
+		try{
+			return new ActiveXObject("Msxml2.XMLHTTP");
+		}catch(e1){
+			return null;
+		}
+	}else if(window.XMLHttpRequest){
+		return new XMLHttpRequest();
+	}else{
+		return null;
+	}		
+}
+
+function viewMessage(){
+	if(httpRequest.readyState==4)   
+	{
+		if(httpRequest.status==200) 
+		{
+			//alert("응답:" + httpRequest.responseText);
+			document.getElementById('display').innerHTML=httpRequest.responseText;
+		}else{
+			alert("실패:" + httpRequest.status);
+		}
+	}
+}
+
+function helloToServer(){
+	httpRequest=getXMLHttpRequest();
+	httpRequest.onreadystatechange=viewMessage;
+	
+	var param="irum="+document.f.irum.value;
+	httpRequest.open("GET","hello.jsp?" + encodeURI(param), true);  //hello.jsp?irum=kim
+	httpRequest.send(null);             //한글처리 (익스플로러에서 실패:400 에러)
+} 
+</script>
+</head>
+<body>
+<form name="f">
+	이름: <input type="text" name="irum">
+	<input type="button" value="입력" onclick="helloToServer()">
+</form>
+<div id="display"></div>
+</body>
+</html>
+-->
+
+
+
+
