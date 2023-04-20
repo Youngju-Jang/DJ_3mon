@@ -16,8 +16,14 @@ function init(){
 	    + "<br>나이:" +emp.age
 	    + "<br>연락처:" + emp['phone'] 
         + "<br>주소:" + emp['addr']+"<br>";
+
+	var temp = `이름 : ${emp.name} 
+				나이 : ${emp.age} <br>
+				연락처 : ${emp.phone}
+				주소 : ${emp.addr}
+				`
 	
-	document.getElementById("result").innerHTML=msg;
+	document.getElementById("result").innerHTML=temp;
 }
 </script>
 </head>

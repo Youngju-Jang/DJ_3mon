@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2 onclick="getImage();">이 행을 클릭하세요. Ajax로 이미지를 요청하고 출력합니다.</h2>
+
+<script>
+function getImage(){
+	var xhr = new XMLHttpRequest();	
+	xhr.responseType="blob";
+	xhr.onload=function(e){
+		if(this.status==200){
+			var b=e.target.response;
+			var img=document.createElement('img'); // img 태그 생성
+			img.width=100;
+			img.height=100;
+				
+			img.onload=function(e){
+				//URL.revokeObjectURL("http://localhost:8080/edu/test10");
+				URL.revokeObjectURL(img.src);
+			};
+			img.src=URL.createObjectURL(b);
+			document.body.appendChild(img);
+		}
+	};
+	xhr.open('GET', 'duke_luau.png', true);
+	xhr.send();
+}
+</script>
+</body>
+</html>
+<!-- 
+URL.revokeObjectURL(): 기존 URL을 폐기
+URL.createObjectURL(): 새로운 URL 생성
+
+
+var v=document.createElement('video');  // video 태그 생성
+v.width=400;
+v.height=300;
+v.autoplay=true;
+xhr.open('GET', 'tiger.mp4', true);
+
+
+
+var a=document.createElement('audio'); // audio 태그 생성
+a.controls=false;
+a.autoplay=true;
+
+xhr.open('GET', 'ladymov.mp3', true);
+ -->
+
+
+
+
+
+
+
