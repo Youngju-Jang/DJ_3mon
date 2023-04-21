@@ -8,7 +8,7 @@ function helloToServer(){
 	var xhr=new XMLHttpRequest();
 	
 	xhr.onreadystatechange=function(){
-		alert(xhr.readyState);
+		// alert(xhr.readyState);
 		if(xhr.readyState==4 && xhr.status==200){
 			document.getElementById('display').innerHTML=xhr.responseText;
 		}
@@ -16,9 +16,9 @@ function helloToServer(){
 	var param="irum="+document.f.irum.value;
 	xhr.open("GET","hello.jsp?" + encodeURI(param), true);
 	
-	alert("open");
+	// alert("open");
 	xhr.send(null);
-	alert("send");
+	// alert("send");
 	
 } 
 </script>
