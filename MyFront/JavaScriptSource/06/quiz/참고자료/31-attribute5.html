@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style type="text/css">
+		.democlass {
+		  color: red;
+		}
+	</style>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1 class="democlass">Hello World</h1>
+
+	<button onclick="myFunction()">Try it</button>
+
+	<p id="demo"></p>
+
+	<script>
+	function myFunction() {
+	  var elmnt = document.getElementsByTagName("H1")[0];
+	  var attr = elmnt.getAttributeNode("class").name;
+	  var val = elmnt.getAttributeNode("class").value;
+	  document.getElementById("demo").innerHTML = attr + ":" + val;
+	}
+	</script>
+</body>
+</html>

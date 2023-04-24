@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var obj = {}; // Object.create(Object.prototype); 과 같음
+		var obj2 = Object.create(null, {
+		  a: {
+		    writable: true,
+		    configurable: false,
+		    value: 5,
+		  }
+		});
+		console.log(obj2.a); // 5
+	</script>
+</body>
+</html>

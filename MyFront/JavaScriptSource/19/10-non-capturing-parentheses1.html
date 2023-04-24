@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		console.log(/abc+/.exec("abcabcabc")); // 첫번째 abc에 매칭됨
+		console.log(/(?:abc)+/.exec("abcabcabc")); // abcabcabc에 매칭됨
+	</script>
+</body>
+</html>

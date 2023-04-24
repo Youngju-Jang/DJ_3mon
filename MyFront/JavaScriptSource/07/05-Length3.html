@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var arr = [0, 1, 2];
+		console.log(arr.length); // 3
+
+		arr.length = 5;
+		console.log(arr); // [0, 1, 2, undefined, undefined]
+
+		arr.length = 2;
+		console.log(arr); // [0, 1]
+		console.log(arr[2]); // undefined
+	</script>
+</body>
+</html>

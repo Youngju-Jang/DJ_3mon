@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="content"></div>
+    <script>
+        var c = document.getElementById("content");
+        var p1 = document.createElement("p");
+        var con1 = document.createTextNode("컨텐츠1");
+        p1.append(con1);
+        c.append(p1);
+
+        var p2 = document.createElement("p");
+        var con2 = document.createTextNode("컨텐츠2");
+        p2.append(con2);
+        c.append(p2);
+
+        p1.style.backgroundColor = "gray";
+        p2.style.backgroundColor = "green";
+    </script>
+</body>
+</html>

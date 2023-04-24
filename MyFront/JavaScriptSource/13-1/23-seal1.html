@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var obj = {};
+		Object.defineProperties(obj, {
+		  a: {
+		    value: 5,
+		    writable: false,
+		    enumerable: true,
+		  },
+		  b: {
+		    get: function() {
+		      return 'zero';
+		    },
+		    set: function(value) {
+		      console.log(this, value);
+		      this.a = value;
+		    },
+		    enumerable: false,
+		    configurable: false,
+		  },
+		});
+		Object.defineProperty(obj, 'c', {
+		  value: { x: 3, y: 4 },
+		  writable: false,
+		  enumerable: true,
+		});
+
+		var sealedObj = Object.seal(obj);
+		sealedObj.a = 10;
+		console.log(sealedObj.a); // 5로 변경이 안 되지만 writable이 true면 변경 가능
+		console.log(delete sealedObj.c); // false
+	</script>
+</body>
+</html>

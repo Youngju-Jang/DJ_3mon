@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const targetStr = 'Is this all there is?';
+
+		// 문자열 is를 대소문자를 구별하여 한번만 검색한다.
+		let regexr1 = /is/;
+		let regexr2 = new RegExp("is");
+
+		console.log(targetStr.match(regexr1)); // [ 'is', index: 5, input: 'Is this all there is?' ]
+		console.log(targetStr.match(regexr2));
+
+		// 문자열 is를 대소문자를 구별하지 않고 대상 문자열 끝까지 검색한다.
+		regexr1 = /is/ig;
+		regexr2 = new RegExp("is","ig");
+
+		console.log(targetStr.match(regexr1)); // [ 'Is', 'is', 'is' ]
+		console.log(targetStr.match(regexr1).length); // 3
+
+		console.log(targetStr.match(regexr2)); // [ 'Is', 'is', 'is' ]
+		console.log(targetStr.match(regexr2).length); // 3
+	</script>
+</body>
+</html>

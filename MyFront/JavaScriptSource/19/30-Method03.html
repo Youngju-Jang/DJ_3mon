@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var str = "abcde";
+		var myArray = str.match(/a(b)c(d)/);
+		console.log(myArray);
+
+		var re = /(\w+)\s(\w+)/;
+		var str = "John Smith";
+		var newstr = str.replace(re, "$2, $1");
+		console.log(newstr);  // Smith John
+	</script>
+</body>
+</html>

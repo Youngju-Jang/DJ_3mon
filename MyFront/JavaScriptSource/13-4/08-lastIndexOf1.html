@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const str = 'Hello World';
+
+		console.log(str.lastIndexOf('World')); // 6
+		console.log(str.lastIndexOf('l'));     // 9
+		console.log(str.lastIndexOf('o', 5));  // 4
+		console.log(str.lastIndexOf('o', 8));  // 7
+		console.log(str.lastIndexOf('l', 10)); // 9
+
+		console.log(str.lastIndexOf('H', 0));  // 0
+		console.log(str.lastIndexOf('W', 5));  // -1
+		console.log(str.lastIndexOf('x', 8));  // -1
+	</script>
+</body>
+</html>

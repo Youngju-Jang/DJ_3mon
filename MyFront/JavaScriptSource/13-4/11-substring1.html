@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const str = 'Hello World'; // str.length == 11
+
+		console.log(str.substring(1, 4)); // ell
+
+		// 첫번째 인수 > 두번째 인수 : 두 인수는 교환된다.
+		console.log(str.substring(4, 1)); // ell
+
+		// 두번째 인수가 생략된 경우 : 해당 문자열의 끝까지 반환한다.
+		console.log(str.substring(4)); // o World
+
+		// 인수 < 0 또는 NaN인 경우 : 0으로 취급된다.
+		console.log(str.substring(-2)); // Hello World
+
+		// 인수 > 문자열의 길이(str.length) : 인수는 문자열의 길이(str.length)으로 취급된다.
+		console.log(str.substring(1, 12)); // ello World
+		console.log(str.substring(11)); // ''
+		console.log(str.substring(20)); // ''
+		console.log(str.substring(0, str.indexOf(' '))); // 'Hello'
+		console.log(str.substring(str.indexOf(' ') + 1, str.length)); // 'World'
+	</script>
+</body>
+</html>

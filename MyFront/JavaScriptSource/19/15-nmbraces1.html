@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		console.log(/a{1,3}/.exec("cndy")); // 매칭되지 않음
+		console.log(/a{1,3}/.exec("caandy")); // aa와 매칭됨
+		console.log(/a{1,3}/.exec("caaaaaaandy")); // 처음으로 오는 aaa와 매칭됨
+	</script>
+</body>
+</html>

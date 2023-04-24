@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 배열 내 모든 값의 합계 구하기
+		var sum = [0, 1, 2, 3].reduceRight(function(a, b) { return a + b; });
+		console.log(sum);  // 6
+
+		// 이중 배열 전개하기
+		var flattened = [[0, 1], [2, 3], [4, 5]].reduceRight(function(a, b) { return a.concat(b); }, []);
+		console.log(flattened);  // [4, 5, 2, 3, 0, 1]
+
+		// reduce와 reduceRight의 차이점
+		var a = ["1", "2", "3", "4", "5"]; 
+		var left  = a.reduce(function(prev, cur)      { return prev + cur; }); 
+		var right = a.reduceRight(function(prev, cur) { return prev + cur; }); 
+
+		console.log(left);  // "12345"
+		console.log(right); // "54321"
+	</script>
+</body>
+</html>

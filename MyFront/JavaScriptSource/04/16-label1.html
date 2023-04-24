@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var i, j;
+
+		loop1:
+		for (i = 0; i < 3; i++) {      //첫번째 for문은 "loop1" 레이블을 붙였다.
+		   loop2:
+		   for (j = 0; j < 3; j++) {   //두번째 for문은 "loop2" 레이블을 붙였다.
+		      if (i === 1 && j === 1) {
+		         continue loop1;
+		      }
+		      console.log('i = ' + i + ', j = ' + j);
+		   }
+		}
+	</script>
+</body>
+</html>

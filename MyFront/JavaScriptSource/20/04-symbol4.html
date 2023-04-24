@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let sym =Symbol("123");
+		try {
+		  `${sym}`;
+		} catch (e) {
+		  console.log("`${sym} 불가`");
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var GrandParent = function() { };
+
+		var Parent = function() { };
+		Parent.prototype = new GrandParent();
+		Parent.prototype.constructor = Parent;
+
+		var Child = function() { };
+		Child.prototype = new Parent();
+		Child.prototype.constructor = Child;
+
+		var child = new Child();
+		console.log(Parent.prototype.isPrototypeOf(child)); // true
+		console.log(GrandParent.prototype.isPrototypeOf(child)); // true
+
+		console.log(Object.getPrototypeOf(child)); // Parent
+		var parent = new Parent();
+		console.log(Object.getPrototypeOf(parent)); // GrandParent
+		var grandParent = new GrandParent();
+		console.log(Object.getPrototypeOf(grandParent)); // {constructor: ƒ}
+		console.log(Object.getPrototypeOf(new GrandParent())); // {constructor: ƒ}
+
+		Object.setPrototypeOf(child, new GrandParent());
+		console.log(Object.getPrototypeOf(child)); // GrandParent
+	</script>
+</body>
+</html>

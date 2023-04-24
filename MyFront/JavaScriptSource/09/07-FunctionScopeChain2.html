@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var value = "value1";
+
+		function printFunc(func) {
+		    var value = "value2";
+			
+			function printValue() {
+				return value;
+			}
+			console.dir(printValue);
+		    console.log(printValue());
+		}
+		console.dir(printFunc);
+		printFunc();
+	</script>
+</body>
+</html>

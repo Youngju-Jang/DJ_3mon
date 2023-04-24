@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const str = '   foo  ';
+
+		console.log(str.trim()); // 'foo'
+
+		// String.prototype.replace
+		console.log(str.replace(/\s/g, ''));   // 'foo'
+		console.log(str.replace(/^\s+/g, '')); // 'foo  '
+		console.log(str.replace(/\s+$/g, '')); // '   foo'
+
+		// String.prototype.{trimStart,trimEnd} : Proposal stage 3
+		console.log(str.trimStart()); // 'foo  '
+		console.log(str.trimEnd());   // '   foo'
+	</script>
+</body>
+</html>

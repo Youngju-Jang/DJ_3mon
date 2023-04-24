@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// map을 활용해 배열 속 객체를 재구성하기
+		var kvArray = [{key:1, value:10},{key:2, value:20},{key:3, value: 30}];
+
+		var reformattedArray = kvArray.map(function(obj){ 
+		   var rObj = {};
+		   rObj[obj.key] = obj.value;
+		   return rObj;
+		});
+
+		console.log(reformattedArray); // [{1:10}, {2:20}, {3:30}]
+		console.log(kvArray); // [{key:1, value:10},{key:2, value:20},{key:3, value: 30}]
+
+		// 인자를 받는 함수를 사용하여 숫자 배열 재구성하기
+		var numbers = [1, 4, 9];
+		var doubles = numbers.map(function(num) {
+			return num * 2;
+		});
+		console.log(doubles);
+
+		// map을 포괄적으로 사용하기
+		var map = Array.prototype.map;
+		var a = map.call('Hello World', function(x) { return x.charCodeAt(0); });
+		console.log(a); // [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]
+
+
+	</script>
+</body>
+</html>

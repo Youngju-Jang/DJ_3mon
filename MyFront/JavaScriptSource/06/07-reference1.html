@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var objA = {
+		    val : 40
+		};
+		var objB = objA;
+
+		console.log(objA.val);  // 40
+		console.log(objB.val);  // 40
+
+		objB.val = 50;
+		console.log(objA.val);  // 50
+		console.log(objB.val);  // 50
+	</script>
+</body>
+</html>

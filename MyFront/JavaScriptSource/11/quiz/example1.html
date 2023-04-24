@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        article::before {
+            content: attr(data-parent);
+        }
+    </style>
+</head>
+
+<body>
+    <article id="electriccars" data-columns="3" data-index-number="12314" data-parent="cars">
+    </article>
+
+    <script>
+        var article = document.getElementById('electriccars');
+
+        console.log(article.dataset.columns); // "3"
+        console.log(article.dataset.indexNumber); // "12314"
+        console.log(article.dataset.parent); // "cars"
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function add(x, callback){
+		    let sum = x + x;
+		    console.log(sum);
+		    callback(sum);
+		}
+
+		add(3, function(result){
+		    add(result, function(result2){
+		        add(result2, function(result3){
+		            add(result3, function(result4){
+		                console.log("에너지 파")
+		            })
+		        })
+		    })
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function Person(name, age, gender, position){
+			this.name = name;
+			this.age = age;
+			this.gender = gender;
+
+			return {name:'bar', age:25, gender:'woman'};
+		}
+
+		var foo = new Person('foo',30,'woman');
+		console.dir(foo);
+	</script>
+</body>
+</html>

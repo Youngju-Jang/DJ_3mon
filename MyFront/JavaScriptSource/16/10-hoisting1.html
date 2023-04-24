@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function sum(a, b) {
+			var x = add(a, b);
+			return x;
+
+			function add(c, d) {
+				var result = c + d;
+				return result;
+			}
+		}
+
+		function sum(a, b) {
+			var x = undefined;
+			function add(c, d) {
+				var result = c + d;
+				return result;
+			}
+
+			x = add(a, b);
+			return x;
+		}
+	</script>
+</body>
+</html>

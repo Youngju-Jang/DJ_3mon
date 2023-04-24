@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="tab-menu"></div>
+    <script>
+        function TabMenu(name){
+            const tabMenu = document.getElementById(name);
+            const button1 = document.createElement("button");
+            const button2 = document.createElement("button");
+            const button3 = document.createElement("button");
+
+            button1.textContent = "버튼1";
+            button2.textContent = "버튼2";
+            button3.textContent = "버튼3";
+
+            tabMenu.append(button1);
+            tabMenu.append(button2);
+            tabMenu.append(button3);
+        }
+
+        const tab = new TabMenu("tab-menu");
+    </script>
+</body>
+</html>

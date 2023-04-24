@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		console.log(-2 ** 2); 
+		// Bash에서 4, 다른 언어에서는 -4. 
+		// 모호한 표현이므로 JavaScript에서는 유효하지 않음
+
+		console.log(-(2 ** 2));
+		// JavaScript에서 -4, 작성자의 의도가 명확함
+
+		console.log(-(2 ** 2)); // -4
+		// 결과의 부호를 뒤집으려면 다음과 같이 작성한다.
+
+		console.log((-2) ** 2); // 4
+		// 거듭제곱의 밑을 음수로 강제하려면 다음과 같이 작성한다.
+	</script>
+</body>
+</html>

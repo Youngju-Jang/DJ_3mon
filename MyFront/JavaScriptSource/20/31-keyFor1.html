@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let symOne = Symbol.for("123");
+		console.log(Symbol.keyFor(symOne));
+
+		let symTwo = Symbol("222");
+		console.log(Symbol.keyFor(symTwo));
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="rsp" name="rsp">
+    <button id="action">가위바위보</button>
+    <div id="result"></div>
+    <script>
+        document.getElementById("action").addEventListener("click",function(){
+            var v1 = document.getElementById("rsp");
+            var com = Math.floor(Math.random() * (3 - 1 + 1) ) + 1;
+            console.log(com);
+            var result = document.getElementById("result");
+            if(v1.value == com){
+                result.innerHTML = "<h1>비겼습니다</h1>";
+            }else if(v1.value == (com%3 + 1)){
+                result.innerHTML = "<h1>이겼습니다</h1>";
+            }else{
+                result.innerHTML = "<h1>졌습니다</h1>";
+            }
+        },false)
+    </script>
+</body>
+</html>

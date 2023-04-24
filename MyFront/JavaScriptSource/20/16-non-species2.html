@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		class ExtendArray extends Array {
+		  getValue(){}
+		}
+		let newArray = new ExtendArray(1, 2, 3);
+
+		let newInst = newArray.slice(1, 2);
+		console.log(newInst instanceof ExtendArray);
+	</script>
+</body>
+</html>

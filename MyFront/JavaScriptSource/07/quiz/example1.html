@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #content1{
+            width : 200px;
+            height : auto;
+            background: cadetblue;
+            color:white;
+        }
+        #content2{
+            width : 200px;
+            height : auto;
+            background: lightcoral;
+            color : white;
+        }
+    </style>
+</head>
+<body>
+    <div id="content1"></div>
+    <div id="content2">
+        <p class="cont">텍스트1</p>
+        <p class="cont">텍스트2</p>
+        <p class="cont">텍스트3</p>
+        <p class="cont">텍스트4</p>
+    </div>
+    <script>
+        var a = document.getElementsByClassName("cont")[0];
+        document.getElementById("content1").append(a);
+    </script>
+</body>
+</html>

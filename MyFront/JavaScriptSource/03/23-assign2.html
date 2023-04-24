@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 다음과 같은 변수를 가정
+		foo = "foo"
+		bar = 5
+		baz = true
+
+		// Number + Number -> 합
+		bar += 2 // 7
+		console.log(bar);
+		// Boolean + Number -> 합
+		baz += 1 // 2
+		console.log(baz);
+		// Boolean + Boolean -> 합
+		baz += false // 2
+		console.log(baz);
+		// Number + String -> 연결
+		bar += 'foo' // "5foo"
+		console.log(bar);
+		// String + Boolean -> 연결
+		foo += false // "foofalse"
+		console.log(foo);
+		// String + String -> 연결
+		foo += 'bar' // "foofalsebar"
+		console.log(foo);
+	</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function func(callback) {
+		    console.log( typeof (callback) );
+		    // 넘어온 함수 실행하기
+		    callback();
+		}
+ 
+		function myCall() {
+    		console.log("myCall 호출됨");
+		}
+
+		func(myCall);
+	</script>
+</body>
+</html>

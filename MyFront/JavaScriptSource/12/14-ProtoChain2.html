@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var myObject = {
+		    name: 'foo',
+		    sayName: function () {
+		        console.log('My Name is ' + this.name);
+		    }
+		};
+
+		myObject.sayName();
+		console.log(myObject.hasOwnProperty('name'));
+		console.log(myObject.hasOwnProperty('nickName'));
+		myObject.sayNickName();
+	</script>
+</body>
+</html>

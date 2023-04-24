@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 함수에 전달할 객체
+        let options = {title: "My menu", items: ["Item1", "Item2"]};
+        
+        function showMenu({ title = "Untitled", width = 200, height = 100, items = [] }) {
+            console.log(`${title} ${width} ${height}`); // My Menu 200 100
+            console.log(items); // Item1, Item2
+        }
+
+        showMenu(options);
+    </script>
+</body>
+
+</html>

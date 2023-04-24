@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var obj = {};
+		Object.defineProperties(obj, {
+		  a: {
+		    value: 5,
+		    writable: false,
+		    enumerable: true,
+		  },
+		  b: {
+		    get: function() {
+		      return 'zero';
+		    },
+		    set: function(value) {
+		      console.log(this, value);
+		      this.a = value;
+		    },
+		    enumerable: false,
+		    configurable: false,
+		  },
+		});
+		Object.defineProperty(obj, 'c', {
+		  value: { x: 3, y: 4 },
+		  writable: false,
+		  enumerable: true,
+		});
+
+		var frozenObj = Object.freeze(obj);
+		frozenObj.a = 10;
+		console.log(frozenObj.a); // 그대로 5
+		console.log(delete frozenObj.c); // false
+		obj.c.x = 5;
+		console.log(obj.c.x);
+		Object.freeze(obj.c); // 이것까지 해야 내부 객체까지 완전히 얼려짐
+		obj.c.x = 7;
+		console.log(obj.c.x);
+	</script>
+</body>
+</html>

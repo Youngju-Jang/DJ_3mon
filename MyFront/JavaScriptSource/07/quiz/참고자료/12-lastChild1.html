@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>Example list:</p>
+	<ul id="myList"><li>Coffee</li><li>Tea</li></ul>
+
+	<p>Click the button to get the HTML content of the list's last child node.</p>
+
+	<button onclick="myFunction()">Try it</button>
+
+	<p><strong>Note:</strong> Whitespace inside elements is considered as text, and text is considered as nodes.</p>
+
+	<p>If you add whitespace before the closing UL element, the result will be "undefined".</p>
+
+	<p id="demo"></p>
+
+	<script>
+	function myFunction() {
+	  var list = document.getElementById("myList").lastChild.innerHTML;
+	  document.getElementById("demo").innerHTML = list;
+	}
+	</script>
+</body>
+</html>

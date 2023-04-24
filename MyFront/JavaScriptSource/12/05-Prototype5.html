@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var a = [1,2,3];
+		var b = [4,5,6];
+		a.__proto__.funcA = function(){
+			console.log('hello');
+		}
+		b.funcA();
+	</script>
+</body>
+</html>

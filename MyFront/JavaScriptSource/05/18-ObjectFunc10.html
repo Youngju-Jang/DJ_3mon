@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function CallLevel(){
+			if (CallLevel.caller == null)
+				return("CallLevel was called from the top level.");
+			else
+				return("CallLevel was called by another function.");
+		}
+
+		console.log(CallLevel());
+
+		// Output: CallLevel was called from the top level
+	</script>
+</body>
+</html>

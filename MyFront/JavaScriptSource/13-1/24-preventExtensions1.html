@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var obj = {};
+		Object.defineProperties(obj, {
+		  a: {
+		    value: 5,
+		    writable: false,
+		    enumerable: true,
+		  },
+		  b: {
+		    get: function() {
+		      return 'zero';
+		    },
+		    set: function(value) {
+		      console.log(this, value);
+		      this.a = value;
+		    },
+		    enumerable: false,
+		    configurable: false,
+		  },
+		});
+		Object.defineProperty(obj, 'c', {
+		  value: { x: 3, y: 4 },
+		  writable: false,
+		  enumerable: true,
+		});
+
+		var nonExtensible = Object.preventExtensions(obj);
+		nonExtensible.d = 'new';
+		console.log(nonExtensible.d); // undefined
+	</script>
+</body>
+</html>

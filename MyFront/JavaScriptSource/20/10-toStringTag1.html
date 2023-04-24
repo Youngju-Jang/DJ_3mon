@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let Sports = function(){};
+		let sportsObj = new Sports;
+		console.log(sportsObj.toString());
+
+		Sports.prototype[Symbol.toStringTag] = "Sports-Function";
+		console.log(sportsObj.toString());
+	</script>
+</body>
+</html>

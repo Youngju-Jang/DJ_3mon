@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		console.log(Math.max(1, 2, 3)); // 3
+
+		// 배열 요소 중에서 최대값 취득
+		const arr = [1, 2, 3];
+		const max = Math.max.apply(null, arr);
+		console.log(max); // 3
+
+		// ES6 Spread operator
+		Math.max(...arr); // 3
+	</script>
+</body>
+</html>

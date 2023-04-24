@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var obj = {};
+		Object.defineProperties(obj, {
+		  a: {
+		    value: 5,
+		    writable: false,
+		    enumerable: true,
+		  },
+		  b: {
+		    get: function() {
+		      return 'kim';
+		    },
+		    set: function(value) {
+		      console.log(this, value);
+		      this.a = value;
+		    },
+		    enumerable: false,
+		    configurable: false,
+		  },
+		});
+
+		console.log(obj.a); // 5
+		console.log(obj.b); // 'kim'
+		obj.a = 10;
+		console.log(obj.a); // writable이 false라 그대로 5
+		for (var key in obj) {
+		  console.log(key); // b의 enumerable이 false이니까 a만 log됨
+		}
+		obj.b = 15; // 15로 설정되는 대신 set의 내용이 실행됨. set의 value는 15
+		console.log(obj.a); // this.a = value로 인해 15로 바뀌어야 하나 writable이 false라 무시됨
+		console.log(obj.b); // 그대로 'kim'
+		Object.defineProperty(obj, 'b', {
+		  value: 5
+		}); // Uncaught TypeError: Cannot redefine property: b // configuration이 false라 갱신 불가
+	</script>
+</body>
+</html>

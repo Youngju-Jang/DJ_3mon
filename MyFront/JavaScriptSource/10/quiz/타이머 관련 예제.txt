@@ -1,0 +1,10 @@
+
+
+https://www.w3schools.com/howto/howto_js_scroll_indicator.asp
+https://www.w3schools.com/howto/howto_js_sticky_header.asp
+https://www.w3schools.com/howto/howto_css_sticky_element.asp
+https://www.w3schools.com/howto/howto_js_shrink_header_scroll.asp
+
+settimeout
+https://www.w3schools.com/howto/howto_js_progressbar.asp
+https://www.w3schools.com/howto/howto_js_snackbar.asp

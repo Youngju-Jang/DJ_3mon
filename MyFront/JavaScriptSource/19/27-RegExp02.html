@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const tel1 = '0101234567팔';
+		const tel2 = '987654321';
+
+		// 정규 표현식 리터럴
+		const myRegExp1 = /^[0-9]+$/;
+		const myRegExp2 = new RegExp("^[0-9]+$")
+
+		console.log(myRegExp1.test(tel1)); // false
+		console.log(myRegExp1.test(tel2)); // true
+
+		console.log(myRegExp2.test(tel1)); // false
+		console.log(myRegExp2.test(tel2)); // true
+
+	</script>
+</body>
+</html>

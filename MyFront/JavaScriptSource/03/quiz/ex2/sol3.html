@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="val1" name="val1">
+    <input type="text" id="val2" name="val2">
+    <button id="plus">더하기</button>
+    <button id="minus">빼기</button>
+    <button id="mul">곱하기</button>
+    <button id="div">나누기</button>
+    <div id="content">
+
+    </div>
+    <script>
+        document.getElementById("plus").addEventListener("click", function() {
+            var a = document.getElementById("val1").value;
+            var b = document.getElementById("val2").value;
+            a = Number(a);
+            b = Number(b);
+            alert(`${a+b}`);
+        }, false);
+        document.getElementById("minus").addEventListener("click", function() {
+            var a = document.getElementById("val1").value;
+            var b = document.getElementById("val2").value;
+            a = Number(a);
+            b = Number(b);
+            alert(`${a+b}`);
+        }, false);
+        document.getElementById("mul").addEventListener("click", function() {
+            var a = document.getElementById("val1").value;
+            var b = document.getElementById("val2").value;
+            a = Number(a);
+            b = Number(b);
+            alert(`${a+b}`);
+        }, false);
+        document.getElementById("div").addEventListener("click", function() {
+            var a = document.getElementById("val1").value;
+            var b = document.getElementById("val2").value;
+            a = Number(a);
+            b = Number(b);
+            alert(`${a+b}`);
+        }, false);
+    </script>
+</body>
+</html>

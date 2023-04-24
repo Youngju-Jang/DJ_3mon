@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function square(x, callback) {
+		    setTimeout(callback, 100, x*x);
+		}
+		 
+		var number = 0;
+		square(2,function(x) {
+		    number = x;
+		});
+		console.log(number);
+	</script>
+</body>
+</html>

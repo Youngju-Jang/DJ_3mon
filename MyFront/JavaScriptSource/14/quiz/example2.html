@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#" method="get">
+        Name: <input type="text" id="myInput" name="fname" pattern=".{6,}" required>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById("myInput").addEventListener("invalid", myFunction);
+
+        function myFunction() {
+            alert("Must contain 6 or more characters");
+        }
+    </script>
+</body>
+
+</html>

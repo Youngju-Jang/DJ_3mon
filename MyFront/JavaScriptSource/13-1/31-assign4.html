@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var obj1 = {a:1};
+		var obj2 = {b:2};
+		var obj3 = {c:3};
+		var newObj = Object.assign(obj1, obj2, obj3);
+		console.log(newObj); // {a: 1, b: 2, c: 3}
+		console.log(obj1); // {a: 1, b: 2, c: 3}
+	</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="content">
+        <p>기존의 텍스트</p>
+    </div>
+    <script>
+        let con = document.getElementById("content");
+        let div = document.createElement("div");
+        let p1 = document.createElement("p");
+        let p2 = document.createElement("p");
+        let text1 = document.createTextNode("p1의 텍스트");
+        let text2 = document.createTextNode("p2의 텍스트");
+        p1.append(text1);
+        p2.append(text2);
+        div.append(p1, p2);
+        con.append(div);
+    </script>
+</body>
+</html>

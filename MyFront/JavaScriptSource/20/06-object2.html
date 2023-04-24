@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let sym = Symbol("123");
+		let obj = {[sym]: "456"};
+		console.log(obj);
+
+		console.log(obj[sym]);
+		console.log(obj.sym);
+	</script>
+</body>
+</html>

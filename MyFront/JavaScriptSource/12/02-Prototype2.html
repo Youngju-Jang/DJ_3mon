@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var a = {
+			aa : 123,
+			bb : 'hello'
+		};
+
+		a.__proto__.funcA = function(){
+			console.log('funcA 의 기능');
+		};
+
+		a.__proto__.paramB = 'hi';
+
+		// __proto__ 를 넣어도 상관은 없지만 생략 가능
+
+		a.__proto__.funcA();
+		a.funcA();
+		console.log(a.__proto__.paramB);
+		console.log(a.paramB);
+	</script>
+</body>
+</html>

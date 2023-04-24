@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="quiz1">
+        <h3>문제1</h3>
+        <label>답1<input type="radio" name="q1" id="q1_1" value="1"></label><br>
+        <label>답2<input type="radio" name="q1" id="q1_2" value="2"></label><br>
+        <label>답3<input type="radio" name="q1" id="q1_3" value="3"></label><br>
+        <label>답4<input type="radio" name="q1" id="q1_4" value="4"></label>
+    </div>
+    <button id="result">채점</button>
+    <div id="output">
+
+    </div>
+    <script>
+       document.querySelector('#result').addEventListener("click",function(){
+            var rbs = document.querySelectorAll('input[name="q1"]');
+            var ans = 3;
+            for (var rb of rbs) {
+                if (rb.checked) {
+                    if(rb.value == ans){
+                        document.getElementById("output").innerHTML = "<h1>정답입니다</h1>";
+                    }else{
+                        document.getElementById("output").innerHTML = "<h1>틀렸습니다</h1>";
+                    }
+                    break;
+                }
+            }
+       });
+    </script>
+</body>
+</html>

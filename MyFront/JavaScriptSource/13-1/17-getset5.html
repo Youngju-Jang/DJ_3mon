@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		Object.defineProperty(obj, 'c', {
+		  value: { x: 3, y: 4 },
+		  writable: false,
+		  enumerable: true,
+		});
+		console.log(obj.c); // { x: 3, y: 4 }
+		obj.c = 'kim';
+		console.log(obj.c); // writable이 false라 그대로 { x: 3, y: 4 }
+		obj.c.x = 5; // 값이 객체인 경우 그 객체의 속성을 바꿈
+		console.log(obj.c); // { x: 5, y: 4 }로 바뀜
+	</script>
+</body>
+</html>

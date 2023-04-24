@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 특수 문자 포함 여부를 검사한다.
+		const targetStr = 'abc#123';
+
+		// A-Za-z0-9 이외의 문자가 있는지 검사
+		let regexr = /[^A-Za-z0-9]/gi;
+
+		console.log(regexr.test(targetStr)); // true
+
+		// 아래 방식도 동작한다. 이 방식의 장점은 특수 문자를 선택적으로 검사할 수 있다.
+		regexr = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi;
+
+		console.log(regexr.test(targetStr)); // true
+
+		// 특수 문자 제거
+		console.log(targetStr.replace(regexr, '')); // abc123
+	</script>
+</body>
+</html>

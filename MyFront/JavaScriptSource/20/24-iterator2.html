@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let stringValue = "1A";
+		for (let value of stringValue) {
+		  console.log(value);
+		}
+		let iterObj = stringValue[Symbol.iterator]();
+
+		console.log(iterObj.next());
+		console.log(iterObj.next());
+		console.log(iterObj.next());
+	</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pic {
+            width : 200px;
+            height : 200px;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="pic"></div>
+    <button id="b1">버튼1</button>
+    <button id="b2">버튼2</button>
+    <button id="b3">버튼3</button>
+    <script>
+        document.getElementById("b1").addEventListener("click", function(){
+            document.querySelector(".pic").style.backgroundColor = "red";
+        },false);
+        document.getElementById("b2").addEventListener("click", function(){
+            document.querySelector(".pic").style.backgroundColor = "green";
+        },false);
+        document.getElementById("b3").addEventListener("click", function(){
+            document.querySelector(".pic").style.backgroundColor = "blue";
+        },false);
+    </script>
+</body>
+</html>

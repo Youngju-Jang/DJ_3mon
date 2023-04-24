@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function add(a, b){
+		    return a+b;
+		}
+		function conf(a, b){
+		    return `${a} + ${b}`;
+		}
+		var obj = {
+		    ["addNumber "+conf(5, 10)]:add(5, 10),
+		    [add(10, 20)+" is Result by"]:"10+20"
+		}
+		console.log(obj);
+	</script>
+</body>
+</html>

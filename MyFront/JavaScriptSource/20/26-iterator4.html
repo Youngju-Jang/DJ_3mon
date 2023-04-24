@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let obj = {};
+		obj[Symbol.iterator] = function*(){
+		  yield 10;
+		  yield 20;
+		  yield 30;
+		};
+		let result = [...obj];
+		console.log(result);
+	</script>
+</body>
+</html>

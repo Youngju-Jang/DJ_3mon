@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// y 플래그를 이용하여 검색 위치 조정
+		var str = '#foo#';
+		var regex = /foo/y;
+
+		regex.lastIndex = 1;
+		console.log(regex.exec(str)); // foo와 매칭됨
+		regex.lastIndex = 5;
+		console.log(regex.exec(str)); // 매칭되지 않음
+		console.log(regex.lastIndex); // 0 (매칭되지 않을 경우 0으로 초기화)
+	</script>
+</body>
+</html>

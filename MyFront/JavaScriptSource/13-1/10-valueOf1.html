@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var obj = { a: 'hi', b: 'kim' };
+		console.log(obj.valueOf()); // { a: 'hi', b: 'kim' }
+		console.log(obj + 5); // '[object Object]5' <-- 내부적으로 toString이 호출됨
+		obj.valueOf = function() {
+		  return 3;
+		}
+		console.log(obj + 5); // 8 <-- 내부적으로 valueOf가 호출됨
+	</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function Person(name, age, gender){
+			if(!(this instanceof Person)){
+				return new Person(name, age, gender);
+			}
+			this.name = name;
+			this.age = age;
+			this.gender = gender;
+		}
+
+		var qux = Person('qux', 20, 'man');
+		console.log(qux);
+	</script>
+</body>
+</html>
