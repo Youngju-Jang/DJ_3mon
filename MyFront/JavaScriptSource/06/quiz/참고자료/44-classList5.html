@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	.mystyle {
+	  width: 500px;
+	  height: 50px;
+	}
+
+	.anotherClass {
+	  background-color: lightblue;
+	}
+
+	.thirdClass {
+	  text-align: center;
+	  font-size: 25px;
+	  color: black;
+	  margin-bottom: 10px;
+	}
+	</style>
+</head>
+<body>
+	<div id="myDIV" class="mystyle anotherClass thirdClass">
+		I am a DIV element with multiple classes
+	</div>
+
+	<button onclick="myFunction1()">classList</button>
+	<button onclick="myFunction2()">length</button>
+	<button onclick="myFunction3()">item</button>
+	<button onclick="myFunction4()">contain</button>
+	<button onclick="myFunction5()">removeExpert</button>
+
+	<p id="demo1"></p>
+	<p id="demo2"></p>
+	<p id="demo3"></p>
+	<p id="demo4"></p>
+
+	<script type="text/javascript">
+		function myFunction1() {
+		  var x = document.getElementById("myDIV").classList;
+		  document.getElementById("demo1").innerHTML = x;
+		}
+		function myFunction2() {
+		  var x = document.getElementById("myDIV").classList.length;
+		  document.getElementById("demo2").innerHTML = x;
+		}
+		function myFunction3() {
+		  var x = document.getElementById("myDIV").classList.item(0);
+		  document.getElementById("demo3").innerHTML = x;
+		}
+		function myFunction4() {
+		  var x = document.getElementById("myDIV").classList.contains("mystyle");
+		  document.getElementById("demo4").innerHTML = x;
+		}
+		function myFunction5() {
+		  var x = document.getElementById("myDIV");
+
+		  if (x.classList.contains("mystyle")) {
+		    x.classList.remove("anotherClass");
+		  } else {
+		    alert("Could not find it.");
+		  }
+		}
+	</script>
+</body>
+</html>

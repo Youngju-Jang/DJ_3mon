@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.mystyle {
+	  width: 300px;
+	  height: 50px;
+	  background-color: coral;
+	  color: white;
+	  font-size: 25px;
+	}
+
+	.newClassName {
+	  width: 400px;
+	  height: 100px;
+	  background-color: lightblue;
+	  text-align: center;
+	  font-size: 25px;
+	  color: navy;
+	  margin-bottom: 10px;
+	}
+	</style>
+</head>
+<body>
+	<button onclick="myFunction()">Try it</button>
+	<div id="myDIV" class="mystyle">
+		I am a DIV element
+	</div>
+	<script type="text/javascript">
+		function myFunction() {
+		  document.getElementById("myDIV").classList.toggle("newClassName");
+		}
+	</script>
+</body>
+</html>

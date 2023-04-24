@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 원시 문자열
+		var str1 = String("12345");         
+		 
+		// String 객체    
+		var str2 = new String("Hello world.");  
+		 
+		// valueOf 메서드를 이용해 String 객체를 그에 상응하는 원시 문자열로 변환
+		var str3 = str2.valueOf();          
+		 
+		console.log(typeof str1);   // string
+		console.log(typeof str2);   // Object
+		console.log(typeof str3);   // string
+	</script>
+</body>
+</html>

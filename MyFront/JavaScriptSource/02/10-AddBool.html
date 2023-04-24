@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		console.log(0 + true);  // 1
+		console.log(0 + false);  // 0
+		console.log("" + true); // "true"
+		console.log("" + false); // "false"
+		console.log(!!(1));     // true
+		console.log(!!(-1));     // true
+		console.log(!!(0));     // false
+		console.log(!!(NaN));     // false
+		console.log(!!"abc");     // true
+		console.log(!!"false");     // true
+		console.log(!!"");     // false
+		console.log(!!null);    // false
+		console.log(!!undefined);    // false
+		console.log(!![]);    // true
+		console.log(!!{});    // true
+	</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var array = [2, 9, 9];
+		console.log(array.indexOf(2));     // 0
+		console.log(array.indexOf(7));     // -1
+		console.log(array.indexOf(9, 2));  // 2
+		console.log(array.indexOf(2, -1)); // -1
+		console.log(array.indexOf(2, -3)); // 0
+
+		// 요소의 모든 항목 찾기
+		var indices = [];
+		var array = ['a', 'b', 'a', 'c', 'a', 'd'];
+		var element = 'a';
+		var idx = array.indexOf(element);
+		while (idx != -1) {
+		  indices.push(idx);
+		  idx = array.indexOf(element, idx + 1);
+		}
+		console.log(indices); // [0, 2, 4]
+	</script>
+</body>
+</html>

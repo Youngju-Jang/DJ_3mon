@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function myFun(a, b, ...manyMoreArgs) {
+		  console.log("a", a); 
+		  console.log("b", b);
+		  console.log("manyMoreArgs", manyMoreArgs); 
+		}
+
+		myFun("one", "two", "three", "four", "five", "six");
+		// a, one
+		// b, two
+		// manyMoreArgs, [three, four, five, six]
+		myFun("one", "two", "three");
+		// a, one
+		// b, two
+		// manyMoreArgs, [three]
+		myFun("one", "two");
+		// a, one
+		// b, two
+		// manyMoreArgs, []
+	</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<img id="image" src="smiley.gif" width="160" height="120">
+	<p id="p1"></p>
+
+	<script type="text/javascript">
+		document.getElementById("p1").innerHTML = document.getElementById("image").src;
+		document.getElementById("image").src = "src/landscape.jpg";
+	</script>
+</body>
+</html>

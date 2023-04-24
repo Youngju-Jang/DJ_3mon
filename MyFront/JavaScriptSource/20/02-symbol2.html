@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let sym = Symbol();
+		try {
+		  +sym;
+		} catch (e) {
+		  console.log("+sym 사용 불가");
+		};
+
+		try {
+		  sym | 0;
+		} catch (e) {
+		  console.log("sym | 0 사용 불가");
+		};
+	</script>
+</body>
+</html>

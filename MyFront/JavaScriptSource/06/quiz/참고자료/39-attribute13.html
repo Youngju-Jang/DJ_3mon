@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<a id="myAnchor">A Link: Go to w3schools.com</a>
+
+	<button onclick="myFunction()">Try it</button>
+
+	<script type="text/javascript">
+	function myFunction() {
+	  var anchor = document.getElementById("myAnchor");
+	  var att = document.createAttribute("href");
+	  att.value = "https://www.w3schools.com";
+	  anchor.setAttributeNode(att);
+	}
+	</script>
+</body>
+</html>

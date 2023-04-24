@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		console.log(/a+/.exec("candy")); // a와 매칭됨
+		console.log(/a+/.exec("caaaaaaandy")); // aaaaaaa와 매칭됨
+		console.log(/a+/.exec("cndy")); // 매칭되지 않음
+	</script>
+</body>
+</html>

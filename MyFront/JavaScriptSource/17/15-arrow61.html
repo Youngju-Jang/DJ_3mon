@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		"use strict";
+		debugger;
+
+		let Sports = function(){
+		  this.count = 20;
+		};
+		Sports.prototype = {
+		  add: () => {
+		    this.count += 1;
+		  }
+		};
+		let newSports = new Sports();
+
+		newSports.add();
+		console.log(newSports.count);
+		console.log(window.count);
+
+
+		let dummy;
+	</script>
+</body>
+</html>

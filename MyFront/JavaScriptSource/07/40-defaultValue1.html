@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let [one, two, five = 5] = [1, 2];
+		console.log(one, two, five); // 1, 2, 5
+
+		[one, two, five = 5] = [1, 2, 77];
+		console.log(one, two, five); // 1, 2, 77
+
+		let {six, seven = 7} = {six: 6};
+		console.log(six, seven); // 6, 7
+	</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="quiz1">
+        <h3>문제1</h3>
+        <label>답1<input type="checkbox" name="q1" id="q1_1" value="1"></label><br>
+        <label>답2<input type="checkbox" name="q1" id="q1_2" value="2"></label><br>
+        <label>답3<input type="checkbox" name="q1" id="q1_3" value="3"></label><br>
+        <label>답4<input type="checkbox" name="q1" id="q1_4" value="4"></label><br>
+        <label>답5<input type="checkbox" name="q1" id="q1_5" value="5"></label>
+    </div>
+    <button id="result">채점</button>
+    <div id="output"></div>
+    <script>
+        document.querySelector('#result').addEventListener("click",function(){
+             var rbs = document.querySelectorAll('input[name="q1"]');
+             var ans1 = false;
+             var ans2 = false;
+             var ans3 = false;
+             var ans4 = false;
+             var ans5 = false;
+             for (var rb of rbs) {
+                 if (rb.checked) {
+                     if(rb.value == 1){
+                         ans1 = true;
+                     }else if(rb.value == 2){
+                         ans2 = true;
+                     }else if(rb.value == 3){
+                         ans3 = true;
+                     }else if(rb.value == 4){
+                         ans4 = true;
+                     }else if(rb.value == 5){
+                         ans5 = true;
+                     }
+                 }
+             }
+             console.log(`${ans1} ${ans2} ${ans3} ${ans4} ${ans5}`);
+             if((!ans1) && (!ans2) && ans3 && (!ans4) && ans5){
+                document.getElementById("output").innerHTML = "<h1>정답입니다</h1>";
+             }else{
+                document.getElementById("output").innerHTML = "<h1>틀렸습니다</h1>";
+             }
+        });
+     </script>
+</body>
+</html>

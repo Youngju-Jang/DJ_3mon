@@ -1,0 +1,15 @@
+innerHTML, innerText, 
+innerContent의 소개 : innerContent는 숨겨진 태그(display:none도 읽을 수 있다)
+addEventListener의 소개
+random() 함수 소개
+append(), prepend() 소개 및 appendChild(), InsertBefore() 소개
+https://webisfree.com/2020-08-07/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8-%EC%95%9E-%EB%98%90%EB%8A%94-%EB%92%A4%EC%97%90-%EC%9A%94%EC%86%8C-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-append()-appendchild()-prepend()-insertbefore()
+---------------------------------------------------------------
+양수 음수 판독기
+X의 배수 판독기
+4지선다 문제집 만들기
+가위바위보 게임 만들기
+목록 출력하기
+테이블 만들기
+
+

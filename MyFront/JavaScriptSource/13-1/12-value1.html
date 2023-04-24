@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var obj = {};
+		Object.defineProperty(obj, 'c', {
+		  value: 5,
+		  writable: false,
+		  enumerable: true,
+		  configurable : false
+		});
+		console.log(obj.c); // 5
+		obj.c = 7;
+		console.log(obj.c); // writable이 false이므로 5
+		for (var x in obj) {
+			console.log(x); // c의 enumerable이 true이니까 c는 반환
+		}
+		delete obj.c
+		console.log(obj.c); // configurable이 false이므로 c는 지워지지 않고 5 출력
+	</script>
+</body>
+</html>

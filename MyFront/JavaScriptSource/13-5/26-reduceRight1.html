@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		console.log([0, 1, 2, 3, 4].reduceRight(function(previousValue, currentValue, index, array) {
+			return previousValue + currentValue;
+		}));
+
+		console.log([0, 1, 2, 3, 4].reduceRight(function(previousValue, currentValue, index, array) {
+			return previousValue + currentValue;
+		}, 10));
+	</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		console.log([1, 2, 3].includes(2));     // true
+		console.log([1, 2, 3].includes(4));     // false
+		console.log([1, 2, 3].includes(3, 3));  // false
+		console.log([1, 2, 3].includes(3, -1)); // true
+		console.log([1, 2, NaN].includes(NaN)); // true
+
+		// fromIndex 가 배열의 길이보다 같거나 큰 경우 false를 반환한다.
+		var arr = ['a', 'b', 'c'];
+
+		console.log(arr.includes('c', 3));   // false
+		console.log(arr.includes('c', 100)); // false
+
+		// 0보다 작은 인덱스의 계산
+		// fromIndex 가 음수라면, valueToFind 를 찾기 시작할 배열의 위치로 
+		// 사용되기 위해 연산된다. 만약 계산된 인덱스가 -1 * array.length 
+		// 보다 작거나 같다면, 전체 배열이 검색된다.
+		var arr = ['a', 'b', 'c'];
+
+		console.log(arr.includes('a', -100)); // true
+		console.log(arr.includes('b', -100)); // true
+		console.log(arr.includes('c', -100)); // true
+		console.log(arr.includes('a', -2)); // false
+	</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .item {
+            width: 200px;
+            margin: 50px auto;
+            max-height: 250px;
+            padding: 75px 20px;
+            background: #ccc;
+            text-align: center;
+            color: #FFF;
+            font-size: 3em;
+        }
+
+        .item span {
+            display: block;
+            font-size: 1rem;
+        }
+
+        .item.item--primary {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            right: 20px;
+            background: green;
+        }
+
+        .item.item--secondary {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            left: 20px;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="item item--secondary" data-aos="fade-right" data-aos-anchor="#trigger-left"
+        data-aos-anchor-placement="top-top">
+        LEFT
+        <span>when top of <strong>2</strong> hits top of window</span>
+    </div>
+
+    <div class="item item--primary" data-aos="fade-left" data-aos-anchor="#trigger-right"
+        data-aos-anchor-placement="top-center">
+        RIGHT
+        <span>when top of <strong>5</strong> hits center of window</span>
+    </div>
+
+    <div class="item">1</div>
+    <div class="item" id="trigger-left">
+        2
+        <span>trigger left</span>
+    </div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item" id="trigger-right">
+        5
+        <span>trigger right</span>
+    </div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+    <div class="item">9</div>
+    <div class="item">10</div>
+    <div class="item">11</div>
+    <div class="item">12</div>
+    <script>
+        AOS.init({
+            duration: 1200,
+            easing: 'ease-in-out-back'
+        });
+    </script>
+</body>
+
+</html>

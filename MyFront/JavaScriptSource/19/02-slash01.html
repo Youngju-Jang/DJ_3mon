@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		console.log(/a\d/.exec("ad")); // 매칭되지 않음
+		console.log(/a\d/.exec("a1d")); // a1과 매칭됨
+
+		console.log(/a\*/.exec("aaaaaaa")); // 매칭되지 않음
+		console.log(/a\*/.exec("a*aaaaaa")); // a*과 매칭됨
+	</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 암시적 형변환
+        var a1 = 10 + "10";
+        console.log(a1); //-> "1010"
+        var a2 = true + "10";
+        console.log(a2); //-> "true10"
+        var a3 = true + 10;
+        console.log(a3); //-> 11
+        var a4 = "42";
+        console.log(typeof +a4); //-> number
+
+        // 문자열로 변환
+        /* 숫자를 문자열로 형변환 */
+        var n = 15;
+
+        // 숫자를 문자열로 변환한다.
+        n.toString();    //-> "15"
+
+        // 인수로 기수를 전달해 진법을 결정할 수 있다.
+        n.toString(16);  //-> "f"
+
+        // 인수로 전달한 숫자만큼의 소수점 자리수를 포함한 문자열로 변환한다.
+        var n = 12.345
+        n.toFixed(1)  //-> '12.3'
+        n.toFixed(3)  //-> '12.345'
+
+        // 인수로 전달한 유효숫자만큼 표시한다.
+        n.toPrecision(1)  //-> '1e+1'
+        n.toPrecision(3)  //-> '12.3'
+        
+        // String() 을 사용한 문자열 변환
+        String(15);    //-> '15'
+        String(true);  //-> 'true'
+
+        // parseInt와 parseFloat 함수를 사용해 문자열을 숫자로 변환
+        // parseInt : 문자열을 정수로 변환
+        // parseFloat : 함수는 문자열을 부동소수점으로 변환
+        /* parseInt */
+        parseInt("1010");  //-> 1010
+
+        // parseInt의 두번째 인자로 진수를 지정할 수 있습니다.
+        parseInt("16 volts", 10);  // 16
+
+        // 문자열을 16진수로 해석해서 10진수로 변경
+        parseInt("3a", 16);        //=> 58
+
+        /* parseFloat */
+        parseFloat("10.10");  //-> 10.1
+
+        // Number를 이용한 숫자 변환
+        Number("10.10");  //-> 10.1
+        Number(false);    //-> 0
+
+        // Boolean으로 형변환
+        var n = 0;
+        !!n;        //-> false
+        Boolean(n)  //-> false
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const targetStr = 'This is a pen.';
+		const regexr = /is/ig;
+
+		// RegExp 객체의 메소드
+		console.log(regexr.exec(targetStr)); // [ 'is', index: 2, input: 'This is a pen.' ]
+		console.log(regexr.test(targetStr)); // true
+
+		// String 객체의 메소드
+		console.log(targetStr.match(regexr)); // [ 'is', 'is' ]
+		console.log(targetStr.replace(regexr, 'IS')); // ThIS IS a pen.
+		// String.prototype.search는 검색된 문자열의 첫번째 인덱스를 반환한다.
+		console.log(targetStr.search(regexr)); // 2 ← index
+		console.log(targetStr.split(regexr));  // [ 'Th', ' ', ' a pen.' ]
+	</script>
+</body>
+</html>

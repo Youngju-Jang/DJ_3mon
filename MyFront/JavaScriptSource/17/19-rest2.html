@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		"use strict";
+		debugger;
+
+
+		let get = (...rest) => {
+		  console.log(rest);
+		  console.log(Array.isArray(rest));
+		}
+		get(...[1, 2, 3]);
+
+
+		let dummy;
+	</script>
+</body>
+</html>

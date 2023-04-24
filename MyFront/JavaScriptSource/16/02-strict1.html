@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 선언하지 않고 전역 변수를 만들 수 없습니다.
+		"use strict"
+		testvar = 4;
+
+		//writable이 false로, 읽기 전용 객체에 쓰는 것이 불가능 합니다. (read only 객체 수정 불가능)
+		"use strict";
+		var testObj = Object.defineProperties({}, {
+		    prop1: {
+		        value: 10,
+		        writable:false // by default
+		    },
+		    prop2: {
+		        get:function () {
+		        }
+		    }
+		});
+		testObj.prop1 = 20;
+		testObj.prop2 = 30;
+
+		// get으로 선언된 객체는 수정할 수 없습니다. (getter-only property 수정 불가능)
+		"use strict";
+		var obj2 = { get x() {return 17; } };
+		obj2.x = 5;// throws a TypeError
+
+		// extensible 특성이 false로 설정된 객체에 속성을 확장 할 수 없습니다. (확장 불가 객체 확장 불가능)
+		"use strict";
+		var testObj =new Object();
+ 
+		Object.preventExtensions(testObj);
+ 
+		testObj.name ="Bob";
+
+		// delete를 호출 할 수 없습니다.
+		"use strict";
+		var testvar = 15;
+		function testFunc() {};
+		delete testvar;
+		delete testFunc;
+		 
+		Object.defineProperty(testObj,"testvar", {
+		    value: 10,
+		    configurable:false
+		    });
+		delete testObj.testvar;
+
+		// 리터럴 객체는 동일한 이름의 property를 가질 수 없습니다.(하지만ES6는 가능함)
+		"use strict";
+		var o = { p: 1, p: 2 };// !!! syntax error
+
+		// 함수의 동일한 매개 변수 이름을 선언하는 것이 불가능 합니다.
+		"use strict";
+		function testFunc(param1, param1) {
+		    return 1;
+		};
+
+		// 8진수 숫자 리터럴 및 이스케이프 문자를 사용 할 수 없습니다.
+		"use strict";
+		var testoctal = 010;
+		var testescape = \010;
+
+		// primitive values의 속성 설정이 불가능합니다.
+		(function() {
+			"use strict";
+			 
+			false.true ="";        // TypeError
+			(14).sailing ="home";    // TypeError
+			"with".you ="far away";// TypeError
+			 
+		})();
+
+		// 변수 사용의 명료화(Simplify variable uses)
+		// with를 사용할 수 없습니다.
+		"use strict";
+		var foo = {
+		    name:"foo"
+		};
+		with (foo) {
+		    console.log(name);
+		}
+
+		// eval 함수는 주변 스코프에 새로운 변수를 추가하지 않습니다.
+		var x = 17;
+		var evalX = eval("'use strict'; var x = 42; x");
+		console.log(x);
+		console.log(evalX);
+
+		// eval과 arguments 명료화(Making eval and arguments simpler)
+		// eval을 변수 또는 함수, 매개 변수의 이름으로 사용할 수 없습니다.
+		"use strict";
+		eval = 17;
+		++eval;
+		var eval;
+		function x(eval) { }
+		var y =function eval() { };
+
+		// arguments를 변수 또는 함수, 매개 변수의 이름으로 사용할 수 없습니다.
+		"use strict";
+		arguments++;
+		var obj = { set p(arguments) { } };
+		try { }catch (arguments) { }
+		function arguments() { }
+		var f =new Function("arguments","'use strict'; return 17;");
+
+		// 인자값을 수정함으로 arguments의 값이 수정되지 않습니다.
+		function f(a){
+		    "use strict";
+		    a = 42;
+		    return [a, arguments[0]];
+		}
+		var pair = f(17);
+		console.log(pair[0]);
+		console.log(pair[1]);
+
+		// callee를 지원하지 않습니다.
+		"use strict";
+		var f =function() {return arguments.callee; };
+		f();// throws a TypeErrorr
+
+		// 안전한 자바스크립트("Securing" JavaScript)
+		// this의 값이 null 또는 undefined인 경우 전역 객체로 변환하지 않습니다.
+		"use strict";
+		function fun() {return this; }
+		console.log(fun());
+		console.log(fun.call(2));
+		console.log(fun.apply(null));
+		console.log(fun.call(undefined));
+		console.log(fun.bind(true)());
+
+		// callee, caller를 통해 stack 검색이 불가능합니다.
+		function restricted() {
+		    "use strict";
+		    restricted.caller;   // throws a TypeError
+		    restricted.arguments;// throws a TypeError
+		}
+		function privilegedInvoker() {
+		    return restricted();
+		}
+		privilegedInvoker();
+
+		// arguments의 caller를 지원하지 않습니다.
+		"use strict";
+		function fun(a, b){
+			"use strict";
+			var v = 12;
+			return arguments.caller;// throws a TypeError
+		}
+		fun(1, 2);// doesn't expose v (or a or b)
+
+		// 미래의 자바스트립트 준비(Paving the way for future ECMAScript versions)
+		// 예약된 키워드의 이름으로 변수 또한 함수를 생성할 수 없습니다.
+		"use strict"
+		var implements ="";
+		var interface ="";
+		var package ="";
+		var private ="";
+		var protected ="";
+		var public ="";
+		var static ="";
+		var yield ="";
+
+		// 함수 선언은 스크립트나 함수의 최상위에서 해야 합니다.
+		"use strict";
+		if (true){
+			function f() { }// !!! syntax error
+			f();
+		}
+		 
+		for (var i = 0; i < 5; i++){
+			function f2() { }// !!! syntax error
+			f2();
+		}
+		 
+		function baz(){// kosher
+			function eit() { }// also kosher
+		}
+	</script>	
+</body>
+</html>

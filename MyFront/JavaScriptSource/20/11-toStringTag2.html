@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		class Book {};
+		let bookObj = new Book();
+		console.log(bookObj.toString());
+
+		class Sports {
+		  get [Symbol.toStringTag]() {
+		    return "Sports-class";
+		  }
+		};
+		let sportsObj = new Sports();
+		console.log(sportsObj.toString());
+		console.log(Map.prototype[Symbol.toStringTag]);
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var a = {
+		    aa : 123,
+		    bb : function(){
+		        console.log('a 객체 내 bb function');
+		    }
+		}
+
+		a.cc = 3;
+
+		console.dir(a);
+
+		var b = {
+			aa : 123,
+			bb : function(){
+				console.log('b 객체 내 bb function');
+			}
+		}
+
+		b.__proto__.cc = 3;
+		console.dir(b);
+	</script>
+</body>
+</html>

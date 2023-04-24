@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var a = [false, 1, '2'];
+		console.log(a.propertyIsEnumerable(0)); // true
+		console.log(a.propertyIsEnumerable('length')); // false
+		for (var value in a) {
+		  console.log(value); // 0, 1, 2
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		try {
+			myroutine();
+		} catch (e instanceof TypeError) {
+			console.log("TypeError : "+e.message);
+		} else if (e instanceof RangeError) {
+			console.log("RangeError : "+e.message);
+		} else if (e instanceof EvalError) {
+			console.log("EvalError : "+e.message);
+		} else if (e instanceof ReferenceError) {
+			console.log("ReferenceError : "+e.message);
+		} else {
+			console.log(e.name);
+		}
+	</script>
+</body>
+</html>

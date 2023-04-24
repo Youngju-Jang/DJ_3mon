@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const person = {};
+
+        Object.defineProperty(person, 'name', {
+            set(value) { this.name1 = `${value}-set`; },
+            get() { return `get-${this.name1}`; },
+        });
+
+        person.name = 'sungin'; // set을 통해 sungin-set 으로 설정
+        console.log(person.name);  // get을 통해 get-sungin-set 으로 설정
+    </script>
+</body>
+
+</html>

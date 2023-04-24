@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var callback = function(){
+			console.dir(this);
+		};
+
+		var obj = {
+			a : 1,
+			b : function(cb){
+				cb.call(this);
+			}
+		};
+		obj.b(callback);  // Object
+	</script>
+</body>
+</html>

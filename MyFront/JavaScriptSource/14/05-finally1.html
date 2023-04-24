@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		try { 
+			console.log('try 구문'); 
+			abcd.run(); // 없는객체의 없는 메서드이기 때문에 예외 발생 
+			console.log('try 구문 끝'); // 예외로 인해 실행 되지 않음 
+		} catch (exception) { 
+			console.log('예외 발생시 실행 되는 catch 구문'); 
+		} finally { 
+			console.log('예외 발생 여부 상관없이 실행 되는 finally 구문'); 
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var o = {
+		    set current (str) {
+		        this.log[this.log.length] = str;
+		    },
+		    log: []
+		}
+		o.current = "test";
+		console.log(o);
+	</script>
+</body>
+</html>

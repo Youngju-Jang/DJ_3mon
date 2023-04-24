@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var obj = {};
+		Object.defineProperties(obj, {
+		  a: {
+		    value: 5,
+		    writable: false,
+		    enumerable: true,
+		  },
+		  b: {
+		    get: function() {
+		      return 'zero';
+		    },
+		    set: function(value) {
+		      console.log(this, value);
+		      this.a = value;
+		    },
+		    enumerable: false,
+		    configurable: false,
+		  },
+		});
+		Object.defineProperty(obj, 'c', {
+		  value: { x: 3, y: 4 },
+		  writable: false,
+		  enumerable: true,
+		});
+
+		var frozenObj = Object.freeze(obj);
+		var sealedObj = Object.seal(obj);
+		var nonExtensible = Object.preventExtensions(obj);
+
+		console.log(Object.isFrozen(frozenObj)); // true
+		console.log(Object.isSealed(sealedObj)); // true
+		console.log(Object.isExtensible(nonExtensible)); // false
+	</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var myString = 'Table of Contents';
+		document.body.innerHTML = myString.anchor('contents_anchor');
+
+		var hotText = 'MDN';
+		var URL = 'https://developer.mozilla.org/';
+
+		console.log('Click to return to ' + hotText.link(URL));
+		// Click to return to <a href="https://developer.mozilla.org/">MDN</a>
+	</script>
+</body>
+</html>

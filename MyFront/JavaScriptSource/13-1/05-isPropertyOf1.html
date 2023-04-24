@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var GrandParent = function() { };
+
+		var Parent = function() { };
+		Parent.prototype = new GrandParent();
+		Parent.prototype.constructor = Parent;
+
+		var Child = function() { };
+		Child.prototype = new Parent();
+		Child.prototype.constructor = Child;
+
+		var child = new Child();
+		console.log(Parent.prototype.isPrototypeOf(child)); // true
+		console.log(GrandParent.prototype.isPrototypeOf(child)); // true
+	</script>
+</body>
+</html>

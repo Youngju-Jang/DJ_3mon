@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function isBigEnough(element, index, array) {
+		  return element >= 10;
+		}
+		console.log([12, 5, 8, 130, 44].every(isBigEnough));   // false
+		console.log([12, 54, 18, 130, 44].every(isBigEnough)); // true
+
+		console.log([12, 5, 8, 130, 44].every(elem => elem >= 10)); // false
+		console.log([12, 54, 18, 130, 44].every(elem => elem >= 10)); // true
+	</script>
+</body>
+</html>

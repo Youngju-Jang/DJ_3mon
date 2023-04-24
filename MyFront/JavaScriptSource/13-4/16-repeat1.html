@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		console.log('abc'.repeat(0));   // ''
+		console.log('abc'.repeat(1));   // 'abc'
+		console.log('abc'.repeat(2));   // 'abcabc'
+		console.log('abc'.repeat(2.5)); // 'abcabc' (2.5 → 2)
+		console.log('abc'.repeat(-1));  // RangeError: Invalid count value
+	</script>
+</body>
+</html>

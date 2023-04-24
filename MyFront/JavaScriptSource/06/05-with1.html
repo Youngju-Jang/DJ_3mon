@@ -1,0 +1,29 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var product = {
+		    name: '7D 건조 망고',
+		    kind: '당절임',
+		    ingredient: '망고, 설탕, 메타중아황산나트륨, 치자황색소',
+		    origin: '필리핀',
+		     
+		    getName: function() {
+		        return this.name;
+		    }
+		};
+		 
+		with(product) {
+		    console.log(name); // 7D 건조 망고
+		    console.log(kind); // 당절임
+		    console.log(ingredient); // 망고, 설탕, 메타중아황산나트륨, 치자황색소
+		    console.log(origin); // 필리핀
+		    console.log(getName()); // 7D 건조 망고
+		}
+	</script>
+</body>
+</html>

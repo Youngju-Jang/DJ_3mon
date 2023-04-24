@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var obj = {a : 10};
+		Object.defineProperty(obj, "roll", {
+		  get: function(){
+		    return this.a;
+		  },
+		  set: function(a){
+		  	this.a = a+3
+		  }
+		});
+
+		
+		console.log(obj.roll); // 10
+		obj.roll = 3;
+		console.log(obj.roll); // 6
+	</script>
+</body>
+</html>

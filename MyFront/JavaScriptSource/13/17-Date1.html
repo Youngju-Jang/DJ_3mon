@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var date = new Date();
+		console.log(date); // Thu May 16 2019 17:16:13 GMT+0900 (한국 표준시)
+
+		// KST(Korea Standard Time)는 GMT(그리니치 평균시: Greenwich Mean Time)에 9시간을 더한 시간이다.
+		var date = new Date(0);
+		console.log(date); // Thu Jan 01 1970 09:00:00 GMT+0900 (한국 표준시)
+
+		// 86400000ms는 1day를 의미한다.
+		// 1s = 1,000ms
+		// 1m = 60s * 1,000ms = 60,000ms
+		// 1h = 60m * 60,000ms = 3,600,000ms
+		// 1d = 24h * 3,600,000ms = 86,400,000ms
+		date = new Date(86400000);
+		console.log(date); // FFri Jan 02 1970 09:00:00 GMT+0900 (한국 표준시)
+
+		var date = new Date('May 16, 2019 17:22:10');
+		console.log(date); // Thu May 16 2019 17:22:10 GMT+0900 (한국 표준시)
+
+		date = new Date('2019/05/16/17:22:10');
+		console.log(date); // Thu May 16 2019 17:22:10 GMT+0900 (한국 표준시)
+
+
+		// 월을 나타내는 4는 5월을 의미한다.
+		// 2019/5/1/00:00:00:00
+		var date = new Date(2019, 4);
+		console.log(date); // Wed May 01 2019 00:00:00 GMT+0900 (한국 표준시)
+
+		// 월을 나타내는 4는 5월을 의미한다.
+		// 2019/5/16/17:24:30:00
+		date = new Date(2019, 4, 16, 17, 24, 30, 0);
+		console.log(date); // Thu May 16 2019 17:24:30 GMT+0900 (한국 표준시)
+
+		// 가독성이 훨씬 좋다.
+		date = new Date('2019/5/16/17:24:30:10');
+		console.log(date); // Thu May 16 2019 17:24:30 GMT+0900 (한국 표준시)
+
+		// Date 생성자 함수를 new 연산자없이 호출하면 인스턴스를 반환하지 않고 결과값을 문자열로 반환한다.
+		var date = Date();
+		console.log(typeof date, date); // string Thu May 16 2019 17:33:03 GMT+0900 (한국 표준시)
+	</script>
+</body>
+</html>

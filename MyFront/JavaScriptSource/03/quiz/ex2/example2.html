@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li><p><span></span></p></li>
+        <li><p id="p1"></p></li>
+        <li><p class="p2"></p></li>
+        <li><p class="p3"></p></li>
+        <li><p class="p3"></p></li>
+    </ul>
+    <script>
+        document.getElementsByTagName("span")[0].innerHTML = "이것은 태그로 접근한 element";
+        document.getElementById("p1").innerHTML = '이것은 id 값으로 접한 element';
+        document.querySelector(".p2").innerHTML = '이것은 class 값으로 접한 element';
+        document.querySelectorAll(".p3")[1].innerHTML = '이것은 class 값으로 접한 element';
+    </script>
+</body>
+</html>

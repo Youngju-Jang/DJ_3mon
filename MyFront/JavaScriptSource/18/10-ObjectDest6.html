@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let options = {title: "Menu",height: 200,width: 100};
+        // title = 이름이 title인 프로퍼티
+        // rest = 나머지 프로퍼티들
+        let { title, ...rest } = options;
+
+        // title엔 "Menu", rest엔 {height: 200, width: 100}이 할당된다.
+        console.log(title); // Menu
+        console.log(rest); // {height: 200, width: 100}
+        console.log(rest.height);  // 200
+        console.log(rest.width);   // 100
+    </script>
+</body>
+
+</html>

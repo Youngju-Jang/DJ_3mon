@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		console.log(!!true);                   // !!truthy returns true
+		console.log(!!{});                     // !!truthy returns true: any object is truthy...
+		console.log(!!(new Boolean(false)));   // ...even Boolean objects with a false .valueOf()!
+		console.log(!!false);                  // !!falsy returns false
+		console.log(!!"");                     // !!falsy returns false
+		console.log(!!Boolean(false));         // !!falsy returns false
+	</script>
+</body>
+</html>

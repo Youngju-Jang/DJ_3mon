@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<script type="text/javascript">
+		// Rest 파라미터 이전에, "arguments" 는 다음을 사용해 일반적인 배열로 변환될 수 있음
+		function f1(a, b) {
+			var normalArray = Array.prototype.slice.call(arguments);
+			// -- 또는 --
+			var normalArray = [].slice.call(arguments);
+			// -- 또는 --
+			var normalArray = Array.from(arguments);
+
+			var first = normalArray.shift(); // OK, 첫 번째 인수를 반환
+			// var first = arguments.shift(); // ERROR (arguments 가 일반적인 배열이 아님)
+			console.log(first);  // 1
+		}
+
+		// 이제 rest 파라미터를 사용해 쉽게 일반적인 배열에 접근할 수 있음
+		function f2(...args) {
+			var normalArray = args;
+			var first = normalArray.shift(); // OK, 첫 번째 인수를 반환
+			console.log(first);  // 1
+		}
+
+		f1(1, 2);
+		f2(1, 2);
+	</script>
+</body>
+
+</html>

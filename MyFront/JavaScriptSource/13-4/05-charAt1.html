@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const str = 'Hello';
+
+		console.log(str.charAt(0)); // H
+		console.log(str.charAt(1)); // e
+		console.log(str.charAt(2)); // l
+		console.log(str.charAt(3)); // l
+		console.log(str.charAt(4)); // o
+		// 지정한 index가 범위(0 ~ str.length-1)를 벗어난 경우 빈문자열을 반환한다.
+		console.log(str.charAt(5)); // ''
+
+		// 문자열 순회. 문자열은 length 프로퍼티를 갖는다.
+		for (let i = 0; i < str.length; i++) {
+		  console.log(str.charAt(i));
+		}
+
+		// String 객체는 유사 배열 객체이므로 배열과 유사하게 접근할 수 있다.
+		for (let i = 0; i < str.length; i++) {
+		  console.log(str[i]); // str['0']
+		}
+	</script>
+</body>
+</html>

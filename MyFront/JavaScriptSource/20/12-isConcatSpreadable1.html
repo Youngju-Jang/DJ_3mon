@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let one = [11, 12], two = [21, 22];
+		let result = one.concat(two);
+		console.log(result, result.length);
+
+		two[Symbol.isConcatSpreadable] = false;
+		result = one.concat(two);
+		console.log(result, result.length);
+
+		two[Symbol.isConcatSpreadable] = true;
+		result = one.concat(two);
+		console.log(result, result.length);
+	</script>
+</body>
+</html>

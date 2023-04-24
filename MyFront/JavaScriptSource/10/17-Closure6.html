@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function setName(name){
+			return function() {
+				return name;
+			}
+		}
+
+		var sayMyName = setName('고무곰');
+		sayMyName();
+	</script>
+</body>
+</html>

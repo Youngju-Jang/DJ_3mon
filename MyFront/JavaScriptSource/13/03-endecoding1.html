@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var escaped_string = escape("https://doitnow-man.tistory.com/test/간디");
+		console.log(escaped_string);
+
+		var unescaped_string = unescape(escaped_string);
+		console.log(unescaped_string);
+
+		var encodeURI_string = encodeURI("https://doitnow-man.tistory.com/test/간디");
+		console.log(encodeURI_string);
+
+		var decodeURI_string = decodeURI(encodeURI_string);
+		console.log(decodeURI_string);
+
+		var encodeURICom_string = encodeURIComponent("https://doitnow-man.tistory.com/test/간디");
+		console.log(encodeURICom_string);
+
+		var decodeURICom_string = decodeURIComponent(encodeURICom_string);
+		console.log(decodeURICom_string);
+	</script>
+</body>
+</html>

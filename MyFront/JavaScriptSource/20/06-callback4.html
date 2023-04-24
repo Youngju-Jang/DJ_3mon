@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		try {
+		  setTimeout(() => { throw new Error('Error!'); }, 1000);
+		} catch (e) {
+		  console.log('에러를 캐치하지 못한다..');
+		  console.log(e);
+		}
+	</script>
+</body>
+</html>

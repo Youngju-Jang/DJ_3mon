@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var o = {
+		  set foo (val) {
+		    delete this.foo;
+		    this.foo = val;
+		  },
+		  get foo () {
+		    delete this.foo;
+		    return this.foo = 'something';
+		  }
+		};
+
+		o.foo = "test";
+		console.log(o.foo);
+	</script>
+</body>
+</html>

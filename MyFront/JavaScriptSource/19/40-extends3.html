@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const targetStr = '12345';
+
+		// 모두 숫자인지 검사
+		// [^]: 부정(not)을 의미한다. 얘를 들어 [^a-z]는 알파벳 소문자로 시작하지 않는 모든 문자를 의미한다.
+		// [] 바깥의 ^는 문자열의 처음을 의미한다.
+		const regexr = /^\d+$/;
+
+		console.log(regexr.test(targetStr)); // true
+	</script>
+</body>
+</html>

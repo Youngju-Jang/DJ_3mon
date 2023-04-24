@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 뺄셈
+		bar = 5;
+
+		bar -= 2;     // 3
+		console.log(bar);
+		bar -= "foo"; // NaN
+		console.log(bar);
+
+		// 곱셈
+		bar = 5
+
+		bar *= 2     // 10
+		console.log(bar);
+		bar *= "foo" // NaN
+		console.log(bar);
+
+		// 나눗셈
+		bar = 5
+
+		bar /= 2     // 2.5
+		console.log(bar);
+		bar /= "foo" // NaN
+		console.log(bar);
+		bar = 5
+		bar /= 0     // Infinity
+		console.log(bar);
+
+		// 나머지 연산
+		bar = 5
+
+		bar %= 2     // 1
+		console.log(bar);
+		bar %= "foo" // NaN
+		console.log(bar);
+		bar = 5
+		bar %= 0     // NaN
+		console.log(bar);
+
+		// 거듭제곱 할당
+		bar = 5
+
+		bar **= 2     // 25
+		console.log(bar);
+		bar **= "foo" // NaN
+		console.log(bar);
+	</script>
+</body>
+</html>

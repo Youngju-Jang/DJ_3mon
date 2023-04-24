@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function countSeconds(howMany){
+			for (var i = 1; i <= howMany; i++) {
+				(function(){
+					var current = i;
+					setTimeout(function(){
+						console.log(current);
+					}, current*1000);
+				}());
+			}
+		}
+
+		countSeconds(3);
+	</script>
+</body>
+</html>

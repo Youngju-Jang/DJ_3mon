@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let sports = {
+		  event: "축구",
+		  player: 11
+		}
+		let dup = sports;
+
+		sports.player = 55;
+		console.log(dup.player);
+
+		dup.event = "농구";
+		console.log(sports.event);
+	</script>
+</body>
+</html>

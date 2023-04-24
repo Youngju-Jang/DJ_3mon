@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>커피를 주문하세요.</h3>
+    <button data-coffee-name="아메리카노" data-price="4100">아메리카노</button>
+    <button data-coffee-name="카페라떼" data-price="4300">카페라떼</button>
+    <button data-coffee-name="바닐라라떼" data-price="4600">바닐라라떼</button>
+    <hr>
+    <h3>주문내역</h3>
+    <p><span id="coffee"></span> : <span id="price"></span>원</p>
+    <script>
+        //1. 문서객체선택
+        var button = document.getElementsByTagName('button');
+        var coffee = document.getElementById('coffee');
+        var price = document.getElementById('price');
+
+        for (var i = 0; i < button.length; i++) {
+            button[i].addEventListener('click', function () {
+                var cName = this.dataset.coffeeName; //카멜표기법으로 작성
+                var cPrice = this.dataset.price;
+
+                coffee.textContent = cName;
+                price.textContent = cPrice;
+            });
+        }
+    </script>
+</body>
+
+</html>

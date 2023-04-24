@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="tab-menu"></div>
+    <script>
+        function TabMenu(name){
+            this.tabMenu = document.getElementById(name);
+            this.tabMenu.style.display = "flex";
+            this.tabMenu.style.flexDirection = "column";
+            this.tabMenu.style.width = "400px";
+
+            this.headerDiv = document.createElement("div");
+            this.bodyDiv = document.createElement("div");
+            this.bodyDiv.style.height = "300px";
+            this.bodyDiv.style.backgroundColor = "gray";
+
+            this.button1 = document.createElement("button");
+            this.button2 = document.createElement("button");
+            this.button3 = document.createElement("button");
+
+            this.button1.textContent = "버튼1";
+            this.button2.textContent = "버튼2";
+            this.button3.textContent = "버튼3";
+
+            this.headerDiv.append(this.button1);
+            this.headerDiv.append(this.button2);
+            this.headerDiv.append(this.button3);
+
+            this.tabMenu.append(this.headerDiv);
+            this.tabMenu.append(this.bodyDiv);
+        }
+
+        TabMenu.prototype.init = function(){
+            const self = this;
+            this.button1.addEventListener("click",function(){
+                self.bodyDiv.style.backgroundColor = "red";
+            });
+            this.button2.addEventListener("click",function(){
+                self.bodyDiv.style.backgroundColor = "blue";
+            });
+            this.button3.addEventListener("click",function(){
+                self.bodyDiv.style.backgroundColor = "green";
+            });
+        }
+
+        const tab = new TabMenu("tab-menu");
+        tab.init();
+    </script>
+</body>
+</html>

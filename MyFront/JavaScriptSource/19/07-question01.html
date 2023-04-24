@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		console.log(/e?le?/.exec("angel")); // el에 매칭됨
+		console.log(/e?le?/.exec("oslo")); // l에 매칭됨
+
+		console.log(/\d+/.exec("123abc")); // 123과 매칭됨
+		console.log(/\d+?/.exec("123abc")); // 1과 매칭됨
+	</script>
+</body>
+</html>

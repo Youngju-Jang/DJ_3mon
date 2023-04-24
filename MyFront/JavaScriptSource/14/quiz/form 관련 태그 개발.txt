@@ -1,0 +1,17 @@
+// 비어있는 인풋창 인식
+https://www.w3schools.com/howto/howto_js_validation_empty_input.asp
+
+// keyCode - 엔터 입력
+https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
+
+// CopyText 창 개발
+https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
+
+// 정규표현식
+https://www.w3schools.com/howto/howto_js_password_validation.asp
+
+// 멀티 스텝
+https://www.w3schools.com/howto/howto_js_form_steps.asp
+
+// 자동완성 기능
+https://www.w3schools.com/howto/howto_js_autocomplete.asp

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var bCondition1 = 4>3;
+		var bCondition2 = 1<5;
+		// 불리언 계산에서, 다음 두 코드는 항상 같다.
+		console.log(bCondition1 && bCondition2);
+		console.log(!(!bCondition1 || !bCondition2));
+		// 불리언 계산에서, 다음 두 코드는 항상 같다.
+		console.log(bCondition1 || bCondition2);
+		console.log(!(!bCondition1 && !bCondition2));
+		// 불리언 계산에서, 다음 두 코드는 항상 같다.
+		var bCondition = true;
+		console.log(!!bCondition);
+		console.log(bCondition);
+	</script>
+</body>
+</html>

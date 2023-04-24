@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		try {
+		  let obj = Object.assign(null, {x: 1});
+		} catch (e) {
+		  console.log("null 지정 불가");
+		}
+
+		console.log(Object.assign(123));
+		console.log(Object.assign(456, 70));
+	</script>
+</body>
+</html>

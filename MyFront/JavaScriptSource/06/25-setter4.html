@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var expr = "foo";
+
+		var obj = {
+		  baz: "bar",
+		  set [expr](v) { this.baz = v; }
+		};
+
+		console.log(obj.baz); // "bar"
+		obj.foo = "baz";      // run the setter
+		console.log(obj.baz); // "baz"
+	</script>
+</body>
+</html>

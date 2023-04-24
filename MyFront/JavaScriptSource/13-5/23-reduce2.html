@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var maxCallback = ( acc, cur ) => Math.max( acc.x, cur.x );
+		var maxCallback2 = ( max, cur ) => Math.max( max, cur );
+
+		// initialValue 없이 reduce()
+		console.log([ { x: 22 }, { x: 42 } ].reduce( maxCallback )); // 42
+		console.log([ { x: 22 }            ].reduce( maxCallback )); // { x: 22 }
+		// console.log([                      ].reduce( maxCallback )); // TypeError
+
+		// map/reduce로 개선 - 비었거나 더 큰 배열에서도 동작함
+		console.log([ { x: 22 }, { x: 42 } ].map( el => el.x )
+		                        .reduce( maxCallback2, -Infinity ));
+	</script>
+</body>
+</html>

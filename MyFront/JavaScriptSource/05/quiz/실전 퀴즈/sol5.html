@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Style the tab */
+        .tab {
+            display: flex;
+            /* overflow: hidden; */
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            background-color: #f1f1f1;
+            border: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <button class="tablinks" id="tab1">탭메뉴1</button>
+        <button class="tablinks" id="tab2">탭메뉴2</button>
+        <button class="tablinks" id="tab3">탭메뉴3</button>
+    </div>
+
+    <div id="tab1-content" class="tabcontent">
+        <h3>탭메뉴1</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto facere omnis quod quisquam non, amet error vero ullam recusandae ea deleniti libero, ipsam nobis, consequuntur tempore fuga voluptate itaque sapiente?</p>
+    </div>
+
+    <div id="tab2-content" class="tabcontent">
+        <h3>탭메뉴2</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo iusto exercitationem sapiente itaque magnam? Ea iure natus repellat fugit, repudiandae quasi vel fuga corrupti ipsum minus impedit incidunt asperiores repellendus!</p>
+    </div>
+
+    <div id="tab3-content" class="tabcontent">
+        <h3>탭메뉴3</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis tempora non quisquam quo. Porro facilis suscipit hic, unde perferendis, voluptas vitae asperiores incidunt provident magni, optio maiores quas. Molestias, saepe!</p>
+    </div>
+    <script>
+        document.getElementById("tab1").addEventListener("click", function(){
+            var tabcontent = document.getElementsByClassName("tabcontent");
+            var tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tablinks[i].style.backgroundColor = "#f1f1f1";
+            }
+            document.getElementById("tab1-content").style.display = "block";
+            this.style.backgroundColor = "#ccc";
+        },false);
+
+        document.getElementById("tab2").addEventListener("click", function(){
+            var tabcontent = document.getElementsByClassName("tabcontent");
+            var tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tablinks[i].style.backgroundColor = "#f1f1f1";
+            }
+            document.getElementById("tab2-content").style.display = "block";
+            this.style.backgroundColor = "#ccc";
+        },false);
+
+        document.getElementById("tab3").addEventListener("click", function(){
+            var tabcontent = document.getElementsByClassName("tabcontent");
+            var tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tablinks[i].style.backgroundColor = "#f1f1f1";
+            }
+            document.getElementById("tab3-content").style.display = "block";
+            this.style.backgroundColor = "#ccc";
+        },false);
+    </script>
+</body>
+
+</html>

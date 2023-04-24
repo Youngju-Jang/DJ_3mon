@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		document.body.innerHTML = '<div id="a">클릭하세요</div>';
+		var obj = {a : 1};
+
+		document.getElementById('a').addEventListener('click', function(){
+			console.dir(this);
+		}.bind(obj));
+	</script>
+</body>
+</html>

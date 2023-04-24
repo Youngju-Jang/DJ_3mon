@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</tiDtle>
+</head>
+<body>
+	<script type="text/javascript">
+		let values = [10, 20, 30];
+		Array.prototype.music = function(){
+		  return "음악"
+		};
+
+		Object.prototype.sports = function(){
+		  return "스포츠"
+		};
+		console.log("<<<for-in>>>");
+		for (var key in values) {
+		  console.log(key, values[key]);
+		};
+		console.log("<<<for-of>>>");
+		for (var value of values) {
+		  console.log(value);
+		};
+	</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// for...of 루프를 통한 반복
+		var arr = ['w', 'y', 'k', 'o', 'p'];
+		var eArr = arr.values();
+		for (let letter of eArr) {
+			console.log(letter);
+		}
+
+		// 다른 반복법
+		var arr = ['w', 'y', 'k', 'o', 'p'];
+		var eArr = arr.values();
+		console.log(eArr.next().value); // w
+		console.log(eArr.next().value); // y
+		console.log(eArr.next().value); // k
+		console.log(eArr.next().value); // o
+		console.log(eArr.next().value); // p
+	</script>
+</body>
+</html>

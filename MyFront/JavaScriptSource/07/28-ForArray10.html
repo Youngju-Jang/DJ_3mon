@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 일반 배열 생성
+		var arr1 = ['item1', 'item2', 'item3'];
+
+		// 일반 객체 생성
+		var arr2 = {
+			0 : 'item1',
+			1 : 'item2',
+			2 : 'item3'
+		}
+
+		// 배열 생성 후 프로퍼티 추가
+		var arr3 = ['item1', 'item2', 'item3'];
+		arr3.color = 'blue';
+		arr3.name = 'number_array';
+
+		// for문 순회
+		console.log(`-------------일반 for문------------`);
+		for (let index = 0; index < arr1.length; index++) console.log(`단순 배열 순회 : ${arr1[index]}`);
+		for (let index = 0; index < arr2.length; index++) console.log(`단순 객체 순회 : ${arr2[index]}`);
+		for (let index = 0; index < arr3.length; index++) console.log(`복합 배열 객체 순회 : ${arr3[index]}`);
+
+		// for~in 문 조회
+		console.log(`-------------for in문------------`);
+		for (const key in arr1) console.log(`단순 배열 순회 ${key}:${arr1[key]}`);
+		for (const key in arr2) console.log(`단순 객체 순회 ${key}:${arr2[key]}`);
+		for (const key in arr3) console.log(`복합 배열 객체 순회 ${key}:${arr3[key]}`);
+
+		// for~of 문 조회
+		console.log(`-------------for of문------------`);
+		for (const item of arr1) console.log(`단순 배열 순회 ${item}`);
+		// error : arr2 is not iterable
+		// for (const item of arr2) console.log(`단순 객체 순회 ${item}`);
+		for (const item of arr3) console.log(`복합 배열 객체 순회 ${item}`);
+		
+		// foreach 문 조회
+		console.log(`-------------foreach문------------`);
+		arr1.forEach(function(item, key){ console.log(`단순 배열 순회 ${key}:${item}`);});
+		// error : arr2 is not a function
+		// arr2.forEach(function(item, key){ console.log(`단순 배열 순회 ${key}:${item}`); });
+		arr3.forEach(function(item, key){ console.log(`복합 배열 배열 순회 ${key}:${item}`);});
+	</script>
+</body>
+</html>
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 배열의 요소 테스트
+		function isBiggerThan10(element, index, array) {
+			return element > 10;
+		}
+		console.log([2, 5, 8, 1, 4].some(isBiggerThan10));  // false
+		console.log([12, 5, 8, 1, 4].some(isBiggerThan10)); // true
+
+		// 화살표 함수를 사용한 배열의 요소 테스트
+		console.log([2, 5, 8, 1, 4].some(elem => elem > 10));  // false
+		console.log([12, 5, 8, 1, 4].some(elem => elem > 10)); // true
+
+		// 값이 배열 내 존재하는지 확인
+		var fruits = ['apple', 'banana', 'mango', 'guava'];
+
+		function checkAvailability(arr, val) {
+		    return arr.some(function(arrVal) {
+		        return val === arrVal;
+		    });
+		}
+
+		console.log(checkAvailability(fruits, 'kela')); //false
+		console.log(checkAvailability(fruits, 'banana')); //true
+
+		// 화살표 함수를 사용하여 값이 존재하는지 확인
+		var fruits = ['apple', 'banana', 'mango', 'guava'];
+
+		function checkAvailability(arr, val) {
+		    return arr.some(arrVal => val === arrVal);
+		}
+
+		console.log(checkAvailability(fruits, 'kela')); //false
+		console.log(checkAvailability(fruits, 'banana')); //true
+
+		// 모든 값을 불린으로 변환
+		var TRUTHY_VALUES = [true, 'true', 1];
+
+		function getBoolean(a) {
+		    'use strict';
+
+		    var value = a;
+
+		    if (typeof value === 'string') {
+		        value = value.toLowerCase().trim();
+		    }
+
+		    return TRUTHY_VALUES.some(function(t) {
+		        return t === value;
+		    });
+		}
+
+		console.log(getBoolean(false)); // false
+		console.log(getBoolean('false')); // false
+		console.log(getBoolean(1)); // true
+		console.log(getBoolean('true')); // true
+	</script>
+</body>
+</html>
