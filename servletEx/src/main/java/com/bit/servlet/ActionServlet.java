@@ -1,0 +1,24 @@
+package com.bit.servlet;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+@WebServlet(name="Action", value="/hi")
+public class ActionServlet extends HttpServlet {
+     
+     @Override
+     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+          Cookie i = new Cookie("test", "test");
+          i.setMaxAge(60*60);
+          resp.addCookie(i);
+          
+          System.out.println("Service");
+//          super.doGet(req, resp);
+          resp.sendRedirect("/");
+     }
+}

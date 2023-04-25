@@ -49,7 +49,6 @@
           } // printInfo
 
           function drawing(twitters) {
-              console.dir(twitters);
               Object.keys(twitters[0]).forEach(function (value) {
                   console.log(value);
                   var head = `<th>\${value}</th>`;
@@ -63,8 +62,6 @@
                       content += td;
                   }); // forEach
                   content += `</tr>`;
-                  // console.log(content);
-
                   document.getElementById("tbody").innerHTML += content;
               }
           }
