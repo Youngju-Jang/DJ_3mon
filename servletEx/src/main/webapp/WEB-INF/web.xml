@@ -4,8 +4,9 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0"
-         metadata-complete="true">
+         metadata-complete="false">
 
+<!--    action servlet-->
     <servlet>
         <servlet-name>Action</servlet-name>
         <servlet-class>com.bit.servlet.ActionServlet</servlet-class>
@@ -15,14 +16,34 @@
         <servlet-name>Action</servlet-name>
         <url-pattern>/hi</url-pattern>
     </servlet-mapping>
-
+<!--Hello Servlet-->
     <servlet>
-        <servlet-name>HelloServlet</servlet-name>
+        <servlet-name>helloServlet</servlet-name>
         <servlet-class>com.bit.servlet.HelloServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>HelloServlet</servlet-name>
+        <servlet-name>helloServlet</servlet-name>
         <url-pattern>/hello-servlet</url-pattern>
     </servlet-mapping>
+<!-- Blue Servlet-->
+    <servlet>
+        <servlet-name>Blue</servlet-name>
+        <servlet-class>com.bit.servlet.blueServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Blue</servlet-name>
+        <url-pattern>/next.do</url-pattern>
+    </servlet-mapping>
+<!--getTest-->
+<!--    <servlet>-->
+<!--        <servlet-name>getTest</servlet-name>-->
+<!--        <servlet-class>com.bit.servlet.GetServlet</servlet-class>-->
+<!--    </servlet>-->
+
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>getTest</servlet-name>-->
+<!--        <url-pattern>/get.do</url-pattern>-->
+<!--    </servlet-mapping>-->
 </web-app>
