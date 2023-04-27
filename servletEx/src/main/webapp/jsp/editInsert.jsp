@@ -40,7 +40,7 @@
       Iterator<Map.Entry<String, String[]>> iterator = map.entrySet().iterator();
       while(iterator.hasNext()){
             Map.Entry<String, String[]> entry = iterator.next();
-            out.print(entry.getKey() +":"+entry.getValue()[0]);
+            out.priwnt(entry.getKey() +":"+entry.getValue()[0]);
       }
 %>
 <div class="container">
@@ -56,9 +56,10 @@
             </tr>
             </thead>
             <tbody>
+
             <tr>
-                  <td>Default</td>
-                  <td>Defaultson</td>
+                  <td>${param.writer}</td>
+                  <td>${param.subject}</td>
                   <td>def@somemail.com</td>
             </tr>
             <tr class="success">

@@ -9,7 +9,8 @@
 <meta http-equiv="imagetoolbar" content="no" />
 <link href="../css/contents.css" rel="stylesheet" type="text/css" />
 </head>
-<body >
+<body>
+${empList}
 	<div id="wrapper">
 		<div id="header">
 				<div class="topInfoWrap">

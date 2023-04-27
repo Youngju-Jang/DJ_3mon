@@ -21,17 +21,6 @@
               });
           });
 
-          $(function () {
-              $("span#edit").click(function () {
-                  $("form[name='redirect']").submit();
-              });
-          });
-
-          $(function () {
-              $("span#list").click(function () {
-                  $("form[name='forward']").submit();
-              });
-          });
 
       </script>
       <%
@@ -71,15 +60,7 @@
 							<span class="button"><a href="#">삭제</a></span>
 						</span>
                         </div>
-                        <form name="redirect" action="../testRedirect" method="post" style="visibility: hidden">
-                              <input type="text" name="name" class="inputText" size="30"
-                                     value="send from edit" />
-                        </form>
-                        <form name="forward" action="../testForward" method="post" style="visibility: hidden">
-                              <input type="text" name="name" class="inputText" size="30"
-                                     value="send from edit" />
-                        </form>
-                        <form action="editInsert.jsp" method="post">
+                        <form action="editUseBean.jsp" method="post">
                               <table class="bbsWrite">
                                     <colgroup>
                                           <col width="90"/>
@@ -94,13 +75,17 @@
                                     </tr>
                                     <tr>
                                           <th scope="row">제목</th>
-                                          <td><input type="text" name="subject" class="inputText" size="50"
+                                          <td><input type="text" name="title" class="inputText" size="50"
                                                      value="입사일 : <%=user.getHiredate()%>"/></td>
+                                    </tr>
+                                    <tr>
+                                          <th scope="row">비밀번호</th>
+                                          <td><input type="text" name="pass" class="inputText" size="50"/></td>
                                     </tr>
                                     <tr>
                                           <th scope="row">내용</th>
                                           <td class="editer">
-								<textarea name="content">
+								<textarea name="contents">
 									Empno : ${user.empno}
                                                       ename : <%= user.getEname()%>
 								</textarea>
