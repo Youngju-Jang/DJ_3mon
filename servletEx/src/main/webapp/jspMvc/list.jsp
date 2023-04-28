@@ -1,24 +1,42 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+	$(document).ready(function(){
+		if(${id}==null){
+		}
+
+
+		var now = new Date();
+		$(".loginWrap>span").eq(1).text(now.getHours()+":"+now.getMinutes()+":"+now.getSeconds());
+		$(".loginWrap>span").eq(0).text(now.getFullYear()+"."+now.getMonth()+"."+now.getDay());
+	});
+</script>
 <head>
 <title>관리자</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=10" />
 <meta http-equiv="imagetoolbar" content="no" />
 <link href="../css/contents.css" rel="stylesheet" type="text/css" />
+<%
+	String id = (String) session.getAttribute("id");
+	if (id == null) {
+		response.sendRedirect("adminLogin.jsp");
+	}
+%>
 </head>
 <body>
-${empList}
 	<div id="wrapper">
 		<div id="header">
 				<div class="topInfoWrap">
 					<div class="topInfoArea clfix">
 						<div class="loginWrap">
-							<span class="fir">2022.05.17</span>
-							<span>13:30:22</span>
-							<span><em>OOO님</em> 좋은 하루 되세요</span>
+							<span class="fir"></span>
+							<span></span>
+							<span><em>${id}님</em> 좋은 하루 되세요</span>
 							<a href="" class="btnLogout"><img src="../img/common/btn_logout.gif" alt="로그아웃" /></a>
 						</div>
 					</div>
@@ -63,28 +81,39 @@ ${empList}
 						<colgroup>
 							<col width="30" />
 							<col width="130" />
-							<col />
-							<col width="150" />
+							<col width="130" />
+							<col width="130" />
+							<col width="130" />
+							<col width="130" />
+							<col width="130" />
+							<col width="130" />
+<%--							<col />--%>
 						</colgroup>
 						<thead>
 						<tr>
 							<th scope="col" class="fir">NO.</th>
-							<th scope="col">작성자(아이디)</th>
-							<th scope="col">제목</th>
-							<th scope="col">등록일</th>
+							<th scope="col">EMPNO</th>
+							<th scope="col">ENAME</th>
+							<th scope="col">SAL</th>
+							<th scope="col">MGR</th>
+							<th scope="col">COMM</th>
+							<th scope="col">HIREDATE</th>
+							<th scope="col">DEPTNO</th>
 						</tr>
 						</thead>
-
 						<tbody>
+						<c:forEach items="${empList}" var="emp" varStatus="vs">
 						<tr>
-							<td class="fir">1</td>
-							
-							<td>관리자(utf-8)</td>
-							<td class="tal"><a href="">Test</a></td>
-							<td>2022-08-01</td>
+							<td class="fir">${vs.index +1}</td>
+							<td>${emp.empno}</td>
+							<td>${emp.ename}</td>
+							<td>${emp.sal}</td>
+							<td>${emp.mgr}</td>
+							<td>${emp.comm}</td>
+							<td>${emp.hiredate}</td>
+							<td>${emp.deptno}</td>
 						</tr>
-						
-
+						</c:forEach>
 						</tbody>
 					</table>
 

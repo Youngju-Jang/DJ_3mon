@@ -2,8 +2,6 @@ package com.bit.controller;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,6 +16,7 @@ public class DispatcherServlet extends HttpServlet {
           String cmd = request.getParameter("cmd");
           ProcessController pc = MapperServlet.getMapper(cmd);
           ForwardController fc = pc.execute(request, response);
+//          System.out.println("cmd: " + cmd + " req.param(id) : "+ request.getParameter("id"));
           if(fc.isRedirect()){
                response.sendRedirect(fc.getPath());
           }else{
@@ -25,6 +24,6 @@ public class DispatcherServlet extends HttpServlet {
                RequestDispatcher rd = request.getRequestDispatcher(fc.getPath());
                rd.forward(request, response);
           }
-          
+
      }
 }
