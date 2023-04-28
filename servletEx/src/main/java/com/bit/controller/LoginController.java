@@ -21,7 +21,7 @@ public class LoginController implements ProcessController{
           String pass = request.getParameter("pass");
           if((id.equals("Admin") && pass.equals("1234"))){
                request.getSession().setAttribute("id", id);
-               request.getSession().setMaxInactiveInterval(30);
+               request.getSession().setMaxInactiveInterval(1*60*60);
                path = "list.do?cmd=list";
                redirect = true;
           }

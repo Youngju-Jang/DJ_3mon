@@ -8,7 +8,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=10"/>
       <meta http-equiv="imagetoolbar" content="no"/>
       <meta name="copyright" content="Copyright 2009 @ high1 all rights reserved"/>
-      <link href="../css/contents.css" rel="stylesheet" type="text/css"/>
+      <link href="<%=request.getContextPath()%>/css/contents.css" rel="stylesheet" type="text/css"/>
       <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
       <script>
             $(function(){
@@ -19,8 +19,9 @@
       </script>
 </head>
 <body>
+
 <%--<form name="login" method="post" action="../cartStruts/adminCheckLogin.action">--%>
-<form name="login" method="post" action="/Web/login.do?cmd=login">
+<form name="login" method="post" action="/login.do?cmd=login">
       <div id="loginWrapper">
             <div class="loginForm">
                   <fieldset>

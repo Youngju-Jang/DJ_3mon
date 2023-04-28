@@ -8,7 +8,7 @@ public class MapperServlet {
                processController = new LoginController("", true);
           }
           if(cmd.equalsIgnoreCase("list")){
-               processController = new ListController("/jspMvc/list.jsp", false);
+               processController = new ListController("jspMvc/list.jsp", false);
           }
           return processController;
      }
