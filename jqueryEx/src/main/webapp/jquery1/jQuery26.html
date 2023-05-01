@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('#sel').change(function(){
+		var ob=$('select > option:selected').val();
+		//var ob=$(this).val();
+		$('#output').text(ob+"를 선택하셨습니다.").css("color","blue");
+	});
+});
+</script>
+</head>
+
+<body>
+<select id="sel">
+	<option>apple</option>
+	<option>orange</option>
+	<option>strawberry</option>
+	<option>melon</option>
+	<option>kiwi</option>
+</select>
+<br><br>
+<div id="output"></div>
+</body>
+</html>
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function go(){
+	var sel = document.getElementById("sel");
+	var val = sel.options[sel.selectedIndex].value;
+	
+	document.getElementById("output").innerHTML="<span style='color:orange;'>"
+	                                             +val+"을 선택하셨습니다</sapn>";
+}
+</script>
+</head>
+
+<body>
+<select onchange="go()" id="sel">
+	<option>apple</option>
+	<option>orange</option>
+	<option>strawberry</option>
+	<option>melon</option>
+	<option>kiwi</option>
+</select>
+<br><br>
+<div id="output"></div>
+</body>
+</html>
+-->

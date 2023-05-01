@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.2.1.js"></script>
+<style> 
+#panel, #flip {
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    background-color: #E8D9FF;
+    color: black;
+    border: solid 1px #fff;
+    border-radius: 3px;
+}
+
+#panel {
+    padding: 50px;
+    display: none;
+}
+</style>
+<script> 
+$(document).ready(function(){
+	$("#shoe").hide();
+	
+	$("#flip").click(function(){
+        $("#panel").slideDown(5000);
+    });
+	$("button").click(function () {
+		$('#shoe').fadeIn(3000);
+    });
+});
+</script>
+</head>
+<body>
+<div id="flip">여기를 눌러보세요</div>
+<div id="panel">생일축하합니다
+	<button>선물증정</button><br><br>
+	
+	<div class="container">
+		<img id="shoe" src="../image/shoe2.jpg" width="120" height="100" style="position: relative" />
+	</div>
+</div>
+</body>
+</html>

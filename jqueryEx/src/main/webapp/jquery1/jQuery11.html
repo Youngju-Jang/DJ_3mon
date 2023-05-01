@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){                                                       
+	$("input").keydown(function () {
+		$(this).css("background-color", "yellow");
+    });
+	
+	$("input").keyup(function () {
+		$(this).css("background-color", "pink");
+    });
+});
+</script>
+</head>
+<body>
+Enter your name: <input type="text">
+</body>
+</html>
+<!-- 
+keyup: 키보드에서 손을 때었을때
+keydown: 키보드를 눌렀을때
+ -->
