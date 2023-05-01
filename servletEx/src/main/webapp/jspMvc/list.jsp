@@ -24,7 +24,7 @@
 <%
 	String id = (String) session.getAttribute("id");
 	if (id == null) {
-		response.sendRedirect("adminLogin.jsp");
+		response.sendRedirect("../cookie/cookieLogin.jsp");
 	}
 %>
 </head>

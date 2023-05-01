@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.container{
+	position: absolute;
+	top:10px;
+	left: 10px;
+	height: 120px;
+	width: 350px;
+	border: 1px  dotted  black;
+	padding-left: 20px;
+	padding-top: 20px;
+}
+.login{
+	position: absolute;
+	top:24px;
+	left: 180px;
+	height: 40px;
+	width: 80px;
+	background-color:#47C83E;
+	border: 1px  solid  #47C83E;
+	font-size: 10px;
+	color:white;
+	font-weight: bold;
+	padding-top: 5px;
+	padding-left: 10px;
+}
+input{
+	border: 0.5px  solid  #D5D5D5;
+}
+</style>
+<script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+$(document).ready(function(){
+	var emp = { 
+		"id" : "abcd",
+		"pw" : "1234",
+		"name" : "홍길동",
+		"point" : "1250"
+	};
+	$("input").focus(function () {
+		$(this).css("background-color", "#FFFF00");
+    });
+    $("input").blur(function () {
+        $(this).css("background-color", "#FFF");
+    });
+	$('#login').click(function(){
+		var a = $('#id').val();
+		var b = $('#pw').val();
+		
+		if(a=="" || b==""){
+			$('#confirm').text("아이디와 비밀번호를 입력해주세요").css("color","black");
+			$('#id').focus();
+			return;
+		}
+		if(emp.id == a && emp.pw == b)
+			$('#confirm').html(emp.name + "님 환영합니다.<br>현재 포인트는 " 
+					           + emp.point + "점 입니다.").css("color","blue");
+		else{
+			$('#confirm').text("아이디 또는 비밀번호가 틀립니다.").css("color","red");
+			$('#id').val("");
+			$('#pw').val("");
+			$('#id').focus();
+		}
+	});
+});
+</script>
+</head>
+<body>
+<div id="result"  class="container">
+	<label for="input">[로그인 화면]</label><br><br>
+	<input type="text" id="id" placeholder="아이디"><span>아이디를 입력하시오</span><br>
+	<input type="text" id="pw" placeholder="비밀번호 "><span>비밀번호를 입력하시오</span><br>
+	<button id="login">Login</button><br><br>
+	<span id="confirm"></span>
+</div>	
+</body>
+</html>
+<!--
+[처리조건] 
+1. emp객체에 id(abcd), pw(1234), name(홍길동), point(1250)를 JSON으로 입력하시오
+2. id와 pw가 일치하면 id="confirm"에 출력
+    홍길동님 환영합니다.
+    현재 포인터는 1250점입니다     <--- 파랑색
+ 
+  id, pw중 하나라도 틀리면  id="confirm"에 출력
+  아이디 또는 비밀번호가 틀립니다  <--- 빨강색, id,pw 지우고 id에 포커스 이동   
+  
+  id, pw중 하나도 입력이 안되면
+  아이디와 비밀번호를 입력해주세요  <--- 검정색,  id에 포커스 이동   
+ -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

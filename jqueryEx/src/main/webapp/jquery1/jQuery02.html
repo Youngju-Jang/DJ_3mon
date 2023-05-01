@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$().ready(function(){
+	$('#btn1').click(function(){
+		$('#img').show();
+	});
+	$('#btn2').click(function(){
+		$('#img').hide();
+	});
+});
+</script>
+</head>
+<body>
+<button id="btn1">보이기</button>
+<button id="btn2">숨기기</button><br><br>
+<div>
+	<img src="../image/dog.png" id="img">
+</div>
+</body>
+</html>

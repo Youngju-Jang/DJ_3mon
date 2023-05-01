@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.container{
+	position: absolute;
+	top:10px;
+	left: 100px;
+	height: 300px;
+	width: 600px;
+	border: 1px dotted red;
+	padding-left: 10px;
+}
+</style>
+<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('#result').text("왼쪽 메뉴를 선택하시오");
+	
+	$('#btn1').click(function(){
+		//$('#result').text("버튼1을 눌렀음").css('font-weight','bold');
+		$('#result').text("버튼1을 눌렀음").css({'color':'red', 'font-weight':'bold', 'font-size':'15px'});
+	});
+	
+	$('#btn2').click(function(){
+		$('#result').text("버튼2을 눌렀음").css({'color':'green', 'font-weight':'bold', 'font-size':'15px'});
+	});
+});
+</script>
+</head>
+<body>
+<a id="btn1" href="#">버튼1</a><br><br>
+<a id="btn2" href="#">버튼2</a><br><br>
+
+<div id="result" class="container"></div>
+</body>
+</html>
+<!-- 
+	$('#btn1').click(function(){
+		$('#result').html("<span style='color:red; font-weight:bold;'>버튼1을 눌렀음</span>");
+	});
+	$('#btn2').click(function(){
+		$('#result').html("<span style='color:green; font-weight:bold;'>버튼2을 눌렀음</span>");
+	});
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+

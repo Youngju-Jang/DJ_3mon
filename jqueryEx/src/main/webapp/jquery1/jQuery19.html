@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>addClass / removeClass</title>
+<style>
+	.green{
+		color:green;
+	}
+	.red{
+		color:red;
+	}
+</style>
+<script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+$(document).ready(function(){
+	$("#btn1").click(function (){
+		$('p').css("color","green");
+	});
+	$("#btn2").click(function (){
+		$('p').css("color","red");
+	});
+	
+	
+// 	$("#btn1").click(function (){
+// 		$('p').addClass("green");
+// 		$('p').removeClass("red");
+// 	});
+// 	$("#btn2").click(function (){
+// 		$('p').addClass("red");
+// 		$('p').removeClass("green");
+// 	});
+
+});
+</script>
+</head>
+<body>
+<p>Hello World</p>
+<button id="btn1">초록색</button>
+<button id="btn2">빨간색</button>
+</body>
+</html>

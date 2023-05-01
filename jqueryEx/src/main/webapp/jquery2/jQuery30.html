@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('#btn').click(function(){
+		$.getJSON('json2.txt', function(data){
+			//alert(JSON.stringify(data));
+			$('#display').empty();
+			
+			//each()함수를 이용해서 데이터 만큼 반복처리
+			//entry.id 또는 entry['id']로 표현
+			var table="<table border='1'><tr><td>번호</td><td>아이디</td><td>비밀번호</td></tr>";
+			$.each(data, function(index, entry){
+				table +="<tr>";				
+				table +="<td>" + index + "</td>";
+				table +="<td>" + entry.id + "</td>";
+				table +="<td>" + entry.pw + "</td></tr>";
+			});
+			table+="</table>";
+			$('#display').append(table);
+		});
+	});
+});
+</script>
+</head>
+<body>
+<button id="btn">데이터 불러오기</button>
+<div id="display"></div>
+</body>
+</html>
+<!-- 
+$(selector).each()
+: 선택한 요소가 여러 개 일 때 각각에 대해 반복하여 실행시킨다. 
+    특정 조건을 만족할 때 반복에서 빠져 나오려면 return false를 사용한다.
+    
+  ex) $('p').each(){ }
+      $.each(데이터, 콜백함수){ }
+ -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
