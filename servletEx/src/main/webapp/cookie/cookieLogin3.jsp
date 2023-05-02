@@ -77,7 +77,6 @@ cookieRequest : ${cookieRequest.get("checker")}
                         <div class="saveId"><input type="checkbox" id="checker" name="checker"/>
 <%--                              checked="<%=(checker!=null)?true : false%>"--%>
                               <img src="${pageContext.request.contextPath}/img/common/save_id.gif" alt="아이디 저장"/>
-                              ${cookieRequest.size()!=0}
                         </div>
                   </fieldset>
             </div>

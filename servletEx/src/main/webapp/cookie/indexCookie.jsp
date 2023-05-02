@@ -12,6 +12,6 @@ pageEncoding="UTF-8" %>
       </script>
 </head>
 <body>
-<a href="${pageContext.request.contextPath}/cookie.do?cmd=cookie&cookieName=checker&state=req">Login</a>
+<a href="${pageContext.request.contextPath}/cookie.do?cmd=cookie&cookieName=checker">Login</a>
 </body>
 </html>

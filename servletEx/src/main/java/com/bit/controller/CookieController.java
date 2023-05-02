@@ -17,37 +17,27 @@ public class CookieController implements ProcessController {
           this.redirect = redirect;
      }
      
-//          public ForwardController execute(HttpServletRequest request, HttpServletResponse response) {
+     //          public ForwardController execute(HttpServletRequest request, HttpServletResponse response) {
 //          String cookieName = request.getParameter("cookieName"); // ?cookieName = checker
 //          cookieProcess.cookieCreate(request, response, cookieName); // 쿠키 생성
-          // 쿠키로 맵만들어서 세션에 저장
+     // 쿠키로 맵만들어서 세션에 저장
 //          request.getSession().setAttribute("cookieRequest", cookieProcess.requestCookie(request, cookieName));
 //          return new ForwardController(path, redirect);
 //     }
      @Override
      public ForwardController execute(HttpServletRequest request, HttpServletResponse response) {
           String cookieName = request.getParameter("cookieName");
-          String state = request.getParameter("state");
-          System.out.println("state: " + state +", cookieName : " + cookieName);
-//     		if(state.equals("req")) {
-//     		request.getSession().setAttribute("cookieRequest", cookieProcess.requestCookie(request, cookieName));
-//     		}else if(state.equals("create")) {
-//     			cookieProcess.cookieCreate(request, response, state);
-////				this.path = request.getContextPath() + "/cookie.do?cmd=cookie&cookieName=checker&state=req";
-//     		}
-         
-          cookieProcess.cookieCreate(request, response, cookieName); // 쿠키 생성
-          // 쿠키로 맵만들어서 세션에 저장
-          request.getSession().setAttribute("cookieRequest", cookieProcess.requestCookie(request, cookieName));
-          System.out.println("cookieRequest :" +request.getSession().getAttribute("cookieRequest").toString());
+          String state = (request.getParameter("state") != null) ?
+               request.getParameter("state") : "";
           
+          if (state.equals("create")) {
+               cookieProcess.cookieCreate(request, response, state);
+               this.path = request.getContextPath() + "/cookie.do?cmd=cookie&cookieName=checker";
+               this.redirect = true;
+          } else {
+               request.getSession().setAttribute("cookieRequest", cookieProcess.requestCookie(request, cookieName));
+          }
+          System.out.println("cookieRequest :" + request.getSession().getAttribute("cookieRequest"));
           return new ForwardController(path, redirect);
-          
-//          if (state.equals("create")) {
-//               cookieProcess.cookieCreate(request, response, state);
-//          }
-//          request.getSession().setAttribute("cookieRequest", cookieProcess.requestCookie(request, cookieName));
-//          System.out.println("cookieRequest :" +request.getSession().getAttribute("cookieRequest"));
-//          return new ForwardController(path, redirect);
      }
 }
