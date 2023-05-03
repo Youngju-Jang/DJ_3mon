@@ -1,6 +1,0 @@
-<p id="p1">
-	good morning
-</p>
-<p id="p2">
-	좋은아침 입니다
-</p>
