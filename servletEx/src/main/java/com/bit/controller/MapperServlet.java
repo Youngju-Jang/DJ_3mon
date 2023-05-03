@@ -10,6 +10,9 @@ public class MapperServlet {
           if(cmd.equalsIgnoreCase("list")){
                processController = new ListController("jspMvc/list.jsp", false);
           }
+          if(cmd.equalsIgnoreCase("cookie")){
+               processController = new CookieController("cookie/cookieLogin3.jsp", true);
+          }
           return processController;
      }
 }

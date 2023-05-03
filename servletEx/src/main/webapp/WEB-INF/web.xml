@@ -37,6 +37,18 @@
         <url-pattern>/next.do</url-pattern>
     </servlet-mapping>
 
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error/404Error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error/500Error.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.NullPointerException</exception-type>
+        <location>/error/nullPointError.jsp</location>
+    </error-page>
 <!--    testRedirectServlet-->
 <!--    <servlet>-->
 <!--        <servlet-name>Redirect</servlet-name>-->

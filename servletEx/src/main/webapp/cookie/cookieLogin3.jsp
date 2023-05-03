@@ -17,14 +17,6 @@
 
 
               $("#btnSubmit").click(function () {
-                  // var checked = $("#checker").is(':checker');
-                  // if(checked){
-                  //     var id = $("#user_id").val();
-                  //     var checkCookie = `checked=true;`;
-                  //     var idCookie = `id=`+id;
-                  //     document.cookie = checkCookie;
-                  //     document.cookie = idCookie;
-                  // }
                   $("form").submit();
               })
           })
@@ -32,41 +24,46 @@
 </head>
 <body>
 <%
-      Cookie[] cookies = request.getCookies();
-      String checker = "";
-      String id = "";
-      if (cookies != null && cookies.length > 0) {
-            for (int i = 0; i < cookies.length; i++) {
-                  if (cookies[i].getName().trim().equalsIgnoreCase("checker")) {
-                        checker = "true";
-                        id = cookies[i].getValue();
-                  }
-            }
-      }
+//      Cookie[] cookies = request.getCookies();
+//      String checker = "";
+//      String id = "";
+//      if (cookies != null && cookies.length > 0) {
+//            for (int i = 0; i < cookies.length; i++) {
+//                  if (cookies[i].getName().trim().equalsIgnoreCase("checker")) {
+//                        checker = "true";
+//                        id = cookies[i].getValue();
+//                  }
+//            }
+//      }
 %>
 <script>
     $(function(){
-        if('<%=checker%>' != '' ){
+        if(${cookieRequest.size()!= 0 } ){
             document.getElementById("checker").checked=true;
-            document.getElementById("user_id").value = '<%=id%>';
-        } else{
-            document.getElementById("checker").checked=false;
         }
         $("#btnSubmit").click(function(){
             $("form").submit();
         });
     });
+
+    $(function(){
+        <%--if(${cookieRequest.size()!=0}){--%>
+        <%--    document.getElementById("checker").checked=true;--%>
+        <%--}--%>
+    })
 </script>
 
 <%--<form name="login" method="post" action="../cartStruts/adminCheckLogin.action">--%>
-<form name="login" method="post" action="login.do?cmd=login">
+cookieRequest : ${cookieRequest.size()}
+cookieRequest : ${cookieRequest.get("checker")}
+<form name="login" method="post" action="${pageContext.request.contextPath}/cookie.do?cmd=cookie&cookieName=checker&state=create">
       <div id="loginWrapper">
             <div class="loginForm">
                   <fieldset>
                         <legend>관리자 시스템 로그인</legend>
                         <dl>
                               <dt><img src="${pageContext.request.contextPath}/img/common/th_id.gif" alt="아이디"/></dt>
-                              <dd><input type="text" name="id" class="text" id="user_id"/></dd>
+                              <dd><input type="text" name="id" class="text" id="user_id" value="${cookieRequest.get("checker")}"/></dd>
 <%--                              value="<%=(checker!=null)? id : null%>"--%>
 
                               <dt><img src="${pageContext.request.contextPath}/img/common/th_pw.gif" alt="비밀번호"/></dt>
@@ -77,7 +74,7 @@
                                    alt="LOGIN" title="LOGIN"/>
                         </div>
 
-                        <div class="saveId"><input type="checkbox" id="checker" name="checker" />
+                        <div class="saveId"><input type="checkbox" id="checker" name="checker"/>
 <%--                              checked="<%=(checker!=null)?true : false%>"--%>
                               <img src="${pageContext.request.contextPath}/img/common/save_id.gif" alt="아이디 저장"/>
                         </div>
