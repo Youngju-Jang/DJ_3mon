@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('#btn1').click(function(){
+		$('#demo').load("sample3.txt #p1");
+	});
+	$('#btn2').click(function(){
+		$('#demo').load("sample3.txt #p2");
+	});
+});
+</script>
+</head>
+<body>
+	<p id="demo"></p>
+	<button type="button" id="btn1">테스트1</button>
+	<button type="button" id="btn2">테스트2</button>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../lib/jquery-3.4.1.min.js"></script>
+<script>
+function process(){
+	alert("버튼1");	
+}
+$(document).ready(function(){
+	//객체.이벤트(함수(){});
+	$("#btn2").click(function(){
+		alert("버튼2");
+	});
+	
+	//객체.on(이벤트,함수(){});  또는  객체.bind(이벤트,함수(){}); 
+	$("#btn3").on('click',function(){
+		alert("버튼3");
+		$(this).off();
+	});
+});
+</script>
+</head>
+<body>
+<input type="button" id="btn1" value="버튼1" onclick="process()">
+<input type="button" id="btn2" value="버튼2">
+<input type="button" id="btn3" value="버튼3">
+</body>
+</html>
+
+
+
+
+

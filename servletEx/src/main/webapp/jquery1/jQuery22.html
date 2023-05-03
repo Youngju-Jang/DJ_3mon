@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.2.1.js"></script>
+<script>
+$(document).ready(function(){
+	$('textarea').keyup(function(){
+		var inputLength = $(this).val().length;
+		var remain = 50 - inputLength;
+	
+		$('h1').html(remain);
+		if ( remain >= 0) {
+			$('h1').css('color','blue');
+		} else {
+			$('h1').css('color','red');
+		}
+	});
+});
+</script>
+</head>
+<body>
+	<div>
+	남은 글자수
+	<h1>50</h1>
+	<textarea cols="50" rows="10"></textarea>
+	</div>
+</body>
+</html>
+<!-- 
+	keydown : 키보드가 눌러지는 순간 발생
+	keypress : 글자가 입력될때 발생
+	keyup : 입력후 손가락이 떼어질때 발생
+-->

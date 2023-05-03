@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('#btn').click(function(){
+		$.getJSON('./json1.txt',function(data){
+			//alert(data);
+			//alert(JSON.stringify(data));
+			alert(data.id + "  " + data.pw);
+		});		
+	});
+});
+</script>
+</head>
+<body>
+<button id="btn">JSON데이터 불러오기</button>
+</body>
+</html>
+<!-- 
+$.getJSON(); - get방식 실행후 JSON데이터를 가져온다  
+    (형식) $.getJSON (url, [data], [callback])
+      url : 호출할 파일(경로)
+      data : url에 보낼  데이타     ex)  id값,  password값
+      callback : 처리 결과를 담당할 함수
+ -->

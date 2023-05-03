@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	var emp={"name":"강호동",
+			"age":"25",
+			"tel":"111-1111",
+			"address":"서울"	
+	};
+	
+	/* 형식)  객체명.key이름   or    객체명['key이름']  */
+	var msg="";
+	msg += "이름:" + emp.name +"<br>"
+	    + "나이:" + emp.age +"<br>"
+	    + "전화:" + emp['tel'] +"<br>"
+	    + "주소:" + emp['address'] +"<br>"
+	    
+	$('#result').html(msg);    
+});
+</script>
+</head>
+<body>
+	<h2>JSON표기법</h2>
+	<div id="result"></div>
+</body>
+</html>

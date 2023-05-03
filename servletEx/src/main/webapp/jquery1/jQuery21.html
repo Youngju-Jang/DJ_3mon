@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#button	{margin:0; background:#eee; padding:10px; cursor:pointer;}
+#info	{background:#000; overflow:hidden; padding:10px; margin:0;}
+#info	p	{font-size:12px; color:#fff; }
+</style>
+<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script>
+	$(document).ready(function(){
+			$("#info").hide();
+			$("#button").click(function(){
+					$("#info").slideToggle();
+			});
+	});
+</script></head>
+
+<body>
+<h1 id="button">button</h1>
+<div id="info">
+	<p>button을 클릭하면 블라인드가 내려갑니다</p>
+</div>
+</body>
+</html>
+
+
+
