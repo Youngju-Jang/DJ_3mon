@@ -10,7 +10,7 @@ public class SqlSessionManager {
      public static SqlSessionFactory sqlSessionFactory;
      
      static {
-          String resource = "com/bit/conf/configuration.xml";
+          String resource = "com/bit/data/mybatis-config.xml";
           Reader reader = null;
           
           try {

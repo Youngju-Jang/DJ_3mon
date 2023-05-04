@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="cacheEnabled" value="false"/>
+        <setting name="useGeneratedKeys" value="true"/>
+        <setting name="defaultExecutorType" value="REUSE"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+    <typeAliases>
+        <typeAlias alias="Emp" type="com.bit.domain.emp.vo.Employees"/>
+        <typeAlias alias="Dept" type="com.bit.domain.dept.vo.Departments"/>
+        <package name="com.bit.vo"/>
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/bitdb?serverTimezone=UTC"/>
+                <property name="username" value="bit"/>
+                <property name="password" value="bit"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="com/bit/data/emp/EmployeesMapper.xml"/>
+        <mapper resource="com/bit/data/dept/DeptMapper.xml"/>
+        <mapper resource="com/bit/data/multi/MultiMapper.xml"/>
+    </mappers>
+</configuration>
+
