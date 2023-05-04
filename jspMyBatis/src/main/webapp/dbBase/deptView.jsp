@@ -1,0 +1,32 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java"
+         pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
+<head>
+      <title>Title</title>
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+      <script>
+          $(function () {
+
+          });
+      </script>
+</head>
+<body>
+<table border="1px solid black">
+      <tr>
+            <th>departmentId</th>
+            <th>departmentName</th>
+            <th>managerId</th>
+            <th>locationId</th>
+      </tr>
+      <c:forEach items="${list}" var="dept" varStatus="vs">
+            <tr>
+                  <td>${dept.departmentId}</td>
+                  <td>${dept.departmentName}</td>
+                  <td>${dept.managerId}</td>
+                  <td>${dept.locationId}</td>
+            </tr>
+      </c:forEach>
+</table>
+</body>
+</html>
