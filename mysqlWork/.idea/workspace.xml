@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd9d4f6b-b7df-4d8c-b67f-54a064fd55ed" name="Changes" comment="" />
+    <list default="true" id="dd9d4f6b-b7df-4d8c-b67f-54a064fd55ed" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/resources/mappers/scott.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/HelloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/HelloServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/conf/configuration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/conf/configuration.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/model/dao/scott.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servletEx/src/main/java/com/bit/controller/MapperServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servletEx/src/main/java/com/bit/controller/MapperServlet.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bit.data.multi.MultiMapper">
+    <select id="selectEmp" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+
+        <if test="table eq 'employees'">
+            SELECT *FROM EMPLOYEES WHERE COMMISSION_PCT IS NOT NULL
+        </if>
+        <if test="table eq 'departments'">
+            SELECT * FROM DEPARTMENTS WHERE MANAGER_ID IS NOT NULL
+        </if>
+        <if test="table eq 'salgrades'">
+            SELECT *
+            FROM salgrades
+        </if>
+
+    </select>
+    <!-- [ {employee_id:7878},{employee_id:7879},{employee_id:7078}] -->
+</mapper>
+
