@@ -22,7 +22,6 @@
             <th>hire_date</th>
             <th>job_id</th>
       </tr>
-      <c:forEach items="${list}" var="emp" varStatus="vs">
             <tr>
                   <td>${emp.employeeId}</td>
                   <td>${emp.firstName}</td>
@@ -32,7 +31,6 @@
                   <td>${emp.hireDate}</td>
                   <td>${emp.jobId}</td>
             </tr>
-      </c:forEach>
 </table>
 </body>
 </html>

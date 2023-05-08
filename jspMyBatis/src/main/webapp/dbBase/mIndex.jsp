@@ -12,9 +12,9 @@ pageEncoding="UTF-8" %>
       </script>
 </head>
 <body>
-<a href="/Web/multi.do?cmd=emp">EMP</a>
+<%--EMP링크 클릭시 EMP list로 이동 : *.do 패턴으로 dispatcherServlet.java 로 이동됨 --%>
+<a href="/Web/multi.do?cmd=empList">EMPLIST</a>
 <a href="/Web/multi.do?cmd=dept">DEPT</a>
 <a href="/Web/multi.do?cmd=multi&t=salgrades">SALGRADES</a>
 </body>
 </html>
-w

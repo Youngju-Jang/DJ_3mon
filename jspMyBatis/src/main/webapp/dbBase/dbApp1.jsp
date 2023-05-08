@@ -12,7 +12,8 @@
   SqlSession sqlSession = sessionFactory.openSession();
   out.println(sqlSession);
 %>
-
-EMP <%=sqlSession.selectList("com.bit.vo.EMP")%>
+<%--"com.bit.data.emp.EmployeesMapper.selectEmpList"--%>
+<%--EMP <%=sqlSession.selectList("com.bit.vo.Emp.selectEmpList")%>--%>
+EMP <%=sqlSession.selectList("com.bit.data.emp.EmployeesMapper.selectEmpList")%>
 </body>
 </html>

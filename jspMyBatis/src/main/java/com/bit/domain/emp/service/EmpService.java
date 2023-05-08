@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface EmpService {
      public List<Employees> selectEmpList();
+     
+     Employees selectEmp(int empId);
 }
