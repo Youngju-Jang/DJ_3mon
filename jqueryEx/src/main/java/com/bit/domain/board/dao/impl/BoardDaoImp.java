@@ -44,7 +44,7 @@ public class BoardDaoImp implements BoardDao {
           List<Board> boardList = null;
           try(SqlSession sqlSession = sqlSessionFactory.openSession()){
                BoardMapper boardMapper = sqlSession.getMapper(BoardMapper.class);
-               boardList = boardMapper.selectBoardList();
+               boardList = boardMapper.selectBoardList(map);
           }catch (Exception e){
                e.printStackTrace();
           }

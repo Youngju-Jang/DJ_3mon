@@ -9,9 +9,13 @@
         values(#{title}, #{writer},#{password},#{contents},#{id},0,#{fileName},now())
     </insert>
 
-    <select id="selectBoardList" resultType="Board">
+    <select id="selectBoardList" resultType="Board" parameterType="java.util.HashMap">
         select *
+        from
+        (select @rownum:=@rownum+1 rm, crudapp.*
         from crudapp
+        where (@rownum:=0)=0) crudapp
+        where rm between ((#{page.page}-1)*#{page.pageSize} +1) and (#{page.page}*#{page.pageSize})
     </select>
 </mapper>
 

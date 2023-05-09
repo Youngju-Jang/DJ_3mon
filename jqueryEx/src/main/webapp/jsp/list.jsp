@@ -21,7 +21,7 @@
 						<div class="loginWrap">
 							<span class="fir">2022.05.17</span>
 							<span>13:30:22</span>
-							<span><em></em> 좋은 하루 되세요</span>
+							<span><em></em>${userName}님 좋은 하루 되세요</span>
 							<a href="" class="btnLogout"><img src="${pageContext.request.contextPath}/img/common/btn_logout.gif" alt="로그아웃" /></a>
 						</div>
 					</div>
@@ -78,13 +78,12 @@
 						</colgroup>
 						<thead>						
 						<tr>
-							<th scope="col" class="fir">EMPNO</th>
-							<th scope="col">ENAME</th>
-							<th scope="col">SAL</th>
-							<th scope="col">MGR</th>
-							<th scope="col">COMM</th>
-							<th scope="col">HIREDATE</th>
-							<th scope="col">DEPTNO</th>
+							<th scope="col" class="fir">No.</th>
+							<th scope="col">TITLE</th>
+							<th scope="col">WRITER</th>
+							<th scope="col">FILENAME</th>
+							<th scope="col">DATE</th>
+							<th scope="col">조회수</th>
 						</tr>
 						</thead>
 
@@ -94,9 +93,9 @@
 							<td>${board.no}</td>
 							<td>${board.title}</td>
 							<td>${board.writer}</td>
-							<td>${board.}</td>
-							<td>${board.no}</td>
-							<td>${board.no}</td>
+							<td>${board.fileName}</td>
+							<td>${board.regdate}</td>
+							<td>${board.hit}</td>
 						</tr>
 						</c:forEach>
 
@@ -111,8 +110,8 @@
 						<a href="#"><img src="${pageContext.request.contextPath}/img/button/btn_prev.gif" alt="이전" /></a>
 						
 						<span>
-							<a href="#">1</a>
-							<a href="#">2</a>
+							<a href="${pageContext.request.contextPath}/listSelect.do?cmd=listSelect&page=1">1</a>
+							<a href="${pageContext.request.contextPath}/listSelect.do?cmd=listSelect&page=2">2</a>
 							<a href="#">3</a>
 							<strong>4</strong>
 							<a href="#">5</a>

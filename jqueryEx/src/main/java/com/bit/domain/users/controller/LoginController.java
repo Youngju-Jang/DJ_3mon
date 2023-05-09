@@ -28,10 +28,13 @@ public class LoginController implements ProcessController {
           
           // 서비스단 로직 실행
           User checkedUser = userService.selectUser(name);
+          System.out.println("User : "  + checkedUser);
+          
           // 세션에 아이디 추가 (name ? userId?)
           if (checkedUser != null && checkedUser.getPassword().equals(password)) { // user가 존재하고, 비밀번호 일치할 경우만 실행
                request.getSession().setAttribute("id", checkedUser.getUserId());
-               request.getSession().setMaxInactiveInterval(60);
+               request.getSession().setAttribute("userName", checkedUser.getName());
+               request.getSession().setMaxInactiveInterval(60*60);
                request.setAttribute("state", "T");
           } else {
                request.setAttribute("state", "F");

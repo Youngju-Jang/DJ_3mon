@@ -25,19 +25,19 @@ public class InsertController implements ProcessController {
      public ForWardController execute(HttpServletRequest request, HttpServletResponse response) {
           // upload, insert
           int size = 10 * 1024 * 1024; // 10mb
-          String uploadPath = "/Users/joj1043/Documents/bit/DJ_3mon/jqueryEx/src/main/webapp/upload";
+          String uploadPath = request.getContextPath()+ "/webapp/upload";
           try {
-               MultipartRequest multi = new MultipartRequest(request, uploadPath, size, "utf-8", new DefaultFileRenamePolicy());
+               MultipartRequest multipartRequest = new MultipartRequest(request, uploadPath, size, "utf-8", new DefaultFileRenamePolicy());
                
-               Enumeration e = multi.getFileNames();
-               String file = (String)e.nextElement();
+               Enumeration<String> e = multipartRequest.getFileNames();
+               String file = e.nextElement();
                
-               Board board=new Board(multi.getParameter("title"),
-                    multi.getParameter("writer"),
-                    multi.getParameter("password"),
-                    multi.getParameter("contents"),
-                    multi.getParameter("id") ,
-                    multi.getOriginalFileName(file));
+               Board board=new Board(multipartRequest.getParameter("title"),
+                    multipartRequest.getParameter("writer"),
+                    multipartRequest.getParameter("password"),
+                    multipartRequest.getParameter("contents"),
+                    multipartRequest.getParameter("id") ,
+                    multipartRequest.getOriginalFileName(file));
                System.out.println("board password: " + board.getPassword());
                boardService.insertBoard(board);
           }catch (Exception e){
