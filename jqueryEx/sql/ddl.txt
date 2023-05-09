@@ -1,0 +1,13 @@
+create table CRUDAPP(
+    no int(10) not null auto_increment primary key ,
+    title varchar(20) not null,
+    writer varchar(20) not null,
+    password varchar(10) not null ,
+    contents varchar(1000),
+    hit int(100),
+    filename varchar(50),
+    regdate date);
+
+select * from crudapp;
+
+alter table crudapp add id varchar(10) after contents;

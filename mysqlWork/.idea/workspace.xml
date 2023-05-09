@@ -5,21 +5,136 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd9d4f6b-b7df-4d8c-b67f-54a064fd55ed" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/data/emp/EmployeesMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/data/emp/EmployeesMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/data/emp/EmployeesMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/data/emp/EmployeesMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/data/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/data/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/emp/controller/EmpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/emp/controller/EmpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/emp/dao/EmpDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/emp/dao/EmpDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/emp/dao/impl/EmpDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/emp/dao/impl/EmpDaoImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/emp/service/EmpService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/emp/service/EmpService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/emp/service/impl/EmpServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/emp/service/impl/EmpServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/global/DispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/global/DispatcherServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/global/MapperServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/global/MapperServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/dbBase/dbApp1.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/dbBase/dbApp1.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/dbBase/empView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/dbBase/empListView.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/dbBase/mIndex.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/dbBase/mIndex.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/conf/SqlSessionManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/data/dept/DeptMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/data/dept/DeptMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/data/emp/EmployeesMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/data/emp/EmployeesMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/data/multi/MultiMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/data/multi/MultiMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/data/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/data/users/UsersMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/data/users/UsersMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/dept/controller/DeptController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/dept/dao/DeptDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/dept/dao/impl/DeptDaoImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/dept/service/DeptService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/dept/service/impl/DeptServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/dept/vo/Departments.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/emp/controller/EmpController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/emp/dao/EmpDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/emp/dao/impl/EmpDaoImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/emp/service/EmpService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/emp/service/impl/EmpServiceImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/emp/vo/Employees.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/users/controller/LoginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/users/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/users/dao/impl/UserDaoImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/users/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/users/service/impl/UserServiceImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/users/vo/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/global/DispatcherServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/global/ForWardController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/global/MapperServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/global/ProcessController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/global/controller/MultiSelectController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/WEB-INF/configuration.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/css/board.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/css/contents.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/css/global.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/css/layout.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/css/popup.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/dbBase/AdminLogin.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/dbBase/dbApp1.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/dbBase/deptView.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/dbBase/empInfoView.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/dbBase/empListView.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/dbBase/mIndex.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/dbBase/multiView2.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/image/americano.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/image/cafelatte.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/image/cat1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/image/cat2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/image/dog.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/image/shoe2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/button/Thumbs.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/button/btn_align_btm.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/button/btn_align_top.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/button/btn_calendar.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/button/btn_first.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/button/btn_last.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/button/btn_login.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/button/btn_logout.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/button/btn_menu_close.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/button/btn_menu_open.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/button/btn_next.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/button/btn_next_step.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/button/btn_pop_close.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/button/btn_prev.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/button/btn_type_01.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/button/btn_type_02.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/button/btn_type_03.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/button/ico_star_com.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/button/ico_star_gray.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/DSC04152.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/Thumbs.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/bg_gnb.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/bg_gnbsub.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/bg_hline_01.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/bg_part.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/bg_pop_header.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/bg_search_left.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/bg_search_mid.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/bg_search_right.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/bg_tab.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/bg_topinfo.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/bg_vline_01.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/btn_logout.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/bx_over.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/bx_over.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/ico_depth1_off.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/ico_depth1_on.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/ico_depth2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/ico_depth3.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/ico_file.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/ico_file_doc.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/ico_file_hwp.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/ico_file_pdf.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/ico_file_ppt.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/ico_file_xls.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/ico_file_zip.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/ico_gn_arrw01.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/ico_gy_arrw01.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/ico_location.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/ico_new.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/ico_star.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/ico_sub_title.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/ico_title.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/ln_gnb.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/ln_gy01.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/ln_tab.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/login_wrap.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/navi_left.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/navi_right.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/save_id.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/tab_left.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/tab_line.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/tab_right.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/temp_img.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/th_id.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/th_pw.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/tit_next.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/img/common/tit_prev.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/lib/jquery-3.4.1.min.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../servletEx/src/main/java/com/bit/controller/MapperServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servletEx/src/main/java/com/bit/controller/MapperServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
