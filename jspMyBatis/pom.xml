@@ -55,7 +55,6 @@
             <version>1.1.2</version>
         </dependency>
         <!-- jstl -->
-
         <!-- mybatis -->
         <dependency>
             <groupId>org.mybatis</groupId>
@@ -71,6 +70,15 @@
             <version>8.0.33</version>
         </dependency>
         <!-- mysql-connector-j -->
+        <!-- https://mvnrepository.com/artifact/servlets.com/cos -->
+
+<!--        <dependency>-->
+<!--            <groupId>servlets.com</groupId>-->
+<!--            <artifactId>cos</artifactId>-->
+<!--            <version>09nov2002</version>-->
+<!--        </dependency>-->
+
+
     </dependencies>
 
     <build>

@@ -13,16 +13,15 @@ import javax.servlet.http.HttpServletResponse;
 public class DispatcherServlet extends HttpServlet{
      @Override
      protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-          // TODO Auto-generated method stub
           request.setCharacterEncoding("UTF-8");
-          String cmd=request.getParameter("cmd");
-          ProcessController pc=MapperServlet.getMapper(cmd);
-          ForWardController fc= pc.execute(request, response);
-          if(fc.isRedirect()) {
+          String cmd=request.getParameter("cmd"); // request parameter중 cmd 파라미터 값을 찾음
+          ProcessController pc=MapperServlet.getMapper(cmd); // cmd에따른 컨트롤러 객체 생성
+          ForWardController fc= pc.execute(request, response); // 생성된 컨트롤러의 execute메소드 실행하여 로직 수행 후 ForwardController return
+          if(fc.isRedirect()) { // 생성한 ForwardController의 Redirect true 일 경우 실행 (Redirect)
                response.sendRedirect(fc.getPath());
-          }else {
+          }else { // redirect false 일 경우 forward 로 수행
                RequestDispatcher rd=request.getRequestDispatcher(fc.getPath());
-               rd.forward(request, response);// /Web/list.do
+               rd.forward(request, response);
           }
           
      }

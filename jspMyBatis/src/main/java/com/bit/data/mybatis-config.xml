@@ -13,6 +13,8 @@
     <typeAliases>
         <typeAlias alias="Emp" type="com.bit.domain.emp.vo.Employees"/>
         <typeAlias alias="Dept" type="com.bit.domain.dept.vo.Departments"/>
+        <typeAlias alias="User" type="com.bit.domain.users.vo.User"/>
+        <typeAlias alias="Board" type="com.bit.domain.board.vo.Board"/>
         <package name="com.bit.vo"/>
     </typeAliases>
 
@@ -31,6 +33,8 @@
         <mapper resource="com/bit/data/emp/EmployeesMapper.xml"/>
         <mapper resource="com/bit/data/dept/DeptMapper.xml"/>
         <mapper resource="com/bit/data/multi/MultiMapper.xml"/>
+        <mapper resource="com/bit/data/users/UsersMapper.xml"/>
+        <mapper resource="com/bit/data/board/BoardMapper.xml"/>
     </mappers>
 </configuration>
 

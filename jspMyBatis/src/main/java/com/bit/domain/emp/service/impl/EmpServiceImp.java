@@ -16,6 +16,12 @@ public class EmpServiceImp implements EmpService {
      
      @Override
      public List<Employees> selectEmpList() {
+          // DAO 단에서 DB정보 들고오도록 메소드 호출
           return EmpDaoImp.getEmpDao().selectEmpList();
+     }
+     
+     @Override
+     public Employees selectEmp(int empId) {
+          return EmpDaoImp.getEmpDao().selectEmp(empId);
      }
 }
