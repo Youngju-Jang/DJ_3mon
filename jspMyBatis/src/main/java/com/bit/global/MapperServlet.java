@@ -1,5 +1,7 @@
 package com.bit.global;
 
+import com.bit.domain.board.controller.HitController;
+import com.bit.domain.board.controller.InfoController;
 import com.bit.domain.dept.controller.DeptController;
 import com.bit.domain.emp.controller.EmpController;
 import com.bit.domain.board.controller.InsertController;
@@ -27,6 +29,12 @@ public class MapperServlet {
           }
           if(cmd.equalsIgnoreCase("insertBoard")){
                processController = new InsertController("listSelect.do?cmd=listSelect", true);
+          }
+          if(cmd.equalsIgnoreCase("hit")){
+               processController = new HitController("", true);
+          }
+          if(cmd.equalsIgnoreCase("info")){
+               processController = new InfoController("", false);
           }
           return processController;
      }

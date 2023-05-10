@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd9d4f6b-b7df-4d8c-b67f-54a064fd55ed" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../jqueryEx/src/main/java/com/bit/domain/board/controller/InsertController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jqueryEx/src/main/java/com/bit/domain/board/controller/InsertController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jqueryEx/src/main/java/com/bit/domain/users/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jqueryEx/src/main/java/com/bit/domain/users/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jqueryEx/src/main/java/com/bit/domain/users/vo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jqueryEx/src/main/java/com/bit/domain/users/vo/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jqueryEx/src/main/webapp/jsp/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../jqueryEx/src/main/webapp/jsp/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/jsp/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/jsp/list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

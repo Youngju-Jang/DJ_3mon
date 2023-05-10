@@ -4,6 +4,7 @@ import com.bit.conf.SqlSessionManager;
 import com.bit.data.board.BoardMapper;
 import com.bit.domain.board.dao.BoardDao;
 import com.bit.domain.board.vo.Board;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -49,5 +50,28 @@ public class BoardDaoImp implements BoardDao {
                e.printStackTrace();
           }
           return boardList;
+     }
+     
+     @Override
+     public void addHit(int no) {
+          try(SqlSession sqlSession = sqlSessionFactory.openSession()){
+               BoardMapper boardMapper = sqlSession.getMapper(BoardMapper.class);
+               boardMapper.updateBoardHit(no);
+               sqlSession.commit();
+          }catch (Exception e){
+               e.printStackTrace();
+          }
+     }
+     
+     @Override
+     public Board selectBoard(int no) {
+          Board board = null;
+          try(SqlSession sqlSession = sqlSessionFactory.openSession()){
+               BoardMapper boardMapper = sqlSession.getMapper(BoardMapper.class);
+               board = boardMapper.selectBoard(no);
+          }catch (Exception e){
+               e.printStackTrace();
+          }
+          return board;
      }
 }

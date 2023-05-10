@@ -26,12 +26,21 @@ public class ListController implements ProcessController {
      @Override
      public ForWardController execute(HttpServletRequest request, HttpServletResponse response) {
           HashMap<String, Object> map = new HashMap<>();
-          String search = request.getParameter("search") ;
-          System.out.println("search : " + search);
+          String search = request.getParameter("search");
+          String option = request.getParameter("option");
+          System.out.println("search: "+ search + "& option : "+ option);
+          
           int page = (request.getParameter("page"))!=null ? Integer.parseInt(request.getParameter("page")) : 1;
+          map.put("search", search);
+          map.put("option", option);
           map.put("page", new Page(page, 3));
+          
           List<Board> boardList = boardService.selectAll(map);
+          
           request.setAttribute("boardList", boardList);
+          request.setAttribute("search", search);
+          request.setAttribute("option", option);
+          request.setAttribute("page", page);
           
           return new ForWardController(path, redirect);
      }
