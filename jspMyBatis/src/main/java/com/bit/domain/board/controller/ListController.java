@@ -27,11 +27,14 @@ public class ListController implements ProcessController {
      public ForWardController execute(HttpServletRequest request, HttpServletResponse response) {
           HashMap<String, Object> map = new HashMap<>();
           String search = request.getParameter("search") ;
-          System.out.println("search : " + search);
+          
           int page = (request.getParameter("page"))!=null ? Integer.parseInt(request.getParameter("page")) : 1;
           map.put("page", new Page(page, 3));
+          
           List<Board> boardList = boardService.selectAll(map);
+          
           request.setAttribute("boardList", boardList);
+          request.setAttribute("page", request.getParameter("page"));
           
           return new ForWardController(path, redirect);
      }

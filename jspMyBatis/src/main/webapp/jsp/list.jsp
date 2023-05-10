@@ -90,7 +90,7 @@
 						<tbody>
 						<c:forEach items="${boardList}" var="board">
 						<tr>
-							<td>${board.no}</td>
+							<td><a href='hit.do?cmd=hit&no=${board.no}&page=${requestScope.page}'>${board.no}<a/></td>
 							<td>${board.title}</td>
 							<td>${board.writer}</td>
 							<td>${board.fileName}</td>

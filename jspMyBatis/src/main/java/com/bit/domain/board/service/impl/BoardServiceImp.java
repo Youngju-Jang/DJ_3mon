@@ -9,6 +9,8 @@ import java.util.Hashtable;
 import java.util.List;
 
 public class BoardServiceImp implements BoardService {
+     
+     
      private static BoardService boardService = new BoardServiceImp();
      public static BoardService getBoardService(){
           return boardService;
@@ -31,5 +33,15 @@ public class BoardServiceImp implements BoardService {
      @Override
      public List<Board> selectAll(HashMap<String, Object> map) {
           return BoardDaoImp.getBoardDao().selectAll(map);
+     }
+     
+     @Override // hitUpdate
+     public void addHit(int no) {
+          BoardDaoImp.getBoardDao().addHit(no);
+     }
+     
+     @Override
+     public Board selectBoard(int no) {
+          return BoardDaoImp.getBoardDao().selectBoard(no);
      }
 }

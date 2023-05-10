@@ -11,4 +11,6 @@ public interface BoardDao {
      public String getIdCheck(String id);
      public void insertBoard(Board vo);
      public List<Board> selectAll(HashMap<String, Object> map);
+     public void addHit(int no);
+     public Board selectBoard(int no);
 }

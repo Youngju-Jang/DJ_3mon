@@ -30,7 +30,7 @@
                               console.log("ajax success");
                               console.log(data);
                               if(data.trim()=='T'){
-                                  document.location.href='${pageContext.request.contextPath}/listSelect.do?cmd=listSelect';
+                                  document.location.href='${pageContext.request.contextPath}/listSelect.do?cmd=listSelect&page=1';
                               }else{
                                   $("dt#show").html("<font color='red'> Check</font>");
                                   $("input[name='id']").val('');
