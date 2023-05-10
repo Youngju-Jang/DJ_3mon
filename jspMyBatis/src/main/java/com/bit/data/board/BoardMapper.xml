@@ -15,17 +15,20 @@
         (select @rownum:=@rownum+1 rm, crudapp.*
         from crudapp
         where (@rownum:=0)=0
+        <if test="search != null and search != ''">
+            and ${option} like CONCAT('%',#{search},'%')
+        </if>
         order by no desc) crudapp
         where rm between ((#{page.page}-1)*#{page.pageSize} +1) and (#{page.page}*#{page.pageSize})
     </select>
 
-    <update id="updateBoardHit" parameterType="int">
+    <update id="updateBoardHit" parameterType="java.lang.Integer">
         update crudapp
         set hit = hit+1
         where no = #{no}
     </update>
 
-    <select id="selectBoard" parameterType="int" resultType="Board">
+    <select id="selectBoard" parameterType="java.lang.Integer" resultType="Board">
         select *
         from crudapp
         where no = #{no}
