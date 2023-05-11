@@ -53,8 +53,10 @@
                         <div class="btnSet clfix mgb15">
 						<span class="fr">
 							<span class="button"><a href="#" id="search">검색</a></span>
-                                          <span class="button"><a href="${pageContext.request.contextPath}/listSelect.do?cmd=listSelect">새로고침</a></span>
-							<span class="button"><a href="${pageContext.request.contextPath}/jsp/edit.jsp">글쓰기</a></span>
+                                          <span class="button"><a
+                                                    href="${pageContext.request.contextPath}/listSelect.do?cmd=listSelect">새로고침</a></span>
+							<span class="button"><a
+                                                    href="${pageContext.request.contextPath}/jsp/edit.jsp">글쓰기</a></span>
 						</span>기
                         </div>
                         <form action="${pageContext.request.contextPath}/listSelect.do?cmd=listSelect&page=1"
@@ -75,7 +77,14 @@
                                           <td>
                                                 <select style="width: 100%" id="option" name="option">
                                                       <option value="empty">선택하세요</option>
-                                                      <option value="title">TITLE</option>
+                                                      <c:choose>
+                                                            <c:when test="${option eq 'title'}">
+                                                                  <option value="title" selected>TITLE</option>
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                                  <option value="title">TITLE</option>
+                                                            </c:otherwise>
+                                                      </c:choose>
                                                       <option value="contents">CONTENTS</option>
                                                       <option value="writer">WRITER</option>
                                                 </select>
@@ -135,28 +144,33 @@
                         </table>
 
                         <div class="paging">
-                              <a href="#"><img src="${pageContext.request.contextPath}/img/button/btn_first.gif"
-                                               alt="처음페이지"/></a>
-                              <a href="#"><img src="${pageContext.request.contextPath}/img/button/btn_prev.gif"
+                              <c:if test="${pageBean.currentBlock != 1}">
+                                    <a href="${pageContext.request.contextPath}/listSelect.do?cmd=listSelect&page=1&search=${search}&option=${option}"><img
+                                              src="${pageContext.request.contextPath}/img/button/btn_first.gif"
+                                              alt="처음페이지"/></a>
+                                    <a href="${pageContext.request.contextPath}/listSelect.do?cmd=listSelect&page=${pabeBean.startPage-1}&search=${search}&option=${option}">
+                                          <img src="${pageContext.request.contextPath}/img/button/btn_prev.gif"
                                                alt="이전"/></a>
-
+                              </c:if>
                               <span>
-							<a href="${pageContext.request.contextPath}/listSelect.do?cmd=listSelect&page=1&search=${search}&option=${option}">1</a>
-							<a href="${pageContext.request.contextPath}/listSelect.do?cmd=listSelect&page=2&search=${search}&option=${option}">2</a>
-							<a href="#">3</a>
-							<strong>4</strong>
-							<a href="#">5</a>
-							<a href="#">6</a>
-							<a href="#">7</a>
-							<a href="#">8</a>
-							<a href="#">9</a>
-						</span>
-
-                              <a href="#"><img src="${pageContext.request.contextPath}/img/button/btn_next.gif"
-                                               alt="다음"/></a>
-                              <a href="#"><img src="${pageContext.request.contextPath}/img/button/btn_last.gif"
-                                               alt="마지막페이지"/></a>
-
+                                    <c:forEach begin="${pageBean.startPage}" end="${pageBean.endPage}" var="num">
+                                          <c:choose>
+                                                <c:when test="${num == pageBean.currentPage}">
+                                                      <strong>${num}</strong>
+                                                </c:when>
+                                                <c:otherwise>
+                                                      <a href="${pageContext.request.contextPath}/listSelect.do?cmd=listSelect&page=${num}&search=${search}&option=${option}">${num}</a>
+                                                </c:otherwise>
+                                          </c:choose>
+                                    </c:forEach>
+                              </span>
+                              <c:if test="${pageBean.endPage<pageBean.totalPage}">
+                                    <a href="${pageContext.request.contextPath}/listSelect.do?cmd=listSelect&page=${pageBean.endPage+1}&search=${search}&option=${option}"><img
+                                              src="${pageContext.request.contextPath}/img/button/btn_next.gif"
+                                              alt="다음"/></a>
+                                    <a href="${pageContext.request.contextPath}/listSelect.do?cmd=listSelect&page=${pageBean.totalPage}&search=${search}&option=${option}"><img
+                                        src="${pageContext.request.contextPath}/img/button/btn_last.gif" alt="마지막페이지"/></a>
+                              </c:if>
                         </div>
                   </div>
             </div>

@@ -5,7 +5,7 @@ import com.bit.domain.board.service.impl.BoardServiceImp;
 import com.bit.domain.board.vo.Board;
 import com.bit.global.ForWardController;
 import com.bit.global.ProcessController;
-import com.bit.global.vo.Page;
+import com.bit.global.vo.PagingComponent;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,7 +21,7 @@ public class ListController implements ProcessController {
           super();
           this.path = path;
           this.redirect = redirect;
-     }
+}
      
      @Override
      public ForWardController execute(HttpServletRequest request, HttpServletResponse response) {
@@ -30,17 +30,20 @@ public class ListController implements ProcessController {
           String option = request.getParameter("option");
           System.out.println("search: "+ search + "& option : "+ option);
           
-          int page = (request.getParameter("page"))!=null ? Integer.parseInt(request.getParameter("page")) : 1;
-          map.put("search", search);
-          map.put("option", option);
-          map.put("page", new Page(page, 3));
+          if(search!=null && option!=null){
+               map.put("search", search);
+               map.put("option", option);
+          }
+          
+          PagingComponent pagingComponent = new PagingComponent();
+          pagingComponent.pagingCreate(request);
+          map.put("pageBean", request.getAttribute("pageBean"));
           
           List<Board> boardList = boardService.selectAll(map);
           
           request.setAttribute("boardList", boardList);
           request.setAttribute("search", search);
           request.setAttribute("option", option);
-          request.setAttribute("page", page);
           
           return new ForWardController(path, redirect);
      }

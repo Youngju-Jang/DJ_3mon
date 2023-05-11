@@ -74,4 +74,16 @@ public class BoardDaoImp implements BoardDao {
           }
           return board;
      }
+     
+     @Override
+     public int countBoard(HashMap<String, Object> map) {
+          int cnt = 0;
+          try(SqlSession sqlSession = sqlSessionFactory.openSession()){
+               BoardMapper boardMapper = sqlSession.getMapper(BoardMapper.class);
+               cnt = boardMapper.countBoard(map);
+          }catch (Exception e){
+               e.printStackTrace();
+          }
+          return cnt;
+     }
 }

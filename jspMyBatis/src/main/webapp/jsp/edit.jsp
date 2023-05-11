@@ -57,6 +57,7 @@
 						<tbody>
 						<tr>
 							<th scope="row">작성자</th>
+							<input  type="hidden" name="id" value="${userName}"/>
 							<td><input type="text" name="writer" class="inputText" size="50" /></td>
 						</tr>
 						<tr>
