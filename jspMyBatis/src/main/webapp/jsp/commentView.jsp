@@ -2,16 +2,11 @@
          pageEncoding="UTF-8"
          import="com.fasterxml.jackson.databind.ObjectMapper"%>
 <%@ page import="com.bit.domain.member.vo.Member" %>
-      <%
-            System.out.println();
-            ObjectMapper objectMapper = new ObjectMapper();
-            String json = objectMapper.writeValueAsString(request.getAttribute("memberList"));
-            out.print(json);
-      %>
-
-<%--<c:forEach items="${memberList}" var="member">--%>
-<%--      ${member.no}. : ${member.name} : ${member.hobby} : ${member.today}<br>--%>
-<%--</c:forEach>--%>
+<%
+      ObjectMapper objectMapper = new ObjectMapper();
+      String json = objectMapper.writeValueAsString(request.getAttribute("commentList"));
+      out.print(json);
+%>
 
 <%--[--%>
 <%--<c:forEach var="i" items="${ajaxList}" varStatus="cnt">--%>

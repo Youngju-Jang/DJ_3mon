@@ -27,6 +27,35 @@
                           }
                       });
                   }
+                  <%--$.ajax({--%>
+                  <%--    url:'${pageContext.request.contextPath}/memberApp.do?cmd=memberApp&state='+this.id,--%>
+                  <%--    type:'POST',--%>
+                  <%--    //data:{name:$("input#name").val(),hobby:$("input#hobby").val()},--%>
+                  <%--    data:$("form#memberFrm").serialize(),--%>
+                  <%--    dataType:'json',//json,xml,html,script--%>
+                  <%--    success:function(value){--%>
+                  <%--        $("table#table").show(1000).fadeOut(1000).fadeIn(1000);--%>
+                  <%--        $("tr#theadRow *").remove();--%>
+                  <%--        $("tbody#tbody *").remove();--%>
+                  <%--        //head--%>
+                  <%--        $(Object.keys(value[0])).each(function(index,item){--%>
+                  <%--            //console.log(item);--%>
+                  <%--            $("tr#theadRow").append("<td>"+item+"</td>");--%>
+                  <%--        });--%>
+                  <%--        //body--%>
+                  <%--        $(value).each(function(index,dom){--%>
+                  <%--            $("tbody#tbody").append("<tr>");--%>
+                  <%--            $(Object.values(dom)).each(function(index,item){--%>
+                  <%--                //console.log(item);--%>
+                  <%--                $("tbody#tbody").append("<td>"+item+"</td>");--%>
+                  <%--            });--%>
+                  <%--        });--%>
+
+                  <%--    },--%>
+                  <%--    error:function(){--%>
+                  <%--        alert('error');--%>
+                  <%--    }--%>
+                  <%--});--%>
               });
           });
       </script>
