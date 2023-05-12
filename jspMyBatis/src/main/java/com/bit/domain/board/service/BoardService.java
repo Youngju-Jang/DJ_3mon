@@ -13,4 +13,5 @@ public interface BoardService {
      public List<Board> selectAll(HashMap<String, Object> map);
      public void addHit(int no);
      public Board selectBoard(int no);
+     public int countBoard(HashMap<String, Object> map);
 }

@@ -57,7 +57,7 @@
                                                     href="${pageContext.request.contextPath}/listSelect.do?cmd=listSelect">새로고침</a></span>
 							<span class="button"><a
                                                     href="${pageContext.request.contextPath}/jsp/edit.jsp">글쓰기</a></span>
-						</span>기
+						</span>
                         </div>
                         <form action="${pageContext.request.contextPath}/listSelect.do?cmd=listSelect&page=1"
                               method="post">

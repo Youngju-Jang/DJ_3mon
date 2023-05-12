@@ -44,4 +44,9 @@ public class BoardServiceImp implements BoardService {
      public Board selectBoard(int no) {
           return BoardDaoImp.getBoardDao().selectBoard(no);
      }
+     
+     @Override
+     public int countBoard(HashMap<String, Object> map) {
+          return BoardDaoImp.getBoardDao().countBoard(map);
+     }
 }
