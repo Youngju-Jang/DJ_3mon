@@ -6,6 +6,7 @@ import com.bit.domain.dept.controller.DeptController;
 import com.bit.domain.emp.controller.EmpController;
 import com.bit.domain.board.controller.InsertController;
 import com.bit.domain.board.controller.ListController;
+import com.bit.domain.member.controller.MemberAppController;
 import com.bit.domain.users.controller.LoginController;
 
 public class MapperServlet {
@@ -35,6 +36,9 @@ public class MapperServlet {
           }
           if(cmd.equalsIgnoreCase("info")){
                processController = new InfoController("", false);
+          }
+          if(cmd.equalsIgnoreCase("memberApp")){
+               processController = new MemberAppController("/ajaxMvc/ajaxApp1/ajaxView.jsp", false);
           }
           return processController;
      }
