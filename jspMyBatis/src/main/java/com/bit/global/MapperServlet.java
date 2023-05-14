@@ -1,9 +1,6 @@
 package com.bit.global;
 
-import com.bit.domain.board.controller.HitController;
-import com.bit.domain.board.controller.InfoController;
-import com.bit.domain.board.controller.InsertController;
-import com.bit.domain.board.controller.ListController;
+import com.bit.domain.board.controller.*;
 import com.bit.domain.comment.controller.CommentController;
 import com.bit.domain.dept.controller.DeptController;
 import com.bit.domain.emp.controller.EmpController;
@@ -43,6 +40,15 @@ public class MapperServlet {
           }
           if(cmd.equalsIgnoreCase("insertComment")){
                processController = new CommentController("jsp/commentView.jsp", false);
+          }
+          if(cmd.equalsIgnoreCase("passCheck")){
+               processController = new PasswordController("", false);
+          }
+          if (cmd.equalsIgnoreCase("modify")) {
+               processController = new ModifyController("", true);
+          }
+          if (cmd.equalsIgnoreCase("deleteBoard")) {
+               processController = new DeleteController("/listSelect.do?cmd=listSelect&page=1", true);
           }
           return processController;
      }

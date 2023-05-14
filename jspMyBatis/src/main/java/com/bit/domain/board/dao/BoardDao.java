@@ -14,4 +14,6 @@ public interface BoardDao {
      public void addHit(int no);
      public Board selectBoard(int no);
      public int countBoard(HashMap<String, Object> map);
+     void updateBoard(Board board);
+     void deleteBoard(int no);
 }

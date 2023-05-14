@@ -43,5 +43,14 @@
             </when>
         </choose>
     </select>
+    <update id="updateBoard" parameterType="Board">
+        update crudapp
+        set title = #{title}, writer = #{writer}, password = #{password}, contents = #{contents}, id = #{id}, fileName = #{fileName}, regdate = now()
+        where no = #{no}
+    </update>
+    <delete id="deleteBoard" parameterType="int">
+        delete from crudapp
+        where no = #{no}
+    </delete>
 </mapper>
 

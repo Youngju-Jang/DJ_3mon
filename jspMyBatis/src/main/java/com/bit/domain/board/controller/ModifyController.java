@@ -1,6 +1,5 @@
 package com.bit.domain.board.controller;
 
-import com.bit.domain.board.service.BoardService;
 import com.bit.domain.board.service.impl.BoardServiceImp;
 import com.bit.domain.board.vo.Board;
 import com.bit.global.ForWardController;
@@ -12,18 +11,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Enumeration;
 
-public class InsertController implements ProcessController {
+public class ModifyController implements ProcessController {
      private String path;
      private boolean redirect;
-     private BoardService boardService = BoardServiceImp.getBoardService();
-     public InsertController(String path, boolean redirect) {
+     
+     public ModifyController(String path, boolean redirect) {
           this.path = path;
           this.redirect = redirect;
      }
      
      @Override
      public ForWardController execute(HttpServletRequest request, HttpServletResponse response) {
-          // upload, insert
+          int no = 0;
           int size = 10 * 1024 * 1024; // 10mb
           String uploadPath = "/Users/joj1043/Documents/bit/DJ_3mon/jspMyBatis/src/main/webapp/upload";
           System.out.println("_________________");
@@ -33,16 +32,23 @@ public class InsertController implements ProcessController {
                Enumeration<String> e = multipartRequest.getFileNames();
                String file = e.nextElement();
                
-               Board board=new Board(multipartRequest.getParameter("title"),
+               no = Integer.parseInt(multipartRequest.getParameter("no"));
+               
+               Board board = new Board(multipartRequest.getParameter("title"),
                     multipartRequest.getParameter("writer"),
                     multipartRequest.getParameter("password"),
                     multipartRequest.getParameter("contents"),
-                    multipartRequest.getParameter("id") ,
+                    multipartRequest.getParameter("id"),
                     multipartRequest.getOriginalFileName(file));
-               boardService.insertBoard(board);
-          }catch (Exception e){
+               
+               board.setNo(no);
+               
+               BoardServiceImp.getBoardService().updateBoard(board);
+          } catch (Exception e) {
                e.printStackTrace();
           }
+          System.out.println("no = " + no);
+          path = "info.do?cmd=info&no=" + no + "&page=1&job=info";
           return new ForWardController(path, redirect);
      }
 }

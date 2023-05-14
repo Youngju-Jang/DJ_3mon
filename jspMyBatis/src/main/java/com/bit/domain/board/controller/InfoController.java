@@ -13,6 +13,7 @@ public class InfoController implements ProcessController {
      private String path;
      private boolean redirect;
      private BoardService boardService = BoardServiceImp.getBoardService();
+     
      public InfoController(String path, boolean redirect) {
           this.path = path;
           this.redirect = redirect;
@@ -22,13 +23,23 @@ public class InfoController implements ProcessController {
      public ForWardController execute(HttpServletRequest request, HttpServletResponse response) {
           int no = Integer.parseInt(request.getParameter("no"));
           String page = request.getParameter("page");
+          String job = request.getParameter("job");
           request.setAttribute("no", no);
           request.setAttribute("page", page);
           // no 로 데이터 setAttribute 하삼
-          Board board =  boardService.selectBoard(no);
-          request.setAttribute("board", board);
+          Board board = boardService.selectBoard(no);
+          if (job.equalsIgnoreCase("info")) {
+               request.setAttribute("board", board);
+               path = "/jsp/info.jsp";
+          }
+          if(job.equalsIgnoreCase("mod")){
+               request.setAttribute("board", board);
+               path = "/jsp/modify.jsp";
+          }
+          if (job.equalsIgnoreCase("del")) {
           
-          path = "/jsp/info.jsp";
+          }
+          
           return new ForWardController(path, redirect);
      }
 }

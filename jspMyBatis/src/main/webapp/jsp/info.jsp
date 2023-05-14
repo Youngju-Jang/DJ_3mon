@@ -40,7 +40,7 @@
                         <div class="loginWrap">
                               <span class="fir">2022.05.17</span>
                               <span>13:30:22</span>
-                              <span><em>${name}님</em> 좋은 하루 되세요</span>
+                              <span><em>${userName}님</em> 좋은 하루 되세요</span>
                               <a href="" class="btnLogout"><img
                                         src="${pageContext.request.contextPath}/img/common/btn_logout.gif" alt="로그아웃"/></a>
                         </div>
@@ -56,58 +56,61 @@
                         <h1 class="title">게시판 상세보기</h1>
                         <div class="btnSet clfix mgb15">
 						<span class="fr">
-							<span class="button"> <a href="">수정</a></span>
-							<span class="button"><a href="">삭제</a></span>
-							<span class="button"><a href="">목록</a></span>
+                                          <c:if test="${userName eq board.id}">
+                                                <span class="button" id="mod"><a href="${pageContext.request.contextPath}/jsp/password.jsp?job=mod&no=${board.no}">수정</a></span>
+                                                <span class="button" id="del"><a href="${pageContext.request.contextPath}/jsp/password.jsp?job=del&no=${board.no}">삭제</a></span>
+                                          </c:if>
+							<span class="button"><a
+                                                    href="${pageContext.request.contextPath}/jsp/list.jsp?page=${page}">목록</a></span>
 						</span>
                         </div>
-                        <table class="bbsList">
-                              <colgroup>
-                                    <col width="400"/>
-                                    <col width="100"/>
-                                    <col width=""/>
-                              </colgroup>
-                              <tr>
-                                    <th scope="col" class="fir">이미지</th>
-                                    <th scope="col">글번호</th>
-                                    <td>${board.no}</td>
-                              </tr>
-                              <tr>
+                              <table class="bbsList">
+                                    <colgroup>
+                                          <col width="400"/>
+                                          <col width="100"/>
+                                          <col width=""/>
+                                    </colgroup>
+                                    <tr>
+                                          <th scope="col" class="fir">이미지</th>
+                                          <th scope="col">글번호</th>
+                                          <td>${board.no}</td>
+                                    </tr>
+                                    <tr>
 
-                                    <td class="fir" rowspan="7">
-                                          <c:if test='${not empty board.fileName}'>
-                                                <img src='${pageContext.request.contextPath}/upload/${board.fileName}'
-                                                     width="400" height="400"/>
-                                          </c:if>
-                                    </td>
-                                    <th scope="col">작성자</th>
-                                    <td>${board.writer}</td>
-                              </tr>
-                              <tr>
-                                    <th scope="col">제목</th>
-                                    <td>${board.title}</td>
-                              </tr>
-                              <tr>
-                                    <th scope="col">내용</th>
-                                    <td height="200">${board.contents}</td>
-                              </tr>
-                              <tr>
-                                    <th scope="col">등록일</th>
-                                    <td>${board.regdate}</td>
-                              </tr>
-                              <tr>
-                                    <th scope="col">조회수</th>
-                                    <td>${board.hit}</td>
-                              </tr>
+                                          <td class="fir" rowspan="7">
+                                                <c:if test='${not empty board.fileName}'>
+                                                      <img src='${pageContext.request.contextPath}/upload/${board.fileName}'
+                                                           width="400" height="400"/>
+                                                </c:if>
+                                          </td>
+                                          <th scope="col">작성자</th>
+                                          <td>${board.writer}</td>
+                                    </tr>
+                                    <tr>
+                                          <th scope="col">제목</th>
+                                          <td>${board.title}</td>
+                                    </tr>
+                                    <tr>
+                                          <th scope="col">내용</th>
+                                          <td height="200">${board.contents}</td>
+                                    </tr>
+                                    <tr>
+                                          <th scope="col">등록일</th>
+                                          <td>${board.regdate}</td>
+                                    </tr>
+                                    <tr>
+                                          <th scope="col">조회수</th>
+                                          <td>${board.hit}</td>
+                                    </tr>
 
-                        </table>
-
+                              </table>
                   </div>
             </div>
 
             <!-- 덧글 div-->
             <div class="cmt_comm">
-                  <form name="comm_form" action="${pageContext.request.contextPath}/insertComment.do?cmd=insertComment&board=${board.no}">
+                  <form name="comm_form"
+                        action="${pageContext.request.contextPath}/insertComment.do?cmd=insertComment&board=${board.no}">
                         <input type="hidden" value="${sessionScope.id}" id="sessionId" name="userId">
                         <fieldset class="fld_cmt" style="width: 1000px;">
                               <legend class="screen_out">댓글 작성</legend>

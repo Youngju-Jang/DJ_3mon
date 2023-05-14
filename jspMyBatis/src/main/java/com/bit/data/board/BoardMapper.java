@@ -12,4 +12,6 @@ public interface BoardMapper {
      void updateBoardHit(@Param ("no") int no);
      Board selectBoard(int no);
      int countBoard(HashMap<String, Object> map);
+     void updateBoard(Board board);
+     void deleteBoard(int no);
 }

@@ -86,4 +86,26 @@ public class BoardDaoImp implements BoardDao {
           }
           return cnt;
      }
+     
+     @Override
+     public void updateBoard(Board board) {
+          try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
+               BoardMapper boardMapper = sqlSession.getMapper(BoardMapper.class);
+               boardMapper.updateBoard(board);
+               sqlSession.commit();
+          } catch (Exception e) {
+               e.printStackTrace();
+          }
+     }
+     
+     @Override
+     public void deleteBoard(int no) {
+          try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
+               BoardMapper boardMapper = sqlSession.getMapper(BoardMapper.class);
+               boardMapper.deleteBoard(no);
+               sqlSession.commit();
+          } catch (Exception e) {
+               e.printStackTrace();
+          }
+     }
 }
