@@ -19,7 +19,7 @@
             and ${option} like CONCAT('%',#{search},'%')
         </if>
         order by no desc) crudapp
-        where rm between ((#{page.page}-1)*#{page.pageSize} +1) and (#{page.page}*#{page.pageSize})
+        where rm between ((#{pageBean.currentPage}-1)*#{pageBean.pageScale} +1) and (#{pageBean.currentPage}*#{pageBean.pageScale})
     </select>
 
     <update id="updateBoardHit" parameterType="java.lang.Integer">
@@ -33,5 +33,24 @@
         from crudapp
         where no = #{no}
     </select>
+    <select id="countBoard" resultType="java.lang.Integer" parameterType="java.util.HashMap">
+        select count(0) from crudapp
+        <choose>
+            <when test="query !=null and data !=null">
+                <where>
+                    ${option} LIKE CONCAT('%',#{search},'%')
+                </where>
+            </when>
+        </choose>
+    </select>
+    <update id="updateBoard" parameterType="Board">
+        update crudapp
+        set title = #{title}, writer = #{writer}, password = #{password}, contents = #{contents}, id = #{id}, fileName = #{fileName}, regdate = now()
+        where no = #{no}
+    </update>
+    <delete id="deleteBoard" parameterType="int">
+        delete from crudapp
+        where no = #{no}
+    </delete>
 </mapper>
 

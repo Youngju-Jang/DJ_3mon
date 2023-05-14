@@ -12,9 +12,14 @@
       <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
       <script>
           $(function () {
-              $("span#save").click(function () {
+              $("span#modify").click(function () {
+                  if ($("input[name='id']").val().length == 0) {
+                      window.location.href = "/jsp/AdminLogin.jsp";
+                  }
                   //제약사항
-                  $("form").submit();
+                  else {
+                      $("form").submit();
+                  }
               });
 
           });
@@ -28,7 +33,7 @@
                         <div class="loginWrap">
                               <span class="fir">2022.05.17</span>
                               <span>13:30:22</span>
-                              <span><em>OOO님</em> 좋은 하루 되세요</span>
+                              <span><em>${userName}님</em> 좋은 하루 되세요</span>
                               <a href="" class="btnLogout"><img src="../img/common/btn_logout.gif" alt="로그아웃"/></a>
                         </div>
                   </div>
@@ -43,13 +48,11 @@
                         <h1 class="title">게시판 등록</h1>
                         <div class="btnSet clfix mgb15">
 						<span class="fr">
-							<span class="button" id="save"><a href="#">저장</a></span>
-							<span class="button"><a href="#">수정</a></span>
+							<span class="button" id="modify"><a href="#">수정</a></span>
 							<span class="button"><a href="#">목록</a></span>
-							<span class="button"><a href="#">삭제</a></span>
 						</span>
                         </div>
-                        <form action="${pageContext.request.contextPath}/insertBoard.do?cmd=insertBoard" method="post"
+                        <form action="${pageContext.request.contextPath}/modifyBoard.do?cmd=modify" method="post"
                               enctype="multipart/form-data">
                               <table class="bbsWrite">
                                     <colgroup>
@@ -58,13 +61,16 @@
                                     </colgroup>
                                     <tbody>
                                     <tr>
+                                          <input type="hidden" name="no" value="${param.no}"/>
                                           <th scope="row">작성자</th>
                                           <input type="hidden" name="id" value="${userName}"/>
-                                          <td><input type="text" name="writer" class="inputText" size="50"/></td>
+                                          <td><input type="text" name="writer" class="inputText" size="50"
+                                                     value="${board.writer}"/></td>
                                     </tr>
                                     <tr>
                                           <th scope="row">제목</th>
-                                          <td><input type="text" name="title" class="inputText" size="50"/></td>
+                                          <td><input type="text" name="title" class="inputText" size="50"
+                                                     value="${board.title}" }/></td>
                                     </tr>
                                     <tr>
                                           <th scope="row">비밀</th>
@@ -73,13 +79,14 @@
                                     <tr>
                                           <th scope="row">내용</th>
                                           <td class="editer">
-                                                <textarea name="contents"></textarea>
+                                                <textarea name="contents" placeholder="${board.contents}"></textarea>
                                           </td>
                                     </tr>
                                     <tr>
                                           <th scope="row">이미지첨부</th>
                                           <td>
-                                                <input type="file" name="file" class="inputText" size="50"/>
+                                                <input type="file" name="file" class="inputText" size="50"
+                                                       value="${board.fileName}"/>
                                           </td>
                                     </tr>
                                     </tbody>

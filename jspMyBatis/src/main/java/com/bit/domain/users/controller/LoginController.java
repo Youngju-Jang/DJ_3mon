@@ -34,7 +34,7 @@ public class LoginController implements ProcessController {
           if (checkedUser != null && checkedUser.getPassword().equals(password)) { // user가 존재하고, 비밀번호 일치할 경우만 실행
                request.getSession().setAttribute("id", checkedUser.getUserId());
                request.getSession().setAttribute("userName", checkedUser.getName());
-               request.getSession().setMaxInactiveInterval(60*60);
+               request.getSession().setMaxInactiveInterval(10*60*60);
                request.setAttribute("state", "T");
           } else {
                request.setAttribute("state", "F");

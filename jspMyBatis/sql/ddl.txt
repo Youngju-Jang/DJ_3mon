@@ -11,3 +11,19 @@ create table CRUDAPP(
 select * from crudapp;
 
 alter table crudapp add id varchar(10) after contents;
+
+
+create table memberApp(
+    no int(10) not null auto_increment primary key ,
+    name varchar(20) not null,
+    hobby varchar(20) not null
+);
+
+alter table memberApp add today datetime default now();
+
+create table comment(
+    no int(10) not null auto_increment primary key ,
+    user_id int(10) not null,
+    content varchar(500) not null,
+    regdate datetime default now()
+);
