@@ -1,5 +1,6 @@
 package com.bit.domain.comment.controller;
 
+import com.bit.domain.board.vo.Board;
 import com.bit.domain.comment.service.impl.CommentServiceImp;
 import com.bit.domain.comment.vo.Comment;
 import com.bit.global.ForWardController;
@@ -19,11 +20,26 @@ public class CommentController implements ProcessController {
      
      @Override
      public ForWardController execute(HttpServletRequest request, HttpServletResponse response) {
-          int id = (int)request.getSession().getAttribute("id");
+          int id = (int) request.getSession().getAttribute("id");
+          int boardNo = Integer.parseInt(request.getParameter("board"));
           String content = request.getParameter("content");
-          System.out.println("content = " + content);
-          System.out.println("id = " + id);
-          CommentServiceImp.instance.createComment(new Comment(id, content));
+          int parentCommentNum = 0;
+          Comment parentComment = null;
+          // 원댓글에 대한 댓글일경우
+          System.out.println(request.getParameter("comment"));
+          if (request.getParameter("comment").length() != 0) {
+               parentCommentNum = Integer.parseInt(request.getParameter("comment"));
+               parentComment = CommentServiceImp.instance.selectById(parentCommentNum);
+               
+               
+          }else{
+               // 원댓글인경우
+               
+               
+          }
+          
+          CommentServiceImp.instance.createComment(parentComment, new Comment(id, content, boardNo));
+          
           return new ForWardController(path, redirect);
      }
 }

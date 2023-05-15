@@ -26,7 +26,41 @@ public class CommentDaoImp implements CommentDao {
      }
      
      @Override
+     public Comment selectById(int id) {
+          Comment comment = null;
+          try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
+               CommentMapper commentMapper = sqlSession.getMapper(CommentMapper.class);
+               comment = commentMapper.selectById(id);
+          } catch (Exception e) {
+               e.printStackTrace();
+          }
+          return comment;
+     }
+     
+     @Override
      public List<Comment> selectAll() {
           return null;
+     }
+     
+     @Override
+     public void addReply(int no) {
+          try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
+               CommentMapper commentMapper = sqlSession.getMapper(CommentMapper.class);
+               commentMapper.addReply(no);
+               sqlSession.commit();
+          } catch (Exception e) {
+               e.printStackTrace();
+          }
+     }
+     
+     @Override
+     public void updateStep(Comment comment) {
+          try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
+               CommentMapper commentMapper = sqlSession.getMapper(CommentMapper.class);
+               commentMapper.updateStep(comment);
+               sqlSession.commit();
+          } catch (Exception e) {
+               e.printStackTrace();
+          }
      }
 }

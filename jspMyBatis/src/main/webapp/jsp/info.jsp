@@ -110,7 +110,8 @@
             <!-- 덧글 div-->
             <div class="cmt_comm">
                   <form name="comm_form"
-                        action="${pageContext.request.contextPath}/insertComment.do?cmd=insertComment&board=${board.no}">
+                        action="${pageContext.request.contextPath}/insertComment.do?cmd=insertComment&board=${board.no}&comment="
+                  method="post">
                         <input type="hidden" value="${sessionScope.id}" id="sessionId" name="userId">
                         <fieldset class="fld_cmt" style="width: 1000px;">
                               <legend class="screen_out">댓글 작성</legend>
