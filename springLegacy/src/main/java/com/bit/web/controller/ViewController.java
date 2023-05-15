@@ -1,4 +1,4 @@
-package com.mycatgib.springstudy.controller;
+package com.bit.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
