@@ -1,4 +1,4 @@
-package com.bit.web.controller;
+package com.bit.web.v1.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+    <bean id="person1" class="com.bit.web.v1.model.Person" p:name="이도경" p:age="22" p:address="부산시 사하구" scope="prototype"
+          init-method="initPerson" destroy-method="destroyPerson"></bean>
+    <bean id="person2" class="com.bit.web.v1.model.Person">
+        <property name="name" value="김가영"></property>
+        <property name="age" value="23"></property>
+        <property name="address" value="부산시 수영구 민락동"></property>
+    </bean>
+    <bean id="person3" class="com.bit.web.v1.model.Person">
+        <constructor-arg name="name" type="java.lang.String" value="jyj"/>
+    </bean>
+    <bean id="person4" class="com.bit.web.v1.model.Person">
+        <constructor-arg name="age" type="int" value="20"/>
+        <constructor-arg name="name" type="java.lang.String" value="jyj"/>
+    </bean>
+    <bean id="person5" class="com.bit.web.v1.model.Person">
+        <constructor-arg index="0" type="java.lang.String" value="jyj"/>
+        <constructor-arg index="1" type="int" value="20"/>
+        <constructor-arg index="2" type="java.lang.String" value="부산"/>
+    </bean>
+    <bean id="pc1" class="com.bit.web.v1.model.PersonCollection">
+        <property name="list">
+            <list>
+                <ref bean="person1"></ref>
+                <ref bean="person2"></ref>
+                <ref bean="person3"></ref>
+                <ref bean="person4"></ref>
+                <ref bean="person5"></ref>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+                <ref bean="person1"></ref>
+                <ref bean="person2"></ref>
+                <ref bean="person3"></ref>
+                <ref bean="person4"></ref>
+                <ref bean="person5"></ref>
+                <ref bean="person5"></ref>
+            </set>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="servlet/com/login">Login</prop>
+                <prop key="servlet/com/list">List</prop>
+                <prop key="servlet/com/delete">Delete</prop>
+            </props>
+        </property>
+        <property name="map">
+            <map>
+                <entry>
+                    <key>
+                        <value>1</value>
+                    </key>
+                    <ref bean="person1"/>
+                </entry>
+                <entry>
+                    <key>
+                        <value>2</value>
+                    </key>
+                    <ref bean="person2"/>
+                </entry>
+                <entry>
+                    <key>
+                        <value>3</value>
+                    </key>
+                    <ref bean="person3"/>
+                </entry>
+                <entry>
+                    <key>
+                        <value>4</value>
+                    </key>
+                    <ref bean="person4"/>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+
+</beans>
