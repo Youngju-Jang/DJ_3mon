@@ -7,5 +7,6 @@ import java.util.List;
 public interface CommentService {
      public void createComment(Comment parentComment, Comment comment);
      public List<Comment> selectAll();
-     public Comment selectById(int id);
+     public Comment selectByCommentId(int id);
+     public List<Comment> selectAllByBoardId(int id);
 }

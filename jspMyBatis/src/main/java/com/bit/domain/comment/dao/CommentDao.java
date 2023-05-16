@@ -10,4 +10,5 @@ public interface CommentDao {
      Comment selectById(int id);
      public void addReply(int no);
      public void updateStep(Comment comment);
+     List<Comment> selectAllByBoardId(int id);
 }

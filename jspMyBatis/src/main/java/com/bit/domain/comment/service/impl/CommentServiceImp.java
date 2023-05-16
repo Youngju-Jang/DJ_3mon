@@ -30,7 +30,12 @@ public class CommentServiceImp implements CommentService {
      }
      
      @Override
-     public Comment selectById(int id) {
-          return CommentDaoImp.instance.selectById(id);
+     public Comment selectByCommentId(int commentId) {
+          return CommentDaoImp.instance.selectById(commentId);
+     }
+     
+     @Override
+     public List<Comment> selectAllByBoardId(int id) {
+          return CommentDaoImp.instance.selectAllByBoardId(id);
      }
 }

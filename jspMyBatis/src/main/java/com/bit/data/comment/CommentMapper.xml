@@ -31,6 +31,14 @@
     <update id="updateStep" parameterType="Comment">
         update comment
         set step = step +1
-        where ref = #{ref} and lev &gt;= #{lev}
+        where ref = #{ref} and step &gt;= #{step}
     </update>
+
+
+    <select id="selectAllByBoardId" parameterType="int" resultType="Comment">
+        select *
+        from comment
+        where board_no = #{id}
+        order by ref desc, step asc
+    </select>
 </mapper>

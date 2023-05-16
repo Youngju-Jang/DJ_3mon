@@ -13,6 +13,35 @@ public class Comment {
      private int reply; // 댓글 갯수
      private int boardNo; // 참조 개시글 번호
      
+     public Comment(int no, int userId, String content, String regdate, int ref, int step, int lev, int parentNum, int reply, int boardNo) {
+          this.no = no;
+          this.userId = userId;
+          this.content = content;
+          this.regdate = regdate;
+          this.ref = ref;
+          this.step = step;
+          this.lev = lev;
+          this.parentNum = parentNum;
+          this.reply = reply;
+          this.boardNo = boardNo;
+     }
+     
+     @Override
+     public String toString() {
+          return "Comment{" +
+               "no=" + no +
+               ", userId=" + userId +
+               ", content='" + content + '\'' +
+               ", regdate='" + regdate + '\'' +
+               ", ref=" + ref +
+               ", step=" + step +
+               ", lev=" + lev +
+               ", parentNum=" + parentNum +
+               ", reply=" + reply +
+               ", boardNo=" + boardNo +
+               '}';
+     }
+     
      public void setByParent(Comment parent){
           this.ref = parent.getRef();
           this.step = parent.getStep() + 1;

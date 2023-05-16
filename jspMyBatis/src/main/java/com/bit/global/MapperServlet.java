@@ -1,7 +1,8 @@
 package com.bit.global;
 
 import com.bit.domain.board.controller.*;
-import com.bit.domain.comment.controller.CommentController;
+import com.bit.domain.comment.controller.InsertController;
+import com.bit.domain.comment.controller.SelectController;
 import com.bit.domain.dept.controller.DeptController;
 import com.bit.domain.emp.controller.EmpController;
 import com.bit.domain.member.controller.MemberAppController;
@@ -27,7 +28,7 @@ public class MapperServlet {
                processController=new ListController("jsp/list.jsp", false);
           }
           if(cmd.equalsIgnoreCase("insertBoard")){
-               processController = new InsertController("listSelect.do?cmd=listSelect", true);
+               processController = new com.bit.domain.board.controller.InsertController("listSelect.do?cmd=listSelect", true);
           }
           if(cmd.equalsIgnoreCase("hit")){
                processController = new HitController("", true);
@@ -39,7 +40,10 @@ public class MapperServlet {
                processController = new MemberAppController("/ajaxMvc/ajaxApp1/ajaxView.jsp", false);
           }
           if(cmd.equalsIgnoreCase("insertComment")){
-               processController = new CommentController("jsp/commentView.jsp", false);
+               processController = new InsertController("jsp/commentView.jsp", false);
+          }
+          if(cmd.equalsIgnoreCase("selectComment")){
+               processController = new SelectController("jsp/commentView.jsp", false);
           }
           if(cmd.equalsIgnoreCase("passCheck")){
                processController = new PasswordController("", false);

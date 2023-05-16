@@ -63,4 +63,16 @@ public class CommentDaoImp implements CommentDao {
                e.printStackTrace();
           }
      }
+     
+     @Override
+     public List<Comment> selectAllByBoardId(int id) {
+          List<Comment> commentList = null;
+          try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
+               CommentMapper commentMapper = sqlSession.getMapper(CommentMapper.class);
+               commentList = commentMapper.selectAllByBoardId(id);
+          } catch (Exception e) {
+               e.printStackTrace();
+          }
+          return commentList;
+     }
 }
