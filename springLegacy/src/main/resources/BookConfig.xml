@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+    <context:annotation-config/>
+    <context:component-scan base-package="com.bit.web.v2"/>
+    <bean id="book" class="com.bit.web.v2.model.Book" p:author="jyj" p:price="1000" p:title="nani"/>
+    <bean id="book1" class="com.bit.web.v2.model.Book" p:author="jyj2" p:price="2000" p:title="nani2"/>
+
+<!--    <bean id="bookStore" class="com.bit.web.v2.model.BookStore">-->
+<!--        <property name="book">-->
+<!--            <ref bean="book1"></ref>-->
+<!--        </property>-->
+<!--    </bean>-->
+</beans>

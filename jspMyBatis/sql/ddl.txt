@@ -25,5 +25,11 @@ create table comment(
     no int(10) not null auto_increment primary key ,
     user_id int(10) not null,
     content varchar(500) not null,
-    regdate datetime default now()
+    regdate datetime default now(),
+    ref int(10) not null,
+    step int(10) not null,
+    lev int(10) not null,
+    parent_num int(10) not null,
+    reply int(10) not null,
+    board_no int(10) not null
 );
