@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    include: db
+
+#com.bit.serverName=MyBatisServer
+#com.bit.serverPort=5000
+#com.bit.serverUrl=127.0.0.1:8080:MyDB
+#com.bit.connectionCount=7000

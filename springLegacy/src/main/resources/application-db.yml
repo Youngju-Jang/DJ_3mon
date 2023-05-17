@@ -1,0 +1,11 @@
+#com:
+#  bit:
+#    serverName: 'MyBatisServer'
+#    serverPort: 5000
+#    serverUrl: '127.0.0.1:MyDB'
+#    connectionCount: 70000
+
+com.bit.serverName=MyBatisServer
+com.bit.serverPort=5000
+com.bit.serverUrl=127.0.0.1:8080:MyDBrr
+com.bit.connectionCount=7000
