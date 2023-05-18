@@ -1,0 +1,35 @@
+create table CRUDAPP(
+    no int(10) not null auto_increment primary key ,
+    title varchar(20) not null,
+    writer varchar(20) not null,
+    password varchar(10) not null ,
+    contents varchar(1000),
+    hit int(100),
+    filename varchar(50),
+    regdate date);
+
+select * from crudapp;
+
+alter table crudapp add id varchar(10) after contents;
+
+
+create table memberApp(
+    no int(10) not null auto_increment primary key ,
+    name varchar(20) not null,
+    hobby varchar(20) not null
+);
+
+alter table memberApp add today datetime default now();
+
+create table comment(
+    no int(10) not null auto_increment primary key ,
+    user_id int(10) not null,
+    content varchar(500) not null,
+    regdate datetime default now(),
+    ref int(10) not null,
+    step int(10) not null,
+    lev int(10) not null,
+    parent_num int(10) not null,
+    reply int(10) not null,
+    board_no int(10) not null
+);
