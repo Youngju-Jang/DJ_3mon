@@ -15,4 +15,14 @@ public class UserServiceImp implements UserService {
           // DAO 메소드 실행하여 디비정보 불러오기
           return UserDaoImp.getUserDao().selectUser(name);
      }
+     
+     @Override
+     public boolean checkName(String name) {
+          return UserDaoImp.getUserDao().checkName(name);
+     }
+     
+     @Override
+     public void createUser(User user) {
+          UserDaoImp.getUserDao().createUser(user);
+     }
 }

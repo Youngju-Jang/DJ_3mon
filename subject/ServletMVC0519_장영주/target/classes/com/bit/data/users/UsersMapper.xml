@@ -9,5 +9,17 @@
         from users
         where name = #{name}
     </select>
+
+    <select id="checkName" resultType="java.lang.Boolean">
+        select exists
+            (   select 1
+                from users
+                where name = #{name}
+            )
+    </select>
+    <insert id="createUser" parameterType="User">
+        insert into users(name, password)
+        values (#{name}, #{password})
+    </insert>
 </mapper>
 

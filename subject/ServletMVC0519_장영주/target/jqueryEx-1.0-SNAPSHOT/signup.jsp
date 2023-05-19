@@ -32,10 +32,51 @@
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+	<!--[if lt IE 9]>-->
+	<%--        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>--%>
+	<%--        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>--%>
+	<%--	  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>--%>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			$("a#btnSubmit").click(function(){
+				if($("input[name='name']").val().length==0||$("input[type='password']").val().length==0){
+					alert('ID OR PASS CHECK!');
+					$("input[name='name']").val('');
+					$("input[type='password']").val('');
+					$("input[name='name']").focus();
+					return false;
+				}
+				if($("input[name='password']").val() != $("input[name='passwordCheck']").val()){
+					alert('비밀번호가 다릅니다!');
+					$("input[type='password']").val('');
+					$("input[type='passwordCheck']").val('');
+					$("input[type='password']").focus();
+					return false;
+				}
+				else{
+					$.ajax({
+						url:'${pageContext.request.contextPath}/signupSelect.do?cmd=signup',
+						type:'POST',
+						data:{"cmd":'login',"name":$("input#name").val(),"password":$("input#password").val()},
+						success:function(data){
+							console.log(data);
+							if(data.trim()=='T'){
+								document.location.href='/signin.jsp';
+							}else{
+								alert("이미 존재하는 아이디입니다.");
+								$("input[name='id']").val('');
+								$("input[name='pass']").val('');
+								$("input[name='id']").focus();
+							}
+						},error:function(){
+							console.log('error');
+						}
+					});
+				}
+			});
+		});
+	</script>
 </head>
 <body style="background-image: url(img/back.jpg)">
 
@@ -45,33 +86,27 @@
 		<div class="row">
 			<div class="main">
 				<h3>
-					SAMPLE SIGN UP</a>
+					SIGN UP</a>
 				</h3>
-
 				<form role="form">
 					<div class="form-group">
 						<input type="text" placeholder="아이디 또는 이메일" class="form-control"
-							id="inputUsernameEmail name=" email"/>
-
-					</div>
-					<div class="form-group">
-						<input type="text" placeholder="이름(별명)" class="form-control"
-							id="inputUsernameEmail name=" email"/>
+							id="name" name="name"/>
 
 					</div>
 					<div class="form-group">
 						<input type="text" placeholder="비밀번호" class="form-control"
-							id="inputUsernameEmail name=" email"/>
+							id="password" name="password"/>
 
 					</div>
 					<div class="form-group">
 						<!--<a class="pull-right" href="#">Esqueci a senha</a>-->
 						<input type="password" placeholder="비밀번호 확인" class="form-control"
-							id="inputPassword name=" nome"/>
+							id="passwordCheck" name="passwordCheck"/>
 					</div>
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-12">
-							<a href="#" class="btn btn-sm btn-info btn-block">SIGN UP</a>
+							<a id="btnSubmit" class="btn btn-sm btn-info btn-block">SIGN UP</a>
 						</div>
 					</div>
 					<h6 style="font-weight: 400;font-size: 0.85714rem; color: gray " align="center">
@@ -79,7 +114,6 @@
 							href="#">사용약관</a></u> 및 <u><a
 							href="#">개인정보취급방침</a></u> 에 동의합니다.
 					</h6>
-			</div>
 			</form>
 		</div>
 	</div>

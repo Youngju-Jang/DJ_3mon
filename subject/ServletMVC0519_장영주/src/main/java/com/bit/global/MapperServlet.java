@@ -4,11 +4,15 @@ import com.bit.domain.board.controller.*;
 import com.bit.domain.comment.controller.InsertController;
 import com.bit.domain.comment.controller.SelectController;
 import com.bit.domain.users.controller.LoginController;
+import com.bit.domain.users.controller.SignupController;
 
 public class MapperServlet {
      
      public static ProcessController getMapper(String cmd){
           ProcessController processController = null;
+          if(cmd.equalsIgnoreCase("signup")){
+               processController = new SignupController("", false);
+          }
           if(cmd.equalsIgnoreCase("login")){ // 로그인시 cmd = login
                processController = new LoginController("", false);
           }

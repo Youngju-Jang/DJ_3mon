@@ -29,4 +29,26 @@ public class UserDaoImp implements UserDao {
           // 디비정보 조회된 결과가 User DTO형태에 맞게 매핑되어 리턴됨
           return user;
      }
+     
+     @Override
+     public boolean checkName(String name) {
+          try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
+               UsersMapper usersMapper = sqlSession.getMapper(UsersMapper.class);
+               return usersMapper.checkName(name);
+          } catch (Exception e) {
+               e.printStackTrace();
+          }
+          return false;
+     }
+     
+     @Override
+     public void createUser(User user) {
+          try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
+               UsersMapper usersMapper = sqlSession.getMapper(UsersMapper.class);
+               usersMapper.createUser(user);
+               sqlSession.commit();
+          }catch (Exception e){
+               e.printStackTrace();
+          }
+     }
 }
