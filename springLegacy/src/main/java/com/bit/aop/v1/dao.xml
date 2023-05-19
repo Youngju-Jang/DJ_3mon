@@ -10,13 +10,25 @@
     <context:annotation-config/>
     <context:component-scan base-package="com.bit.aop.v1"/>
 
+    <!--    <aop:aspectj-autoproxy/>-->
     <aop:config>
-        <aop:aspect id="before" ref="beforeAdvice">
-            <aop:before method="beforeMethod" pointcut="execution(public * com.bit.aop.v1.dao.Dao*.*())" />
+<!--        <aop:aspect id="before" ref="beforeAdvice">-->
+<!--            <aop:before method="beforeMethod" pointcut="execution(public * com.bit.aop.v1.dao.Dao*.*())"/>-->
+<!--        </aop:aspect>-->
+
+<!--        <aop:aspect id="after" ref="afterAdvice">-->
+<!--            <aop:after method="afterMethod" pointcut="execution(public * com.bit.aop.v1.dao.Dao*.*())"/>-->
+<!--        </aop:aspect>-->
+
+        <aop:aspect id="logger" ref="logAop">
+            <aop:pointcut id="timerAnno" expression="@annotation(com.bit.aop.v1.annotation.Timer) and
+                                                        execution(public * com.bit.aop.v1.dao.Dao*.*())"/>
+            <aop:around pointcut-ref="timerAnno" method="loggerAop" />
         </aop:aspect>
 
-        <aop:aspect id="after" ref="afterAdvice">
-            <aop:after method="afterMethod" pointcut="execution(public * com.bit.aop.v1.dao.Dao*.*())" />
-        </aop:aspect>
+
+
+
+
     </aop:config>
 </beans>
