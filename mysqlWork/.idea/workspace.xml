@@ -5,25 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd9d4f6b-b7df-4d8c-b67f-54a064fd55ed" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/data/comment/CommentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/data/comment/CommentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/data/comment/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/data/comment/CommentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/board/controller/InfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/board/controller/InfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/comment/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/comment/controller/CommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/comment/dao/CommentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/comment/dao/CommentDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/comment/dao/impl/CommentDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/comment/dao/impl/CommentDaoImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/comment/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/comment/service/CommentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/comment/service/impl/CommentServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/comment/service/impl/CommentServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/comment/vo/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/domain/comment/vo/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/jsp/commentView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/jsp/commentView.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/jsp/info.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/webapp/jsp/info.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springLegacy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springLegacy/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springLegacy/src/main/java/com/bit/web/PersonMain.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springLegacy/src/main/java/com/bit/web/controller/ApiController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springLegacy/src/main/java/com/bit/web/controller/ViewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springLegacy/src/main/java/com/bit/web/model/Person.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springLegacy/src/main/resources/person.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springLegacy/src/test/java/com/bit/web/model/PersonTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/data/users/UsersMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/data/users/UsersMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/domain/users/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/domain/users/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/domain/users/dao/impl/UserDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/domain/users/dao/impl/UserDaoImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/domain/users/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/domain/users/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/domain/users/service/impl/UserServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/domain/users/service/impl/UserServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/global/MapperServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/global/MapperServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/webapp/signup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/webapp/signup.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/target/jqueryEx-1.0-SNAPSHOT/signup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/target/jqueryEx-1.0-SNAPSHOT/signup.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

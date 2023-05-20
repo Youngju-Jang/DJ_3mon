@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bit.data.board.BoardMapper">
+    <insert id="insertBoard" parameterType="Board">
+        insert into crudapp(title, writer, password, contents, id, hit, fileName, regdate)
+        values(#{title}, #{writer},#{password},#{contents},#{id},0,#{fileName},now())
+    </insert>
+
+    <select id="selectBoardList" resultType="Board" parameterType="java.util.HashMap">
+        select *
+        from
+        (select @rownum:=@rownum+1 rm, crudapp.*
+        from crudapp
+        where (@rownum:=0)=0
+        <if test="search != null and search != ''">
+            and ${option} like CONCAT('%',#{search},'%')
+        </if>
+        order by no desc) crudapp
+        where rm between ((#{pageBean.currentPage}-1)*#{pageBean.pageScale} +1) and (#{pageBean.currentPage}*#{pageBean.pageScale})
+    </select>
+
+    <update id="updateBoardHit" parameterType="java.lang.Integer">
+        update crudapp
+        set hit = hit+1
+        where no = #{no}
+    </update>
+
+    <select id="selectBoard" parameterType="java.lang.Integer" resultType="Board">
+        select *
+        from crudapp
+        where no = #{no}
+    </select>
+    <select id="countBoard" resultType="java.lang.Integer" parameterType="java.util.HashMap">
+        select count(0) from crudapp
+        <choose>
+            <when test="query !=null and data !=null">
+                <where>
+                    ${option} LIKE CONCAT('%',#{search},'%')
+                </where>
+            </when>
+        </choose>
+    </select>
+    <update id="updateBoard" parameterType="Board">
+        update crudapp
+        set title = #{title}, writer = #{writer}, password = #{password}, contents = #{contents}, id = #{id}, fileName = #{fileName}, regdate = now()
+        where no = #{no}
+    </update>
+    <delete id="deleteBoard" parameterType="int">
+        delete from crudapp
+        where no = #{no}
+    </delete>
+</mapper>
+
