@@ -1,3 +1,6 @@
 [submodule "springLegacy2"]
 	path = springLegacy2
 	url = https://github.com/Youngju-Jang/springLegacy2.git
+[submodule "study-spring-mvc"]
+	path = study-spring-mvc
+	url = https://github.com/Youngju-Jang/study-spring-mvc
