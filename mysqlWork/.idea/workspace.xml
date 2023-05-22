@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd9d4f6b-b7df-4d8c-b67f-54a064fd55ed" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/data/users/UsersMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/data/users/UsersMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/domain/users/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/domain/users/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/domain/users/dao/impl/UserDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/domain/users/dao/impl/UserDaoImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/domain/users/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/domain/users/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/domain/users/service/impl/UserServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/domain/users/service/impl/UserServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/global/MapperServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/global/MapperServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/webapp/signup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/webapp/signup.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/target/jqueryEx-1.0-SNAPSHOT/signup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/target/jqueryEx-1.0-SNAPSHOT/signup.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="dd9d4f6b-b7df-4d8c-b67f-54a064fd55ed" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

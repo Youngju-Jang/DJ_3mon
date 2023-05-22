@@ -20,7 +20,16 @@ public class MyAspect {
           Signature signature = joinPoint.getSignature();
           String methodName = signature.getName();
           if (methodName.equals("fileSearch")) {
-               System.out.println("fileSearch Before");
+//               System.out.println("fileSearch Before");
+          }
+          
+          //메서드에 들어가는 매개변수 배열을 읽어옴
+          Object[] args = joinPoint.getArgs();
+          
+          //매개변수 배열의 종류와 값을 출력
+          for(Object obj : args) {
+               System.out.println("type : "+obj.getClass().getSimpleName());
+               System.out.println("value : "+obj);
           }
      }
      
