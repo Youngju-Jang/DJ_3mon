@@ -8,7 +8,8 @@
         <choose>
             <when test="ref == 0">
                 insert into comment (user_id, content, regdate, ref, step, lev, parent_num, reply, board_no)
-                values (#{userId}, #{content}, now(), (select no from (SELECT no FROM comment ORDER BY no DESC LIMIT 1)as t) +1, #{step}, #{lev}, (select no from (SELECT no FROM comment ORDER BY no DESC LIMIT 1)as t) +1, #{reply}, #{boardNo})
+                values (#{userId}, #{content}, now(), (select no from (SELECT no FROM comment ORDER BY no DESC LIMIT 1)as t) +1, #{step}, #{lev},
+                       (select no from (SELECT no FROM comment ORDER BY no DESC LIMIT 1)as t) +1, #{reply}, #{boardNo})
             </when>
             <otherwise>
                 insert into comment (user_id, content, regdate, ref, step, lev, parent_num, reply, board_no)

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 public class DispatcherServlet extends HttpServlet{
      @Override
      protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-          request.setCharacterEncoding("UTF-8");
+          jspracterEncoding("UTF-8");
           String cmd=request.getParameter("cmd"); // request parameter중 cmd 파라미터 값을 찾음
           ProcessController pc=MapperServlet.getMapper(cmd); // cmd에따른 컨트롤러 객체 생성
           ForWardController fc= pc.execute(request, response); // 생성된 컨트롤러의 execute메소드 실행하여 로직 수행 후 ForwardController return
