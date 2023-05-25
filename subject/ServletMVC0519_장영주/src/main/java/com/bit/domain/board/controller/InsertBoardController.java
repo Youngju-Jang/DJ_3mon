@@ -12,11 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Enumeration;
 
-public class InsertController implements ProcessController {
+public class InsertBoardController implements ProcessController {
      private String path;
      private boolean redirect;
      private BoardService boardService = BoardServiceImp.getBoardService();
-     public InsertController(String path, boolean redirect) {
+     public InsertBoardController(String path, boolean redirect) {
           this.path = path;
           this.redirect = redirect;
      }

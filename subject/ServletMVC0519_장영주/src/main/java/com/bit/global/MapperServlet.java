@@ -20,7 +20,7 @@ public class MapperServlet {
                processController=new ListController("board.jsp", false);
           }
           if(cmd.equalsIgnoreCase("insertBoard")){
-               processController = new InsertController("listSelect.do?cmd=listSelect", true);
+               processController = new InsertBoardController("listSelect.do?cmd=listSelect", true);
           }
           if(cmd.equalsIgnoreCase("hit")){
                processController = new HitController("", true);

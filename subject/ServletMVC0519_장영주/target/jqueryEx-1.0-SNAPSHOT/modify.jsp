@@ -21,7 +21,6 @@
                       $("form").submit();
                   }
               });
-
           });
       </script>
 </head>
