@@ -25,7 +25,7 @@ public class InsertBoardController implements ProcessController {
      public ForWardController execute(HttpServletRequest request, HttpServletResponse response) {
           // upload, insert
           int size = 10 * 1024 * 1024; // 10mb
-          String uploadPath = "/Users/joj1043/Documents/bit/DJ_3mon/jspMyBatis/src/main/webapp/upload";
+          String uploadPath = "/Users/joj1043/Documents/bit/DJ_3mon/subject/ServletMVC0519_장영주/src/main/webapp/upload";
           System.out.println("_________________");
           try {
                MultipartRequest multipartRequest = new MultipartRequest(request, uploadPath, size, "utf-8", new DefaultFileRenamePolicy());

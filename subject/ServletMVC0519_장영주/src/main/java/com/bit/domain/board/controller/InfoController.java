@@ -10,6 +10,7 @@ import com.bit.global.ProcessController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 public class InfoController implements ProcessController {
@@ -23,7 +24,8 @@ public class InfoController implements ProcessController {
      }
      
      @Override
-     public ForWardController execute(HttpServletRequest request, HttpServletResponse response) {
+     public ForWardController execute(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+          request.setCharacterEncoding("UTF-8");
           int no = Integer.parseInt(request.getParameter("no"));
           String page = request.getParameter("page");
           String job = request.getParameter("job");

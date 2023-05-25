@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC >
@@ -35,9 +35,9 @@
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
       <!--[if lt IE 9]>-->
-<%--      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>--%>
-<%--      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>--%>
-<%--      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>--%>
+      <%--      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>--%>
+      <%--      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>--%>
+      <%--      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>--%>
       <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
       <![endif]-->
@@ -115,8 +115,8 @@
                        style="font-weight: 400; font-size: 1.2rem; color: #404040">
                         <p>
                               <i class="glyphicon glyphicon-user"></i> ${userName} 님
-                              <i class="glyphicon glyphicon-comment"></i> 0
-                              <i class="glyphicon glyphicon-ok"></i> 20
+                              <i class="glyphicon glyphicon-comment"></i> ${board.hit}
+                              <i class="glyphicon glyphicon-ok"></i> ${commentList.size()}
                               <i class="glyphicon glyphicon-time"></i> ${board.regdate}
                               <i class="glyphicon glyphicon-thumbs-up"></i> 0
                               <i class="glyphicon glyphicon-thumbs-down"></i> 0
@@ -125,7 +125,11 @@
                   <div class="clear"></div>
             </div>
             <div class="list-group-item">
-				<span class="board-contents"> ${board.contents} </span>
+                  <span class="board-contents"> ${board.contents} </span>
+                  <c:if test='${not empty board.fileName}'>
+                        <img src='/upload/${java.net.URLEncoder.encode(board.fileName, 'euc-kr')}'
+                             width="400" height="400"/>
+                  </c:if>
                   <p style="text-align: center; margin-top: 30px">
                         <button class="btn btn-success">
                               <i class="glyphicon glyphicon-thumbs-up"></i>공감
@@ -133,14 +137,17 @@
                         <button class="btn btn-warning">
                               <i class="glyphicon glyphicon-thumbs-down"></i>비공감
                         </button>
-                  </p>
+                  </p>감
             </div>
             <div class="bottom" style="margin: 10px;margin-top: 20px; text-align: right">
-                  <a href="${pageContext.request.contextPath}/board.jsp?page=${page}" class="btn btn-default btn-xs pull-left">목록으로</a>
+                  <a href="${pageContext.request.contextPath}/board.jsp?page=${page}"
+                     class="btn btn-default btn-xs pull-left">목록으로</a>
                   <c:if test="${userName eq board.id}">
-                  <a href="${pageContext.request.contextPath}/password.jsp?job=mod&no=${board.no}" class="btn btn-default btn-xs">수정</a>
-                  <a href="${pageContext.request.contextPath}/password.jsp?job=del&no=${board.no}" target="_action_frame_bbs" class="btn btn-default btn-xs"
-                     onclick="return confirm('정말로 삭제하시겠습니까?');">삭제</a>
+                        <a href="${pageContext.request.contextPath}/password.jsp?job=mod&no=${board.no}"
+                           class="btn btn-default btn-xs">수정</a>
+                        <a href="${pageContext.request.contextPath}/password.jsp?job=del&no=${board.no}"
+                           target="_action_frame_bbs" class="btn btn-default btn-xs"
+                           onclick="return confirm('정말로 삭제하시겠습니까?');">삭제</a>
                   </c:if>
                   <a href="#" class="btn btn-default btn-xs">스크랩</a>
             </div>
