@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 
 public class PagingComponent {
-     int pageScale = 2;//보여줄 row
+     int pageScale = 4;//보여줄 row
      int blockScale = 3;//  block count
      int currentPage = 1;
      int totalRow = 0;

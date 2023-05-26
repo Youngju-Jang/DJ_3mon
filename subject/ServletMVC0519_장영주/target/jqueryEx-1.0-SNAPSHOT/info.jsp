@@ -6,7 +6,7 @@
 
 <head>
 
-      <meta charset="utf-8">
+      <meta charset="utf-8" >
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="description" content="">
@@ -127,7 +127,7 @@
             <div class="list-group-item">
                   <span class="board-contents"> ${board.contents} </span>
                   <c:if test='${not empty board.fileName}'>
-                        <img src='/upload/${java.net.URLEncoder.encode(board.fileName, 'euc-kr')}'
+                        <img src='/upload/${board.fileName}'
                              width="400" height="400"/>
                   </c:if>
                   <p style="text-align: center; margin-top: 30px">

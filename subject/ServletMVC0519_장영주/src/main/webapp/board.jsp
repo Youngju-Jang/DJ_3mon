@@ -153,14 +153,14 @@
                                     <img src="${pageContext.request.contextPath}/img/button/btn_first.gif" alt="처음페이지"/>
                               </a></li>
                         <li>
-                              <a href="${pageContext.request.contextPath}/listSelect.do?cmd=listSelect&page=${pabeBean.startPage-1}&search=${search}&option=${option}">
+                              <a href="${pageContext.request.contextPath}/listSelect.do?cmd=listSelect&page=${pageBean.startPage-1}&search=${search}&option=${option}">
                                     <img src="${pageContext.request.contextPath}/img/button/btn_prev.gif"
                                          alt="이전"/></a></li>
                   </c:if>
                   <c:forEach begin="${pageBean.startPage}" end="${pageBean.endPage}" var="num">
                         <c:choose>
                               <c:when test="${num == pageBean.currentPage}">
-                                    <li class="active"><a href="#">${num}</a></li>
+                                    <li class="active"><a>${num}</a></li>
                               </c:when>
                               <c:otherwise>
                                     <li>
