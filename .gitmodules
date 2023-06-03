@@ -4,3 +4,6 @@
 [submodule "study-spring-mvc"]
 	path = study-spring-mvc
 	url = https://github.com/Youngju-Jang/study-spring-mvc
+[submodule "hipponMall"]
+	path = hipponMall
+	url = https://github.com/Youngju-Jang/hipponMall.git
