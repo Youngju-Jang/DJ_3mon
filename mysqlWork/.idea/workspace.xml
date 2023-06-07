@@ -5,20 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd9d4f6b-b7df-4d8c-b67f-54a064fd55ed" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/global/DispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jspMyBatis/src/main/java/com/bit/global/DispatcherServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/domain/board/controller/InfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/domain/board/controller/InfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/global/ProcessController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/java/com/bit/global/ProcessController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/webapp/info.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/src/main/webapp/info.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/target/classes/com/bit/domain/board/controller/InfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/target/classes/com/bit/domain/board/controller/InfoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/target/classes/com/bit/global/ProcessController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/target/classes/com/bit/global/ProcessController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/target/classes/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/target/classes/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/target/jqueryEx-1.0-SNAPSHOT/WEB-INF/classes/com/bit/domain/board/controller/InfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/target/jqueryEx-1.0-SNAPSHOT/WEB-INF/classes/com/bit/domain/board/controller/InfoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/target/jqueryEx-1.0-SNAPSHOT/WEB-INF/classes/com/bit/global/ProcessController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/target/jqueryEx-1.0-SNAPSHOT/WEB-INF/classes/com/bit/global/ProcessController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/target/jqueryEx-1.0-SNAPSHOT/WEB-INF/classes/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/target/jqueryEx-1.0-SNAPSHOT/WEB-INF/classes/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/target/jqueryEx-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/target/jqueryEx-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/target/jqueryEx-1.0-SNAPSHOT/info.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../subject/ServletMVC0519_장영주/target/jqueryEx-1.0-SNAPSHOT/info.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +41,13 @@
       <recent name="$PROJECT_DIR$/필기" />
       <recent name="$PROJECT_DIR$/문제" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="console_3.sql" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
+      <script-file value="$APPLICATION_CONFIG_DIR$/consoles/db/b99bd900-07f5-4b1e-bdf2-1eb92467c25b/console_3.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
 </project>
